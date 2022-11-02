@@ -1,0 +1,28 @@
+\begin{thebibliography}{1}
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\language\csname l@#1\endcsname\fi}
+\ifx\undefined\url\def\url#1{{\small #1}}\else\fi
+\ifx\undefined\BibUrl\def\BibUrl#1{\url{#1}}\else\fi
+\ifx\undefined\BibAnnote\long\def\BibAnnote#1{(#1)}\else\fi
+\ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
+
+\bibitem{time}
+\selectlanguageifdefined{russian}
+Stopwatch [Эл. ресурс].
+\newblock Режим доступа: \url{https://clck.ru/32NCYi} (дата
+  обращения: 13.10.2022).
+
+\bibitem{wind}
+\selectlanguageifdefined{russian}
+Windows 11, version 22H2 [Эл. ресурс].
+\newblock Режим доступа: \url{https://clck.ru/32NCXx} (дата
+  обращения: 14.10.2022).
+
+\bibitem{proc}
+\selectlanguageifdefined{russian}
+Процессор Intel® Core™ i7 [Эл. ресурс].
+\newblock Режим доступа: \url{https://clck.ru/yeQa8} (дата
+  обращения: 14.10.2022).
+
+\end{thebibliography}

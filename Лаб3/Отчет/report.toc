@@ -1,0 +1,26 @@
+
+\babel@toc {russian}{}\relax 
+\contentsline {chapter}{Введение}{4}{}%
+\contentsline {chapter}{\numberline {1}Аналитическая часть}{5}{}%
+\contentsline {section}{\numberline {1.1}Описание алгоритмов}{5}{}%
+\contentsline {subsection}{\numberline {1.1.1}Плавная сотрировка}{5}{}%
+\contentsline {subsection}{\numberline {1.1.2}Сортировка слиянием}{7}{}%
+\contentsline {subsection}{\numberline {1.1.3}Блочная сортировка}{7}{}%
+\contentsline {chapter}{\numberline {2}Конструкторская часть}{8}{}%
+\contentsline {section}{\numberline {2.1}Трудоемкость алгоритмов}{8}{}%
+\contentsline {subsection}{\numberline {2.1.1}Сортировка слиянием}{8}{}%
+\contentsline {subsection}{\numberline {2.1.2}Плавная сортировка}{10}{}%
+\contentsline {subsection}{\numberline {2.1.3}Блочная сортировка}{11}{}%
+\contentsline {section}{\numberline {2.2}Описание алгоритмов}{12}{}%
+\contentsline {chapter}{\numberline {3}Технологическая часть}{27}{}%
+\contentsline {section}{\numberline {3.1}Средства реализации}{27}{}%
+\contentsline {section}{\numberline {3.2}Сведения о модулях программы}{27}{}%
+\contentsline {section}{\numberline {3.3}Реализация алгоритмов}{28}{}%
+\contentsline {section}{\numberline {3.4}Функциональные тесты}{38}{}%
+\contentsline {chapter}{\numberline {4}Исследовательская часть}{39}{}%
+\contentsline {section}{\numberline {4.1}Технические характеристики}{39}{}%
+\contentsline {section}{\numberline {4.2}Демонстрация работы программы}{39}{}%
+\contentsline {section}{\numberline {4.3}Время выполнения реализаций алгоритмов}{41}{}%
+\contentsline {section}{Вывод}{46}{}%
+\contentsline {chapter}{Заключение}{47}{}%
+\contentsline {chapter}{Список использованных источников}{48}{}%

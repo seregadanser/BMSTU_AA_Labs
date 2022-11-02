@@ -1,0 +1,261 @@
+\chapter{Технологическая часть}
+В данном разделе будут рассмотрены средства реализации, а также представлены листинги сортировок.
+\section{Средства реализации}
+В данной работе для реализации был выбран язык программирования $c\#$. В текущей лабораторной работе требуется замерить время выполнения реализаци трассировщика лучей.
+
+Время работы было замерено с помощью класса \textit{Stopwatch} из библиотеки $System.Diagnostics$ \cite{time}. 
+
+Для создания потоков был выбран класс \textit{Tread} из библиотеки $System.Threading$.
+
+\section{Сведения о модулях программы}
+Программа состоит из следующих модулей:
+\begin{itemize}
+	\item $Scene.cs$ - файл, содержащий сцену;
+	\item $Form1.cs$ - файл, реализующий интерфейс программы;
+	\item $RayTraiser.cs$ - файл, содержащий трассировку лучей.
+\end{itemize}
+
+\section{Реализация алгоритмов}
+В данной работе используется параметризированный поток, который на вход \newpage принимает структуру, содержащую начало, конец интервала для трассировки и остальные параметры, требуемые для работы алгоритма.
+
+В листинге \ref{common_part} представлена реализация общей части: функция для расчета пересечения луча и объекта, функция определяющая ближайший объект к наблюдателю, функция построения выпуклой оболочки -- для трассировки лучей. В листингах \ref{parallel_traise} и \ref{traise} представлены реализации параллельной и не паралелльной трассировки лучей соответсвенно. В листинге \ref{struct} представлена реализация структуры для передачи в поток.\clearpage
+\begin{center}
+\begin{lstlisting}[label=common_part, caption={Реализация общей части трассировки лучей}]
+   private Color RayT(Model model, MatrixCoord3D D, MatrixCoord3D position)
+{
+	
+	PolygonComponent closest = null;
+	double closest_t = double.MaxValue;
+	//  Parallel.ForEach<PolygonComponent>(model.Polygons, p=> { 
+		foreach (PolygonComponent p in model.Polygons)
+		{
+			//   if (MatrixCoord3D.scalar(p.Normal, cam.Direction) > 0)
+			{
+				MatrixCoord3D tt = GetTimeAndUvCoord(position, D, p.Points[0].Coords, p.Points[1].Coords, p.Points[2].Coords);
+				if (tt != null)
+				{
+					if (tt.X < closest_t && tt.X > 1)
+					{
+						closest_t = tt.X;
+						closest = p;
+					}
+				}
+			}
+		}
+		
+		if (closest == null)
+		return Color.White;
+		return closest.ColorF;
+	}
+	private Tuple<MatrixCoord3D, double> FoundCenter(Container<PointComponent> points)
+	{
+		double minX, maxX, minY, maxY, minZ, maxZ;
+		minX = points[0].X;
+		maxX = points[0].X;
+		minY = points[0].Y;
+		maxY = points[0].Y;
+		minZ = points[0].Z;
+		maxZ = points[0].Z;
+		
+		foreach (PointComponent p in points)
+		{
+			if (p.X < minX)
+			minX = p.X;
+			if (p.X > maxX)
+			maxX = p.X;
+			if (p.Y < minY)
+			minY = p.Y;
+			if (p.Y > maxY)
+			maxY = p.Y;
+			if (p.Z < minZ)
+			minZ = p.Z;
+			if (p.Z > maxZ)
+			maxZ = p.Z;
+		}
+		MatrixCoord3D position = new MatrixCoord3D((minX + maxX) / 2f, (minY + maxY) / 2f, (minZ + maxZ) / 2f);
+		double r = 0;
+		foreach (PointComponent p in points)
+		{
+			LineComponent minx = new LineComponent(new PointComponent(position), p);
+			r = Math.Max(minx.Len(), r);
+		}
+		
+		return new Tuple<MatrixCoord3D, double>(position, r);
+	}
+	private double RaySphereIntersection(MatrixCoord3D rayOrigin, MatrixCoord3D rayDirection, MatrixCoord3D spos, double r)
+	{
+		double t = Double.MaxValue;
+		//a == 1; // because rdir must be normalized
+		MatrixCoord3D k = rayOrigin - spos;
+		double b = MatrixCoord3D.scalar(k, rayDirection);
+		double c = MatrixCoord3D.scalar(k, k) - r * r;
+		double d = b * b - c;
+		if (d >= 0)
+		{
+			double sqrtfd = Math.Sqrt(d);
+			// t, a == 1
+			double t1 = -b + sqrtfd;
+			double t2 = -b - sqrtfd;
+			double min_t = Math.Min(t1, t2);
+			double max_t = Math.Max(t1, t2);
+			t = (min_t >= 0) ? min_t : max_t;
+		}
+		return t;
+	}
+	
+	private const double Epsilon = 0.000001d;
+	
+	private MatrixCoord3D? GetTimeAndUvCoord(MatrixCoord3D rayOrigin, MatrixCoord3D rayDirection, MatrixCoord3D vert0, MatrixCoord3D vert1, MatrixCoord3D vert2)
+	{
+		var edge1 = vert1 - vert0;
+		var edge2 = vert2 - vert0;
+		
+		var pvec = (rayDirection * edge2);
+		
+		var det = MatrixCoord3D.scalar(edge1, pvec);
+		
+		if (det > -Epsilon && det < Epsilon)
+		{
+			return null;
+		}
+		
+		var invDet = 1d / det;
+		
+		var tvec = rayOrigin - vert0;
+		
+		var u = MatrixCoord3D.scalar(tvec, pvec) * invDet;
+		
+		if (u < 0 || u > 1)
+		{
+			return null;
+		}
+		
+		var qvec = (tvec * edge1);
+		
+		var v = MatrixCoord3D.scalar(rayDirection, qvec) * invDet;
+		
+		if (v < 0 || u + v > 1)
+		{
+			return null;
+		}
+		
+		var t = MatrixCoord3D.scalar(edge2, qvec) * invDet;
+		
+		return new MatrixCoord3D(t, u, v);
+	}
+	
+	private MatrixCoord3D GetTrilinearCoordinateOfTheHit(float t, MatrixCoord3D rayOrigin, MatrixCoord3D rayDirection)
+	{
+		return rayDirection * t + rayOrigin;
+	}
+	
+	private MatrixCoord3D CanvasToVieport(int x, int y, double aspect, double fov)
+	{
+		
+		double fx = aspect * fov * (2 * ((x + 0.5f) / screen.Width) - 1);
+		double fy = (1 - (2 * (y + 0.5f) / screen.Height)) * fov;
+		
+		return new MatrixCoord3D(fx / scale, fy / scale, -1);
+	}
+\end{lstlisting}
+\end{center}
+\newpage
+\begin{center}
+\begin{lstlisting}[label=parallel_traise, caption={Алгоритм паралельной трассировки}]
+        public override void RayTrasing(Model model)
+{
+	
+	Tuple<MatrixCoord3D, double> sphere = FoundCenter(model.Points);
+	List<Thread> threads = new List<Thread>();
+	
+	MatrixCoord3D CamPosition = cam.Position.Coords;
+	MatrixTransformation3D RotateMatrix = cam.RotateMatrix;
+	
+	int x = 0;
+	for (int h = 0; h < NumberofThreads; h++)
+	{
+		threads.Add(new Thread(new ParameterizedThreadStart(ByVertecal)));
+		threads[threads.Count - 1].Start(new Limit(x, x + screen.Width / NumberofThreads,model,CamPosition, RotateMatrix,sphere ));
+		x += screen.Width / NumberofThreads;
+	}
+	foreach (var elem in threads)
+	{
+		elem.Join();
+	}
+}
+
+private void ByVertecal(object obj)
+{
+	Limit limit = (Limit)obj;
+	Color c;
+	double aspect = screen.Width / screen.Height;
+	double field = Math.Tan(cam.Fovy / 2 * Math.PI / 180.0f);
+	for (int x = limit.begin; x < limit.end; x++)
+	for (int y = 0; y < screen.Height; y++)
+	{
+		MatrixCoord3D D = CanvasToVieport(x, y,aspect,field) * limit.RotateMatrix;// new MatrixCoord3D(cam.RotateMatrix.Coeff[0,2], cam.RotateMatrix.Coeff[1, 2], cam.RotateMatrix.Coeff[2, 2]);
+		D.Normalise();
+		c = Color.White;
+		if (RaySphereIntersection(limit.CamPosition, D, limit.sphere.Item1, limit.sphere.Item2) != double.MaxValue)
+		{
+			c = RayT(limit.model, D, limit.CamPosition);
+		}
+		PictureBuff.SetPixel(x, y, c.ToArgb());
+	}
+}
+\end{lstlisting}
+\end{center}
+\newpage
+\begin{center}
+\begin{lstlisting}[label=traise,caption = { Алгоритм последовательной трассировки}]
+        public virtual void RayTrasing(Model model)
+{
+	Tuple<MatrixCoord3D, double> sphere = FoundCenter(model.Points);
+	MatrixCoord3D CamPosition = cam.Position.Coords;
+	MatrixTransformation3D RotateMatrix = cam.RotateMatrix.InversedMatrix();
+	double aspect = screen.Width / (double)screen.Height;
+	double field = Math.Tan(cam.Fovy / 2 * Math.PI / 180.0f);
+	for (int x = 0; x < screen.Width; x++)
+	{
+		for (int y = 0; y < screen.Height; y++)
+		{
+			MatrixCoord3D D = CanvasToVieport(x, y, aspect, field) * RotateMatrix;// new MatrixCoord3D(cam.RotateMatrix.Coeff[0,2], cam.RotateMatrix.Coeff[1, 2], cam.RotateMatrix.Coeff[2, 2]);
+			D.Normalise();
+			Color c = Color.White;
+			if (RaySphereIntersection(CamPosition, D, sphere.Item1, sphere.Item2) != double.MaxValue)
+			{
+				c = RayT(model, D, CamPosition);
+			}
+			PictureBuff.SetPixel(x, y, c.ToArgb());
+		}
+	}
+}
+
+\end{lstlisting}
+\end{center}
+\newpage
+\begin{center}
+	\begin{lstlisting}[label=struct,caption = { Структура для передачи в поток}]
+	  class Limit
+	{
+		public int begin;
+		public int end;
+		readonly public Model model;
+		readonly public MatrixCoord3D CamPosition;
+		readonly public MatrixTransformation3D RotateMatrix;
+		readonly public Tuple<MatrixCoord3D, double> sphere;
+		public Limit(int begin, int end, Model model, MatrixCoord3D CamPosition, MatrixTransformation3D RotateMatrix, Tuple<MatrixCoord3D, double> sphere)
+		{
+			this.begin = begin; this.end = end; this.model = model; 
+			this.CamPosition = CamPosition; this.RotateMatrix = RotateMatrix.InversedMatrix();
+			this.sphere = sphere;
+		}
+	}
+		
+	\end{lstlisting}
+\end{center}
+\newpage
+
+
+%\section*{Вывод}
+%В данном разделе были представлены реализации алгоритмов плавной сортировки, сортировки слиянием и блочной сортировки.

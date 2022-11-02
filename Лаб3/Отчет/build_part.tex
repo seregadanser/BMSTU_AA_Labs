@@ -1,0 +1,293 @@
+\chapter{Конструкторская часть}
+
+\section{Трудоемкость алгоритмов}
+Введем модель трудоемкости для оценки алгоритмов.
+\begin{enumerate}
+	\item Операции из списка (\ref{for:operations}) имеют трудоёмкость равную 1:
+	\begin{equation}		
+		+, -, /, *, \%, =, +=, -=, *=, /=, \%=, ==
+		\nonumber
+	\end{equation}
+\begin{equation}
+	\label{for:operations}
+	!=, <, >, <=, >=, [], ++, {-}-
+		\end{equation}
+	\item Трудоёмкость оператора выбора \code{if условие then A else B} рассчитывается, как (\ref{for:if}):
+	\begin{equation}
+		\label{for:if}
+		f_{if} = f_{\text{условия}} +
+		\begin{cases}
+			f_A, & \text{если условие выполняется,}\\
+			f_B, & \text{иначе.}
+		\end{cases}
+	\end{equation}
+	\item Трудоёмкость цикла рассчитывается, как (\ref{for:cycle}):
+	\begin{equation}
+		\label{for:cycle}
+		f_{for} = f_{\text{инициализации}} + f_{\text{сравнения}} + N(f_{\text{тела}} + f_{\text{инкремент}} + f_{\text{сравнения}})
+	\end{equation}
+	\item Трудоёмкость вызова функции равна 0.
+\end{enumerate}
+
+
+
+
+Далее будет приведены оценки трудоемкости алгоритмов. 
+\subsection{Сортировка слиянием}
+
+Лучший случай: массив отсортирован.
+Худший случай: массив отсортирован в обратном порядке.
+
+\begin{enumerate}
+
+\item Построчная оценка функции merge (Табл. \ref{tab:table3}).
+
+	\begin{longtable}{|l c|} 
+				\caption{Построчная оценка веса}
+		\label{tab:table3}\\
+		\hline
+		Код & Вес \\ [0.5ex] 
+		\hline\hline
+		int i, j, k, c[50]; & 0\\
+		\hline
+		 i = low; & 1\\
+		\hline
+		 k = low; & 1\\
+		\hline
+		j = mid + 1; & 2\\
+		\hline
+		while (i <= mid \&\& j <= high)  & 3\\
+		\hline
+		\{ & 0\\
+		\hline
+		if (arr[i] < arr[j])  & 3\\
+		\hline
+		\{ & 0\\
+		\hline
+	    c[k] = arr[i]; & 3\\
+		\hline
+		k++; & 1\\
+		\hline
+		i++; & 1\\
+		\hline
+		\} & 0\\
+		\hline
+		else & 0 \\
+		\hline
+		\{ & 0\\
+		\hline
+		c[k] = arr[j]; & 3\\
+		\hline
+		k++; & 1\\
+		\hline
+		j++; & 1\\
+		\hline
+		\} & 0\\
+		\hline
+		\} & 0\\
+		\hline
+		while (i <= mid) & 1\\
+		\hline
+		\{ & 0\\
+		\hline
+		c[k] = arr[i]; & 3\\
+		\hline
+		k++; & 1\\
+		\hline
+		i++; & 1\\
+		\hline
+		\} & 0\\
+		\hline
+		while (j <= hight) & 1\\
+		\hline
+		\{ & 0\\
+		\hline
+		c[k] = arr[j]; & 3\\
+		\hline
+		k++; & 1\\
+		\hline
+		j++; & 1\\
+		\hline
+		\} & 0\\
+		\hline
+		for (i = low; i < k; i++) & 3\\
+		\hline
+		\{ & 0\\
+		\hline
+		arr[i] = c[i]; & 3\\
+		\hline
+		\} & 0\\
+		\hline
+		\hline
+		\} & 0\\
+		\hline
+
+\end{longtable}
+
+Трудоемкость:  $1 + 1 + 2 + n * (3 + 8) + k1 * 6 + k2 * 6 + n * 3= 14n + 4  + 6(k1 + k2)= O(n)$, где $k1 < n/2, k2  < n/2$
+
+\item Проанализируем сложность mergeSort. Разобьём все “слияния”, выполненные в процессе сортировки массива на “слои”. Слияние двух частей изначального массива - первый слой, слияния частей каждой из этих двух частей (четвертей оригинального массива) - второй слой, и т.д. Необходимо заметить, что количество элементов в каждом слое равна $N$. Тогда из пункта 1 следует что на каждом слое все слияния выполняются за $O(N)$. Известно, что количество таких строк, называемое глубиной рекурсивного дерева, будет $log(N)$.
+Для наилучшего и наихудшего случая общая сложность mergeSort совпадает и равна: $O(n * log(n))$ \cite{algos}.
+\end{enumerate}
+
+\subsection{Плавная сортировка} 
+Лучший случай: массив отсортирован.
+Худший случай: массив отсортирован в обратном порядке.
+
+Для определения сложности плавной сортировки необходимо для начала определить сложность пирамидальной сортировки.  Основной структурой пирамидальной сортировки является бинарное дерево глубиной $k = log(n)$. Алгоритм состоит из двух частей.
+\begin{enumerate}
+	\item Создание дерева.
+	\item Сортировка дерева.
+\end{enumerate} 
+
+На первом этапе перебирем n элементов. Само добавление в кучу обходится в $O(1)$, но затем для кучи нужно сделать просейку. Данная операция для каждого добавления обходится не более чем в $k$ сравнений. Для второго этапа ситуация аналогичная. При обмене очередного максимума опять нужно просеять кучу, в корне которой он находился. На этой стадии сортировка выполняется для $n-1$ элементов с $k$ сравнениеями. 	Таким образом общие затраты для пирамидальной сортировки составляют $k * n + k * (n - 1) = O(n*log(n))$.
+
+ Перейдем к расчету сложности плавной сортировки. Для почти отсортированного массива строится дерево, удовлетворяющее первому следствию. Благодаря этому временная сложность просейки на первом этапе будет равна $O(1)$ так как просейка не опускается дальше первого элемента и общая сложность соответсвенно $O(n)$. Во время выполнения второго этапа результат трудоемкости остается таким же. Следовательно, общая трудоемкость для двух этапов будет $O(n)$. 
+ 
+ Таким образом лучшая сложность плавной сортировки плавно стремится к $O(n)$ чем более упорядоченными будут входящие данные. А худшая сложность - $O(n*log(n))$ достигается, когда данные во входящем массиве не упорядоченны. 
+ 
+\subsection{Блочная сортировка} 
+Лучший случай: элементы входящего массива попали в разные корзины.
+Худший случай: элементы входящего массива попали в одну корзину.
+
+Для наилучшего и наихудшего случаев сложность первого цикла будет одинакова и равна $O(n)$
+
+\textbf{Лучший случай:} в каждый блок попадает по одному элементу. Сложность второго цикла равна $O(n)$, третьего - $O(n) * O(1) = O(n)$, четвертого аналогично. Тогда общая временная трудоемкость в наилучшем случае будет  $O(n)$. 
+
+\textbf{Худший случай:} все элементы входного массива попадают в один блок. Сложность второго цикла равна $O(n)$, третьего - $(n-1)* O(1) + 1 * O(n * log(n)) = O(n * log(n))$, четвертого -  $(n-1)* O(2) + 1 * O(n) = O(n)$. Тогда общая временная трудоемкость в наихудшем случае будет  $O(n * log(n))$. 
+
+\section{Описание алгоритмов}
+В данном разделе будут рассмотрены схемы алгоритмов плавной сортировки (рис. \ref{ris:imageSS}), сортировки слиянием (рис. \ref{ris:imageSC}), блочной сортировки (рис. \ref{ris:imageSB}, \ref{ris:imageSB2}). Схемы на рис. \ref{ris:imageSS1}, \ref{ris:imageSS2}, \ref{ris:imageSS3}, \ref{ris:imageSS4}, \ref{ris:imageSS5}, \ref{ris:imageSS6}, \ref{ris:imageSS7}, \ref{ris:imageSC1}, \ref{ris:imageSC2} являются вспомогательными схемами. 
+\begin{center}
+	
+
+\newpage
+%\begin{figure}[h]
+	\centering
+	%\def\svgwidth{5cm} % используем для изменения размера, если надо
+	\def\svgwidth{9cm}
+	\input{src/smooth.pdf_tex}
+	\captionof{figure}{Схема алгоритма плавной сортировки}
+	\label{ris:imageSS}
+%\end{figure}
+\newpage
+%\begin{figure}[h]
+	\centering
+	\def\svgwidth{8cm}
+	%\def\svgwidth{5cm} % используем для изменения размера, если надо
+	\input{src/smooth_findposMax1.pdf_tex}
+	\captionof{figure}{Схема функции findPosMaxElem, часть 1}
+	\label{ris:imageSS1}
+%\end{figure}
+\newpage
+%\begin{figure}[h]
+	\centering
+	\def\svgwidth{12cm}
+	%\def\svgwidth{5cm} % используем для изменения размера, если надо
+	\input{src/smooth_findposMax2.pdf_tex}
+	\captionof{figure}{Схема функции findPosMaxElem, часть 2}
+	\label{ris:imageSS2}
+%\end{figure}
+\newpage
+%\begin{figure}[h]
+	\centering
+		\def\svgwidth{12cm}
+	%\def\svgwidth{5cm} % используем для изменения размера, если надо
+	\input{src/smooth_make_heap_pool.pdf_tex}
+	\captionof{figure}{Схема функции makeHeapPool}
+	\label{ris:imageSS3}
+%\end{figure}
+\newpage
+%\begin{figure}[h]
+	\centering
+	\def\svgwidth{14cm}
+	%\def\svgwidth{5cm} % используем для изменения размера, если надо
+	\input{src/smooth_nextState.pdf_tex}
+	\captionof{figure}{Схема функции nextState}
+	\label{ris:imageSS4}
+%\end{figure}
+\newpage
+%\begin{figure}[h]
+	\centering
+	\def\svgwidth{15cm}
+	%\def\svgwidth{5cm} % используем для изменения размера, если надо
+	\input{src/smooth_prevState.pdf_tex}
+	\captionof{figure}{Схема функции prevState}
+	\label{ris:imageSS5}
+%\end{figure}
+\newpage
+%\begin{figure}[h]
+	\centering
+	\def\svgwidth{14cm}
+	%\def\svgwidth{5cm} % используем для изменения размера, если надо
+	\input{src/smooth_shift_down1.pdf_tex}
+	\captionof{figure}{Схема функции shiftDown часть 1}
+	\label{ris:imageSS6}
+%\end{figure}
+\newpage
+%\begin{figure}[h]
+	\centering
+		\def\svgwidth{17cm}
+	%\def\svgwidth{5cm} % используем для изменения размера, если надо
+	\input{src/smooth_shift_down2.pdf_tex}
+	\captionof{figure}{Схема функции shiftDown часть 2}
+	\label{ris:imageSS7}
+%\end{figure}
+
+
+\newpage
+%\begin{figure}[h]
+	\centering
+	\def\svgwidth{12cm} % используем для изменения размера, если надо
+	\input{src/merge_sort.pdf_tex}
+	\captionof{figure}{Схема алгоритма сортировки слиянием}
+	\label{ris:imageSC}
+%\end{figure}
+\newpage
+%\begin{figure}[p]
+	\centering
+	%\def\svgwidth{5cm} % используем для изменения размера, если надо
+	\def\svgwidth{11cm}
+	\input{src/merge1.pdf_tex}
+	\captionof{figure}{Схема функции merge часть 1}
+	\label{ris:imageSC1}
+%\end{figure}
+\newpage
+%\begin{figure}[p]
+	\centering
+	%\def\svgwidth{5cm} % используем для изменения размера, если надо
+	\input{src/merge2.pdf_tex}
+	\captionof{figure}{Схема функции merge часть 2}
+	\label{ris:imageSC2}
+%\end{figure}
+
+\newpage
+%\begin{figure}[h]
+	\centering
+	%\def\svgwidth{5cm} % используем для изменения размера, если надо
+	\def\svgwidth{7cm}
+	\input{src/bucketSort1.pdf_tex}
+	\captionof{figure}{Схема алгоритма блочной сортировки часть 1}
+	\label{ris:imageSB}
+\newpage
+
+\centering
+%\def\svgwidth{5cm} % используем для изменения размера, если надо
+\def\svgwidth{4cm}
+\input{src/bucketSort2.pdf_tex}
+\captionof{figure}{Схема алгоритма блочной сортировки часть 2}
+\label{ris:imageSB2}
+
+\newpage
+\end{center}
+\newpage
+
+\section*{Вывод}
+% \addcontentsline{toc}{section}{Вывод}
+В данном разделе были проанализированны три алгоритма сортировки. Рассчитаны трудоёмкости алгоритмов в лучшем случае (л.с.) и в худшем случае (х.с.).
+
+Сортировка слиянием: л.с. -- $O(nlog(n))$, х.с. -- $O(nlog(n))$.
+
+Плавная сортировка: л.с. -- $O(n)$,  х.с. --  $O(nlog(n))$.
+
+Блочная сортировка: л.с. -- $O(n)$,  х.с. -- $O(nlog(n))$.
