@@ -2,6 +2,7 @@
 #include <iostream>
 #include "MatrixMull.hpp"
 #include "Gen.hpp"
+#include "TimeCompare.hpp"
 
 void output_matrix(data_t m)
 {
@@ -19,9 +20,9 @@ void output_matrix(data_t m)
 int main()
 {
     srand(time(0));
-    data_t m, n;
-
-    gen_best_case(&m, 2);
+    //data_t m, n;
+    time_compare(gen_best_case);
+    /*gen_best_case(&m, 2);
     gen_best_case(&n,2);
     output_matrix(m);
     output_matrix(n);
@@ -29,7 +30,7 @@ int main()
     output_matrix(matrix_multiplication_Vinograd(m, n));
     output_matrix(matrix_multiplication_VinogradOptimase(m, n));
     free_matrix(m.matrix, m.n);
-    free_matrix(n.matrix, n.n);
+    free_matrix(n.matrix, n.n);*/
     return 0;
 }
 
