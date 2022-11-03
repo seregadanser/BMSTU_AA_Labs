@@ -1,0 +1,19 @@
+ 1		Tuple<MatrixCoord3D, double> sphere = FoundCenter(model.Points);
+ 2          MatrixCoord3D CamPosition = cam.Position.Coords;
+ 3          MatrixTransformation3D RotateMatrix = cam.RotateMatrix.InversedMatrix();
+ 4          double aspect = screen.Width / (double)screen.Height;
+ 5          double field = Math.Tan(cam.Fovy / 2 * Math.PI / 180.0f);
+ 6          for (int x = 0; x < screen.Width; x++)
+            {
+ 7              for (int y = 0; y < screen.Height; y++)
+                {
+ 8                  MatrixCoord3D D = CanvasToVieport(x, y, aspect, field) * RotateMatrix;// new MatrixCoord3D(cam.RotateMatrix.Coeff[0,2], cam.RotateMatrix.Coeff[1, 2], cam.RotateMatrix.Coeff[2, 2]);
+ 9                  D.Normalise();
+10                  Color c = Color.White;
+11                  if (RaySphereIntersection(CamPosition, D, sphere.Item1, sphere.Item2) != double.MaxValue)
+                    {
+12                      c = RayT(model, D, CamPosition);
+                    }
+13                  PictureBuff.SetPixel(x, y, c.ToArgb());
+                }
+            }
