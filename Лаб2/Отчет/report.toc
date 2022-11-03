@@ -1,0 +1,20 @@
+
+\babel@toc {russian}{}\relax 
+\contentsline {chapter}{Введение}{3}{}%
+\contentsline {chapter}{\numberline {1}Аналитическая часть}{4}{}%
+\contentsline {section}{\numberline {1.1}Матрица}{4}{}%
+\contentsline {section}{\numberline {1.2}Описание алгоритмов}{5}{}%
+\contentsline {subsection}{\numberline {1.2.1}Классический алгоритм умножения матриц}{5}{}%
+\contentsline {subsection}{\numberline {1.2.2}Алгоритм Винограда}{5}{}%
+\contentsline {subsection}{\numberline {1.2.3}Оптимизация алгоритма Винограда}{6}{}%
+\contentsline {chapter}{\numberline {2}Технологическая часть}{7}{}%
+\contentsline {section}{\numberline {2.1}Средства реализации}{7}{}%
+\contentsline {section}{\numberline {2.2}Сведения о модулях программы}{7}{}%
+\contentsline {section}{\numberline {2.3}Реализация алгоритмов}{8}{}%
+\contentsline {section}{\numberline {2.4}Функциональные тесты}{13}{}%
+\contentsline {chapter}{\numberline {3}Исследовательская часть}{14}{}%
+\contentsline {section}{\numberline {3.1}Технические характеристики}{14}{}%
+\contentsline {section}{\numberline {3.2}Демонстрация работы программы}{14}{}%
+\contentsline {section}{\numberline {3.3}Время выполнения реализаций алгоритмов}{15}{}%
+\contentsline {section}{Вывод}{15}{}%
+\contentsline {chapter}{Список использованных источников}{16}{}%

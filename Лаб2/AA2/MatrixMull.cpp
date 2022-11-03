@@ -40,7 +40,7 @@ data_t matrix_multiplication(const data_t m1, const data_t m2)
             for (int k = 0; k < m1.m; k++)
                 result.matrix[i][j] += m1.matrix[i][k] * m2.matrix[k][j];
         }
-   // free_matrix(result.matrix, result.n);
+    free_matrix(result.matrix, result.n);
     return result;
 }
 
@@ -54,7 +54,7 @@ data_t matrix_multiplication_Vinograd(const data_t m1, const data_t m2)
         return result;
     int n = m1.n;
     int m = n;
-    int d = n / 2;
+
     int *rowFactor = (int *)calloc(n, sizeof(int)), *colFactor = (int*)calloc(n, sizeof(int));
 
     for (int i = 0; i < n; ++i)
@@ -89,7 +89,7 @@ data_t matrix_multiplication_Vinograd(const data_t m1, const data_t m2)
                 result.matrix[i][j] = result.matrix[i][j] + m1.matrix[i][m - 1] * m2.matrix[m - 1][j];
             }
     }
-   // free_matrix(result.matrix, result.n);
+    free_matrix(result.matrix, result.n);
     free(rowFactor);
     free(colFactor);
     return result;
@@ -105,38 +105,44 @@ data_t matrix_multiplication_VinogradOptimase(const data_t m1, const data_t m2)
         return result;
        int n = m1.n;
     int m = n;
-    int d = n / 2;
-    int odd = m % 2 ? 1 : 0;
+    int d = n>>1;
+  
     int *rowFactor = (int *)calloc(n, sizeof(int)), *colFactor = (int*)calloc(n, sizeof(int));
 
     for (int i = 0; i < n; ++i)
     {
-        for (int j = 1; j < m / 2; ++j)
-            rowFactor[i] += m1.matrix[i][ j<<1] * m1.matrix[i][ (j<<1) + 1];
+        rowFactor[i] = m1.matrix[i][0] * m1.matrix[i][1];
+        for (int j = 1; j < d; ++j)
+            rowFactor[i] +=  m1.matrix[i][j<<1] * m1.matrix[i][(j<<1) + 1];
     }
 
     for (int i = 0; i < n; ++i)
     {
-        for (int j = 1; j < m / 2; ++j)
+        colFactor[i] = m2.matrix[0][i] * m2.matrix[1][i];
+        for (int j = 1; j < d; ++j)
             colFactor[i] += m2.matrix[j<<1][i] * m2.matrix[(j<<1) + 1][i];
     };
-    int temp;
 
     for (int i = 0; i < n; ++i)
         for (int j = 0; j < n; ++j)
         {
-            temp = odd ? m1.matrix[i][m - 1] * m2.matrix[m - 1][j] : 0;
-            temp -= rowFactor[i] + colFactor[j];
-
+            result.matrix[i][j] = -(rowFactor[i] + colFactor[j]);
             for (int k = 0; k < d; ++k)
-                temp += \
-                (m1.matrix[i][2 * k] + m2.matrix[2 * k + 1][j]) * (m1.matrix[i][2 * k + 1] + m2.matrix[2 * k][j]);
-
-            result.matrix[i][j] = temp;
+            {
+                result.matrix[i][j] += (m1.matrix[i][k << 1] + m2.matrix[(k<<1) + 1][j]) * (m1.matrix[i][(k<<1) + 1] + m2.matrix[ k<<1][j]);
+            }
         }
 
+    if (m % 2 != 0)
+    {
+        for (int i = 0; i < n; ++i)
+            for (int j = 0; j < n; ++j)
+            {
+                result.matrix[i][j] += m1.matrix[i][m - 1] * m2.matrix[m - 1][j];
+            }
+    }
     
-   // free_matrix(result.matrix, result.n);
+    free_matrix(result.matrix, result.n);
     free(rowFactor);
     free(colFactor);
     return result;

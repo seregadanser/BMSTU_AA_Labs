@@ -1,1 +1,2 @@
 D:\Study\Test\AA2\x64\Debug\AA2.exe
+D:\Labs\Анализ Алгоритмов\Лаб2\AA2\x64\Debug\AA2.exe

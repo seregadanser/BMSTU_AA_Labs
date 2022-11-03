@@ -8,312 +8,222 @@
 \section{Сведения о модулях программы}
 Программа состоит из следующих модулей:
 \begin{itemize}
-	\item $ConsoleApplication1.cpp$ - файл, содержащий весь служебный код;
-	\item $sorst.cpp$ - файл, содержащий код всех сортировок;
-	\item $time\_compare.cpp$ - файл, производящий замеры времени;
-	\item $getCPUTime.cpp$ - файл, определяющий функцию замера времени;
-	\item $arr\_gen.cpp$ - файл, генерирующий входной массив;
-	\item $sorst.hpp$ - заголовочный файл модуля $sorst.cpp$;
+	\item $AA2.cpp$ - файл, содержащий весь служебный код;
+	\item $MatrixMull.cpp$ - файл, содержащий код всех алгоритмов матричного умножения;
+	\item $TimeCompare.cpp$ - файл, производящий замеры времени;
+	\item $GetCPUTime.cpp$ - файл, определяющий функцию замера времени;
+	\item $Gen.cpp$ - файл, генерирующий входную матрицу;
 	\newpage
-	\item $time\_compare.hpp$ - заголовочный файл модуля $time\_compare.cpp$;
-	\item $getCPUTime.hpp$ - заголовочный файл модуля $getCPUTime.cpp$;
-	\item $arr\_gen.hpp$ - заголовочный файл модуля $arr\_gen.cpp$.\newline
+	\item $MatrixMull.hpp$ - заголовочный файл модуля $MatrixMull.cpp$;
+	\item $TimeCompare.hpp$ - заголовочный файл модуля $TimeCompare.cpp$;
+	\item $GetCPUTime.hpp$ - заголовочный файл модуля $GetCPUTime.cpp$;
+	\item $Gen.hpp$ - заголовочный файл модуля $Gen.cpp$.\newline
 \end{itemize}
 
 \section{Реализация алгоритмов}
-В листингах \ref{merge_sort}, \ref{smooth_sort}, \ref{bucket_sort}, представлены реализации алгоритмов сортировок (слиянием, плавной, блочной). В листнингах \ref{merge}, \ref{findPosMaxElem}, \ref{make_heap_pool}, \ref{shiftDown}, \ref{NextState}, \ref{PrevState} представлены реализации вспомогательных функций. \clearpage
+В листингах \ref{standart}, \ref{vino}, \ref{vino_o}, представлены реализации алгоритмов матричного умножения (стандартный, винограда, оптимизированный винограда). 
 \begin{center}
-\begin{lstlisting}[label=merge_sort, caption={Алгоритм сортировки слиянием}]
-	void merge_sort(vector<int>& arr, int low, int high)
-	{
-		int mid;
-		if (low < high) {
-			mid = (low + high) / 2;
-			merge_sort(arr, low, mid);
-			merge_sort(arr, mid + 1, high);
-			merge(arr, low, high, mid);
-		}
-	}
-\end{lstlisting}
-\end{center}
-\newpage
-\begin{center}
-\begin{lstlisting}[label=merge, caption={Алгоритм функции merge}]
-void merge(vector<int>& arr, int low, int high, int mid)
+\begin{lstlisting}[label=standart, caption={Стандартный алгоритм умножения матриц}]
+data_t matrix_multiplication(const data_t m1, const data_t m2)
 {
-	int i, j, k, c[50];
-	i = low;
-	k = low;
-	j = mid + 1;
-	while (i <= mid && j <= high) {
-		if (arr[i] < arr[j]) {
-			c[k] = arr[i];
-			k++;
-			i++;
-		}
-		else {
-			c[k] = arr[j];
-			k++;
-			j++;
-		}
+	data_t result;
+	result.n = m1.n;
+	result.m = m2.m;
+	result.matrix = create_matrix(m1.n, m2.m);
+	if (!result.matrix)
+	return result;
+	for (int i = 0; i < m1.n; i++)
+	for (int j = 0; j < m2.m; j++)
+	{
+		result.matrix[i][j] = 0;
+		for (int k = 0; k < m1.m; k++)
+		result.matrix[i][j] += m1.matrix[i][k] * m2.matrix[k][j];
 	}
-	while (i <= mid) {
-		c[k] = arr[i];
-		k++;
-		i++;
-	}
-	while (j <= high) {
-		c[k] = arr[j];
-		k++;
-		j++;
-	}
-	for (i = low; i < k; i++) {
-		arr[i] = c[i];
-	}
+	return result;
 }
 \end{lstlisting}
 \end{center}
 \newpage
 \begin{center}
-\begin{lstlisting}[label=smooth_sort,caption = { Алгоритм плавной сортировки}]
-typedef int INT;
+\begin{lstlisting}[label=vino, caption={Алгоритм Винограда умножения матриц}]
+data_t matrix_multiplication_Vinograd(const data_t m1, const data_t m2)
+{
+	data_t result;
+	result.n = m1.n;
+	result.m = m2.m;
+	result.matrix = create_matrix(m1.n, m2.m);
+	if (!result.matrix)
+	return result;
+	int n = m1.n;
+	int m = n;
 	
-L(N) = L(N-1) + L(N-2) + 1
-int LeoNum[] = { 1, 1, 3, 5, 9, 15, 25, 41, 67, 109, 177, 287, 465, 753, 1219, 1973, 3193, 5167, 8361, 13529, 21891, 35421, 57313, 92735, 150049, 242785, 392835, 635621, 1028457, 1664079, 2692537, 4356617, 7049155, 11405773, 18454929, 29860703, 48315633, 78176337, 126491971, 204668309, 331160281, 535828591, 866988873, 1402817465 };
-INT curState;
+	int *rowFactor = (int *)calloc(n, sizeof(int)), *colFactor = (int*)calloc(n, sizeof(int));
+	
+	for (int i = 0; i < n; ++i)
+	{
+		rowFactor[i] = m1.matrix[i][0] * m1.matrix[i][1];
+		for (int j = 1; j < m / 2; ++j)
+		rowFactor[i] = rowFactor[i] + m1.matrix[i][2 * j] * m1.matrix[i][2 * j + 1];
+	}
+	
+	for (int i = 0; i < n; ++i)
+	{
+		colFactor[i] = m2.matrix[0][i] * m2.matrix[1][i];
+		for (int j = 1; j < m / 2; ++j)
+		colFactor[i] = colFactor[i] + m2.matrix[2 * j][i] * m2.matrix[2 * j + 1][i];
+	};
+	
+	for (int i = 0; i < n; ++i)
+	for (int j = 0; j < n; ++j)
+	{
+		result.matrix[i][j] = -(rowFactor[i] + colFactor[j]);
+		for (int k = 0; k < m / 2; ++k)
+		{
+			result.matrix[i][j] = result.matrix[i][j] + (m1.matrix[i][2 * k] + m2.matrix[2 * k + 1][j]) * (m1.matrix[i][2 * k + 1] + m2.matrix[2 * k][j]);
+		}
+	}
+	
+	if (m % 2 != 0)
+	{
+		for (int i = 0; i < n; ++i)
+		for (int j = 0; j < n; ++j)
+		{
+			result.matrix[i][j] = result.matrix[i][j] + m1.matrix[i][m - 1] * m2.matrix[m - 1][j];
+		}
+	}
+	free(rowFactor);
+	free(colFactor);
+	return result;
+}
+\end{lstlisting}
+\end{center}
+\newpage
+\begin{center}
+\begin{lstlisting}[label=vino_o,caption = {Оптимизированный алгоритм Винограда умножения матриц}]
+data_t matrix_multiplication_VinogradOptimase(const data_t m1, const data_t m2)
+{
+	data_t result;
+	result.n = m1.n;
+	result.m = m2.m;
+	result.matrix = create_matrix(m1.n, m2.m);
+	if (!result.matrix)
+	return result;
+	int n = m1.n;
+	int m = n;
+	int d = n>>1;
+	
+	int *rowFactor = (int *)calloc(n, sizeof(int)), *colFactor = (int*)calloc(n, sizeof(int));
+	
+	for (int i = 0; i < n; ++i)
+	{
+		rowFactor[i] = m1.matrix[i][0] * m1.matrix[i][1];
+		for (int j = 1; j < d; ++j)
+		rowFactor[i] +=  m1.matrix[i][j<<1] * m1.matrix[i][(j<<1) + 1];
+	}
+	
+	for (int i = 0; i < n; ++i)
+	{
+		colFactor[i] = m2.matrix[0][i] * m2.matrix[1][i];
+		for (int j = 1; j < d; ++j)
+		colFactor[i] += m2.matrix[j<<1][i] * m2.matrix[(j<<1) + 1][i];
+	};
+	
+	for (int i = 0; i < n; ++i)
+	for (int j = 0; j < n; ++j)
+	{
+		result.matrix[i][j] = -(rowFactor[i] + colFactor[j]);
+		for (int k = 0; k < d; ++k)
+		{
+			result.matrix[i][j] += (m1.matrix[i][k << 1] + m2.matrix[(k<<1) + 1][j]) * (m1.matrix[i][(k<<1) + 1] + m2.matrix[ k<<1][j]);
+		}
+	}
+	
+	if (m % 2 != 0)
+	{
+		for (int i = 0; i < n; ++i)
+		for (int j = 0; j < n; ++j)
+		{
+			result.matrix[i][j] += m1.matrix[i][m - 1] * m2.matrix[m - 1][j];
+		}
+	}
+	free(rowFactor);
+	free(colFactor);
+	return result;
+}
+\end{lstlisting}
 
-void smooth_sort(vector<int>& mas)
-{
-	make_heap_pool(mas);
-	
-	for (int i = mas.size() - 1; i >= 0; i--)
-	{
-		int nextPosHeapItemsAmount;
-		int posMaxTopElem = findPosMaxElem(mas, curState, i, nextPosHeapItemsAmount);
-		if (posMaxTopElem != i)
-		{
-			swap(mas[i], mas[posMaxTopElem]);
-			shiftDown(mas, nextPosHeapItemsAmount, posMaxTopElem);
-		}
-		PrevState(curState);
-	}
-}
-\end{lstlisting}
-\end{center}
-\newpage
-\begin{center}
-\begin{lstlisting}[label=findPosMaxElem, caption={Алгоритм функции findPosMaxElem}]
-int findPosMaxElem(vector<int>& mas, INT curState, int indexLastTop, int& nextPosHeapItemsAmount)
-{
-	int pos = 0;
-	while (!(curState & 1))
-	{
-		curState >>= 1;
-		pos++;
-	}
-	
-	int posMaxTopElem = indexLastTop;
-	nextPosHeapItemsAmount = pos;
-	
-	int curTopElem = indexLastTop - LeoNum[pos];
-	
-	curState >>= 1;
-	pos++;
-	while (curState)
-	{
-		if (curState & 1)
-		{
-			if (mas[curTopElem] > mas[posMaxTopElem])
-			{
-				posMaxTopElem = curTopElem;
-				nextPosHeapItemsAmount = pos;
-			}
-			curTopElem -= LeoNum[pos];
-		}
-		curState >>= 1;
-		pos++;
-	}
-	
-	return posMaxTopElem;
-}
-\end{lstlisting}
-\end{center}
-\newpage
-\begin{center}
-\begin{lstlisting}[label=make_heap_pool, caption={Алгоритм функции make\_heap\_pool}]
-void make_heap_pool(vector<int>& mas)
-{
-	for (size_t i = 0; i < mas.size(); i++)
-	{
-		int posHeapItemsAmount = NextState(curState);
-		if (posHeapItemsAmount != -1)
-		shiftDown(mas, posHeapItemsAmount, i);
-	}
-}
-\end{lstlisting}
-\end{center}
-\newpage
-\begin{center}
-\begin{lstlisting}[label=shiftDown, caption={Алгоритм функции shiftDown}]
-void shiftDown(vector<int>& mas, int posHeapItemsAmount, int indexLastTop)
-{
-	int posCurNode = indexLastTop;
-	while (posHeapItemsAmount > 1)
-	{
-		int posR = posCurNode - 1;
-		int posL = posR - LeoNum[posHeapItemsAmount - 2];
-		
-		int posMaxChild = posL;
-		int posNextTop = posHeapItemsAmount - 1;
-		if (mas[posR] > mas[posL])
-		{
-			posMaxChild = posR;
-			posNextTop = posHeapItemsAmount - 2;
-		}
-		if (mas[posCurNode] < mas[posMaxChild])
-		{
-			swap(mas[posCurNode], mas[posMaxChild]);
-			posHeapItemsAmount = posNextTop;
-			posCurNode = posMaxChild;
-		}
-		else
-		break;
-	}
-}
-\end{lstlisting}
-\end{center}
-\newpage
-\begin{center}
-\begin{lstlisting}[label=PrevState, caption={Алгоритм функции PrevState}]
-void PrevState(INT& curState)
-{
-	if ((curState & 15) == 8)
-	{             
-		curState -= 3; 
-	}
-	else
-	if (curState & 1)
-	{
-		if ((curState & 3) == 3) 
-		curState ^= 2;    
-		else            
-		curState ^= 1;      
-	}
-	else
-	{
-		INT prev = curState;
-		int pos = 0;
-		while (prev && !(prev & 1))
-		{
-			prev >>= 1;
-			pos++;
-		}
-		if (prev)                  
-		{
-			curState ^= 1 << pos;
-			curState |= 1 << (pos - 1);
-			curState |= 1 << (pos - 2);
-		}
-		else
-		curState = 0;
-	}
-}
-\end{lstlisting}
-\end{center}
-\newpage
-\begin{center}
-\begin{lstlisting}[label=NextState, caption={Алгоритм функции NextState}]
-int NextState(INT& curState)
-{
-	int posNewTop = -1;
-
-	if ((curState & 7) == 5)
-	{                   
-		curState += 3;  
-		posNewTop = 3;
-	}
-	else  
-	{
-		INT next = curState;
-		int pos = 0;
-		while (next && (next & 3) != 3)
-		{
-			next >>= 1;
-			pos++;
-		}
-		if ((next & 3) == 3)   
-		{
-			curState += 1 << pos; 
-			posNewTop = pos + 2;
-		}
-		else
-		if (curState & 1)   
-		curState |= 2;     
-		else                    
-		curState |= 1;    
-	}
-	return posNewTop;
-}
-\end{lstlisting}
-\end{center}
-\newpage
-\begin{center}
-\begin{lstlisting}[label=bucket_sort, caption={Алгоритм блочной сортировки}]
-void bucketSort(vector<int>& arr, int n, int number_of_buckets)
-{
-	vector<vector<int>> b;
-	int max = arr[0], min = arr[0];
-	
-	for (int i = 0; i < n; i++)
-	{
-		if (arr[i] < min)
-		min = arr[i];
-		if (arr[i] > max)
-		max = arr[i];
-	}
-	
-	for (int i = 0; i < number_of_buckets; i++)
-	{
-		vector<int> k;
-		b.push_back(k);
-	}
-	
-	for (int i = 0; i < n; i++)
-	{
-		int x = floor(number_of_buckets * (arr[i] - min) / (max + 1 - min));
-		b[x].push_back(arr[i]);
-	}
-	for (int i = 0; i < number_of_buckets; i++)
-	smooth_sort(b[i]);
-	int index = 0;
-	for (int i = 0; i < number_of_buckets; i++)
-	for (int j = 0; j < b[i].size(); j++)
-	arr[index++] = b[i][j];
-}
-\end{lstlisting}
 \end{center}
 \newpage
 \section{Функциональные тесты}
 
-В таблице \ref{tbl:functional_test} приведены тесты для функций, реализующих алгоритмы сортировки. Тесты для всех сортировок пройдены успешно.
-
-
-
+В таблице \ref{tbl:functional_test} приведены тесты для функций, реализующих алгоритмы матричного умножения. Тесты для всех реализаций алгоритмов пройдены успешно.
 	\begin{center}
 		\begin{threeparttable}
-			
 				\caption{\label{tbl:functional_test} Функциональные тесты}
-			\begin{tabular}{|c|c|c|}
-				\hline
-				Входной массив & Ожидаемый результат & Результат \\ 
-				\hline
-				$[1, 2, 3, 4, 5]$ & $[1, 2, 3, 4, 5]$  & $[1, 2, 3, 4, 5]$\\
-				$[9, 7, 5, 1, 4]$  & $[1, 4, 5, 7, 9]$  & $[1, 4, 5, 7, 9]$\\
-				$[5, 4, 3, 2, 1]$  & $[1, 2, 3, 4, 5]$ & $[1, 2, 3, 4, 5]$\\
-				$[5]$  & $[5]$  & $[5]$\\
-				$[]$  & $[]$  & $[]$\\
-				\hline
-			\end{tabular}
+		\begin{tabular}{|c@{\hspace{7mm}}|c@{\hspace{7mm}}|c@{\hspace{7mm}}|c@{\hspace{7mm}}|c@{\hspace{7mm}}|c@{\hspace{7mm}}|}
+			\hline
+			Матрица 1 & Матрица 2 & Ожидаемый результат \\ 
+			\hline
+			
+			$\begin{pmatrix}
+				1 & 5 & 7\\
+				2 & 6 & 8\\
+				3 & 7 & 9
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				&
+			\end{pmatrix}$ &
+			Сообщение об ошибке \\ \hline
+			
+			$\begin{pmatrix}
+				1 & 2 & 3
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				1 & 2 & 3
+			\end{pmatrix}$ &
+			Сообщение об ошибке \\ \hline
+			
+			$\begin{pmatrix}
+				1 \\
+				1 \\
+				1
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				1 & 1 & 1
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				1 & 1 & 1\\
+				1 & 1 & 1 \\
+				1 & 1 & 1
+			\end{pmatrix}$ \\ \hline
+			
+			$\begin{pmatrix}
+				1 & 2 & 3 \\
+				4 & 5 & 6 \\
+				7 & 8 & 9
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				1 & 0 & 0 \\
+				0 & 1 & 0 \\
+				0 & 0 & 1
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				1 & 2 & 3 \\
+				4 & 5 & 6 \\
+				7 & 8 & 9
+			\end{pmatrix}$ \\ \hline
+			
+			$\begin{pmatrix}
+				7
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				8
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				56
+			\end{pmatrix}$ \\ \hline
+			
+		\end{tabular}
 	
 		\end{threeparttable}
 	\end{center}
@@ -322,4 +232,4 @@ void bucketSort(vector<int>& arr, int n, int number_of_buckets)
 
 \section*{Вывод}
 % \addcontentsline{toc}{section}{Вывод}
-В данном разделе были представлены реализации алгоритмов плавной сортировки, сортировки слиянием и блочной сортировки.
+В данном разделе были представлены реализации следующих алгоритмов: стандартного матричного умножения, Винограда, Винограда с оптимизацией.
