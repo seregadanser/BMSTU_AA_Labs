@@ -40,7 +40,7 @@ data_t matrix_multiplication(const data_t m1, const data_t m2)
             for (int k = 0; k < m1.m; k++)
                 result.matrix[i][j] += m1.matrix[i][k] * m2.matrix[k][j];
         }
-    free_matrix(result.matrix, result.n);
+ //   free_matrix(result.matrix, result.n);
     return result;
 }
 
@@ -59,15 +59,13 @@ data_t matrix_multiplication_Vinograd(const data_t m1, const data_t m2)
 
     for (int i = 0; i < n; ++i)
     {
-        rowFactor[i] = m1.matrix[i][0] * m1.matrix[i][1];
-        for (int j = 1; j < m / 2; ++j)
+        for (int j = 0; j < m / 2; ++j)
             rowFactor[i] = rowFactor[i] + m1.matrix[i][2 * j] * m1.matrix[i][2 * j + 1];
     }
 
     for (int i = 0; i < n; ++i)
     {
-        colFactor[i] = m2.matrix[0][i] * m2.matrix[1][i];
-        for (int j = 1; j < m / 2; ++j)
+        for (int j = 0; j < m / 2; ++j)
             colFactor[i] = colFactor[i] + m2.matrix[2 * j][i] * m2.matrix[2 * j + 1][i];
     };
 

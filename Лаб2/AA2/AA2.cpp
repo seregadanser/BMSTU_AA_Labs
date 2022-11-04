@@ -20,10 +20,10 @@ void output_matrix(data_t m)
 int main()
 {
     srand(time(0));
-    //data_t m, n;
-    time_compare(gen_best_case);
-    /*gen_best_case(&m, 2);
-    gen_best_case(&n,2);
+   // data_t m, n;
+   time_compare(gen_best_case);
+   /* gen_best_case(&m, 3);
+    gen_best_case(&n,3);
     output_matrix(m);
     output_matrix(n);
     output_matrix(matrix_multiplication(m, n));

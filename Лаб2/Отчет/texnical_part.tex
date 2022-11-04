@@ -61,15 +61,13 @@ data_t matrix_multiplication_Vinograd(const data_t m1, const data_t m2)
 	
 	for (int i = 0; i < n; ++i)
 	{
-		rowFactor[i] = m1.matrix[i][0] * m1.matrix[i][1];
-		for (int j = 1; j < m / 2; ++j)
+		for (int j = 0; j < m / 2; ++j)
 		rowFactor[i] = rowFactor[i] + m1.matrix[i][2 * j] * m1.matrix[i][2 * j + 1];
 	}
 	
 	for (int i = 0; i < n; ++i)
 	{
-		colFactor[i] = m2.matrix[0][i] * m2.matrix[1][i];
-		for (int j = 1; j < m / 2; ++j)
+		for (int j = 0; j < m / 2; ++j)
 		colFactor[i] = colFactor[i] + m2.matrix[2 * j][i] * m2.matrix[2 * j + 1][i];
 	};
 	
@@ -166,9 +164,7 @@ data_t matrix_multiplication_VinogradOptimase(const data_t m1, const data_t m2)
 			\hline
 			
 			$\begin{pmatrix}
-				1 & 5 & 7\\
-				2 & 6 & 8\\
-				3 & 7 & 9
+			1
 			\end{pmatrix}$ &
 			$\begin{pmatrix}
 				&
@@ -176,7 +172,7 @@ data_t matrix_multiplication_VinogradOptimase(const data_t m1, const data_t m2)
 			Сообщение об ошибке \\ \hline
 			
 			$\begin{pmatrix}
-				1 & 2 & 3
+				1 & 2
 			\end{pmatrix}$ &
 			$\begin{pmatrix}
 				1 & 2 & 3
@@ -198,9 +194,9 @@ data_t matrix_multiplication_VinogradOptimase(const data_t m1, const data_t m2)
 			\end{pmatrix}$ \\ \hline
 			
 			$\begin{pmatrix}
-				1 & 2 & 3 \\
-				4 & 5 & 6 \\
-				7 & 8 & 9
+				1 & 1 & 1 \\
+				2 & 2 & 2 \\
+				3 & 3 & 3
 			\end{pmatrix}$ &
 			$\begin{pmatrix}
 				1 & 0 & 0 \\
@@ -208,19 +204,19 @@ data_t matrix_multiplication_VinogradOptimase(const data_t m1, const data_t m2)
 				0 & 0 & 1
 			\end{pmatrix}$ &
 			$\begin{pmatrix}
-				1 & 2 & 3 \\
-				4 & 5 & 6 \\
-				7 & 8 & 9
+				1 & 1 & 1 \\
+			2 & 2 & 2 \\
+			3 & 3 & 3
 			\end{pmatrix}$ \\ \hline
 			
 			$\begin{pmatrix}
-				7
+				1
 			\end{pmatrix}$ &
 			$\begin{pmatrix}
-				8
+				2
 			\end{pmatrix}$ &
 			$\begin{pmatrix}
-				56
+				2
 			\end{pmatrix}$ \\ \hline
 			
 		\end{tabular}
