@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.10) (preloaded format=xelatex 2022.11.4)  5 NOV 2022 22:38
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.10) (preloaded format=xelatex 2022.11.4)  6 NOV 2022 00:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1189,7 +1189,11 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 ))
 (report.aux (title.aux) (introduction.aux) (analit_part.aux) (build_part.aux)
-(texnical_part.aux) (reserch_part.aux) (lib.aux))
+(texnical_part.aux) (reserch_part.aux
+
+LaTeX Warning: Label `tbl:best' multiply defined.
+
+) (conclusion.aux) (lib.aux))
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
@@ -1399,15 +1403,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--31
 [1
 
 
-]) (report.toc)
+]) (report.toc [2
+
+
+
+])
 \tf@toc=\write4
 \openout4 = `report.toc'.
 
- [2
-
-
-
-] [3]
+ [3]
 \openout2 = `introduction.aux'.
 
  (introduction.tex
@@ -1493,28 +1497,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--44
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 131--133
+Underfull \hbox (badness 10000) in paragraph at lines 132--134
 
  []
 
 [10] [11] (src/standart.drawio.pdf_tex
-File: src//stansart.drawio.pdf Graphic file (type pdf)
-<use src//stansart.drawio.pdf, page 1>
-) [12] (src/vino1.drawio.pdf_tex
-File: src//vino1.drawio.pdf Graphic file (type pdf)
-<use src//vino1.drawio.pdf, page 1>
+File: src//standart.drawio.pdf Graphic file (type pdf)
+<use src//standart.drawio.pdf, page 1>
+) [12] (src/vinoNO1.pdf_tex
+File: src//vinoNO1.pdf Graphic file (type pdf)
+<use src//vinoNO1.pdf, page 1>
+) [13]
+(src/vinoNO2.pdf_tex
+File: src//vinoNO2.pdf Graphic file (type pdf)
+<use src//vinoNO2.pdf, page 1>
+) [14] (src/vinoNO3.pdf_tex
+File: src//vinoNO3.pdf Graphic file (type pdf)
+<use src//vinoNO3.pdf, page 1>
+) [15] (src/vino3.pdf_tex
+File: src//vino3.pdf Graphic file (type pdf)
+<use src//vino3.pdf, page 1>
 )
-[13] (src/vino2.drawio.pdf_tex
-File: src//vino2.drawio.pdf Graphic file (type pdf)
-<use src//vino2.drawio.pdf, page 1>
-) [14] (src/vino3.drawio.pdf_tex
-File: src//vino3.drawio.pdf Graphic file (type pdf)
-<use src//vino3.drawio.pdf, page 1>
-) [15]) [16]
+[16] (src/vino2.pdf_tex
+File: src//vino2.pdf Graphic file (type pdf)
+<use src//vino2.pdf, page 1>
+) [17] (src/vino1.pdf_tex
+File: src//vino1.pdf Graphic file (type pdf)
+<use src//vino1.pdf, page 1>
+) [18]) [19]
 \openout2 = `texnical_part.aux'.
 
-
-(texnical_part.tex
+ (texnical_part.tex
 chapter 3.
 
 Class scrreprt Warning: Redefinition of \@makechapterhead detected.
@@ -1527,7 +1540,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-[17
+[20
 
 
 
@@ -1537,7 +1550,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
-[18] [19] [20] [21] [22]) [23]
+[21] [22] [23] [24] [25]) [26]
 \openout2 = `reserch_part.aux'.
 
  (reserch_part.tex
@@ -1553,7 +1566,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-[24
+[27
 
 
 
@@ -1567,10 +1580,33 @@ Underfull \hbox (badness 2261) in paragraph at lines 36--37
 горитмов матричного
  []
 
-[25]
+[28] [29]
 File: src/Graph.png Graphic file (type bmp)
 <src/Graph.png>
- [26] [27]) [28]
+ [30] [31]
+File: src/Graph1.png Graphic file (type bmp)
+<src/Graph1.png>
+ [32]) [33]
+\openout2 = `conclusion.aux'.
+
+ (conclusion.tex
+
+Class scrreprt Warning: Redefinition of \@makeschapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makeschapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makeschapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+) [34
+
+
+
+
+]
 \openout2 = `lib.aux'.
 
  (lib.tex (report.bbl
@@ -1585,20 +1621,25 @@ Class scrreprt Warning: Redefinition of \@makeschapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-)) [29
+)) [35
 
 
 
 
 ] (report.aux (title.aux) (introduction.aux) (analit_part.aux)
-(build_part.aux) (texnical_part.aux) (reserch_part.aux) (lib.aux)) ) 
+(build_part.aux) (texnical_part.aux) (reserch_part.aux) (conclusion.aux)
+(lib.aux))
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 35313 strings out of 410532
- 916900 string characters out of 2813502
- 1981261 words of memory out of 3000000
- 55927 multiletter control sequences out of 15000+600000
+ 35396 strings out of 410532
+ 918519 string characters out of 2813502
+ 1981260 words of memory out of 3000000
+ 55994 multiletter control sequences out of 15000+600000
  470863 words of font info for 63 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  115i,16n,111p,10641b,1759s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on report.pdf (29 pages).
+Output written on report.pdf (35 pages).

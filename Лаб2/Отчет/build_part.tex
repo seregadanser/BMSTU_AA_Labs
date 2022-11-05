@@ -110,7 +110,8 @@
 \begin{itemize}
 	\item Использовании побитового сдвига вместо умножения на 2.
 	\item Замены операции сложения и вычитания на операции $+=$ и $-=$ соответственно.
-	\item Педвычисление первой суммы в циклах заполнения вспомогательных массивов.
+	\item Занесение в циклах вычисления множителей вычисления первых двух
+	элементов во внутренний цикл j.
 \end{itemize}
 
 Тогда трудоемкость оптимизированного алгоритма Винограда состоит из:
@@ -149,7 +150,7 @@ f_{b_{tmp}} = 2 + K (4 + \frac{N}{2} \cdot 12);
 \end{equation}
 
 \section{Описание алгоритмов}
-В данном разделе будут рассмотрены схемы алгоритмов плавной сортировки (рис. \ref{ris:imageSS}), сортировки слиянием (рис. \ref{ris:imageSS1}, \ref{ris:imageSS2}, \ref{ris:imageSS3}).
+В данном разделе будут рассмотрены схемы алгоритмов классического уможения матриц (рис. \ref{ris:imageSS}), Винограда (рис. \ref{ris:imageSSO1}, \ref{ris:imageSSO2}, \ref{ris:imageSSO3}), оптимизированного Винограда (рис. \ref{ris:imageSS1}, \ref{ris:imageSS2}, \ref{ris:imageSS3}).
 \begin{center}
 	
 
@@ -159,7 +160,7 @@ f_{b_{tmp}} = 2 + K (4 + \frac{N}{2} \cdot 12);
 	%\def\svgwidth{5cm} % используем для изменения размера, если надо
 	\def\svgwidth{7cm}
 	\input{src/standart.drawio.pdf_tex}
-	\captionof{figure}{Схема алгоритма плавной сортировки}
+	\captionof{figure}{Схема стандартного алгоритма}
 	\label{ris:imageSS}
 %\end{figure}
 \newpage
@@ -167,16 +168,16 @@ f_{b_{tmp}} = 2 + K (4 + \frac{N}{2} \cdot 12);
 \centering
 \def\svgwidth{3.5cm}
 %\def\svgwidth{5cm} % используем для изменения размера, если надо
-\input{src/vino3.drawio.pdf_tex}
+\input{src/vinoNO1.pdf_tex}
 \captionof{figure}{Схема алгоритма Винограда, часть 1}
 \label{ris:imageSSO1}
 %\end{figure}
 \newpage
 %\begin{figure}[h]
 \centering
-\def\svgwidth{8cm}
+\def\svgwidth{7cm}
 %\def\svgwidth{5cm} % используем для изменения размера, если надо
-\input{src/vino2.drawio.pdf_tex}
+\input{src/vinoNO2.pdf_tex}
 \captionof{figure}{Схема алгоритма Винограда, часть 2}
 \label{ris:imageSSO2}
 %\end{figure}
@@ -185,7 +186,7 @@ f_{b_{tmp}} = 2 + K (4 + \frac{N}{2} \cdot 12);
 \centering
 \def\svgwidth{12cm}
 %\def\svgwidth{5cm} % используем для изменения размера, если надо
-\input{src/vino1.drawio.pdf_tex}
+\input{src/vinoNO3.pdf_tex}
 \captionof{figure}{Схема алгоритма Винограда, часть 3}
 \label{ris:imageSSO3}
 %\end{figure}
@@ -194,7 +195,7 @@ f_{b_{tmp}} = 2 + K (4 + \frac{N}{2} \cdot 12);
 	\centering
 	\def\svgwidth{3.5cm}
 	%\def\svgwidth{5cm} % используем для изменения размера, если надо
-	\input{src/vino3.drawio.pdf_tex}
+	\input{src/vino3.pdf_tex}
 	\captionof{figure}{Схема оптимизированного алгоритма Винограда, часть 1}
 	\label{ris:imageSS1}
 %\end{figure}
@@ -203,7 +204,7 @@ f_{b_{tmp}} = 2 + K (4 + \frac{N}{2} \cdot 12);
 	\centering
 	\def\svgwidth{8cm}
 	%\def\svgwidth{5cm} % используем для изменения размера, если надо
-	\input{src/vino2.drawio.pdf_tex}
+	\input{src/vino2.pdf_tex}
 	\captionof{figure}{Схема оптимизированного алгоритма Винограда, часть 2}
 	\label{ris:imageSS2}
 %\end{figure}
@@ -212,7 +213,7 @@ f_{b_{tmp}} = 2 + K (4 + \frac{N}{2} \cdot 12);
 	\centering
 		\def\svgwidth{12cm}
 	%\def\svgwidth{5cm} % используем для изменения размера, если надо
-	\input{src/vino1.drawio.pdf_tex}
+	\input{src/vino1.pdf_tex}
 	\captionof{figure}{Схема оптимизированного алгоритма Винограда, часть 3}
 	\label{ris:imageSS3}
 %\end{figure}
@@ -222,10 +223,10 @@ f_{b_{tmp}} = 2 + K (4 + \frac{N}{2} \cdot 12);
 
 \section*{Вывод}
 % \addcontentsline{toc}{section}{Вывод}
-В данном разделе были проанализированны три алгоритма сортировки. Рассчитаны трудоёмкости алгоритмов в лучшем случае (л.с.) и в худшем случае (х.с.).
+В данном разделе были проанализированны три алгоритма умножения матриц. Рассчитаны трудоёмкости алгоритмов в лучшем случае (л.с.) и в худшем случае (х.с.).
 
-Сортировка слиянием: л.с. -- $O(nlog(n))$, х.с. -- $O(nlog(n))$.
+Стандартный алгоритм: л.с. -- $O(13n^{3})$, х.с. -- $O(13n^{3})$.
 
-Плавная сортировка: л.с. -- $O(n)$,  х.с. --  $O(nlog(n))$.
+Алгоритм Винограда: л.с. -- $O(11.5n^{3})$,  х.с. --  $O(11.5n^{3})$.
 
-Блочная сортировка: л.с. -- $O(n)$,  х.с. -- $O(nlog(n))$.
+Оптимизированный алгоритм Винограда: л.с. -- $O(11.5n^{3})$,  х.с. -- $O(11.5n^{3})$.
