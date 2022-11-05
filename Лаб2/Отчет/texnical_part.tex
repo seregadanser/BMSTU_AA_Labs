@@ -58,61 +58,7 @@ data_t matrix_multiplication_Vinograd(const data_t m1, const data_t m2)
 	int m = n;
 	
 	int *rowFactor = (int *)calloc(n, sizeof(int)), *colFactor = (int*)calloc(n, sizeof(int));
-	
-	for (int i = 0; i < n; ++i)
-	{
-		for (int j = 0; j < m / 2; ++j)
-		rowFactor[i] = rowFactor[i] + m1.matrix[i][2 * j] * m1.matrix[i][2 * j + 1];
-	}
-	
-	for (int i = 0; i < n; ++i)
-	{
-		for (int j = 0; j < m / 2; ++j)
-		colFactor[i] = colFactor[i] + m2.matrix[2 * j][i] * m2.matrix[2 * j + 1][i];
-	};
-	
-	for (int i = 0; i < n; ++i)
-	for (int j = 0; j < n; ++j)
-	{
-		result.matrix[i][j] = -(rowFactor[i] + colFactor[j]);
-		for (int k = 0; k < m / 2; ++k)
-		{
-			result.matrix[i][j] = result.matrix[i][j] + (m1.matrix[i][2 * k] + m2.matrix[2 * k + 1][j]) * (m1.matrix[i][2 * k + 1] + m2.matrix[2 * k][j]);
-		}
-	}
-	
-	if (m % 2 != 0)
-	{
 		for (int i = 0; i < n; ++i)
-		for (int j = 0; j < n; ++j)
-		{
-			result.matrix[i][j] = result.matrix[i][j] + m1.matrix[i][m - 1] * m2.matrix[m - 1][j];
-		}
-	}
-	free(rowFactor);
-	free(colFactor);
-	return result;
-}
-\end{lstlisting}
-\end{center}
-\newpage
-\begin{center}
-\begin{lstlisting}[label=vino_o,caption = {Оптимизированный алгоритм Винограда умножения матриц}]
-data_t matrix_multiplication_VinogradOptimase(const data_t m1, const data_t m2)
-{
-	data_t result;
-	result.n = m1.n;
-	result.m = m2.m;
-	result.matrix = create_matrix(m1.n, m2.m);
-	if (!result.matrix)
-	return result;
-	int n = m1.n;
-	int m = n;
-	int d = n>>1;
-	
-	int *rowFactor = (int *)calloc(n, sizeof(int)), *colFactor = (int*)calloc(n, sizeof(int));
-	
-	for (int i = 0; i < n; ++i)
 	{
 		rowFactor[i] = m1.matrix[i][0] * m1.matrix[i][1];
 		for (int j = 1; j < d; ++j)
@@ -142,6 +88,58 @@ data_t matrix_multiplication_VinogradOptimase(const data_t m1, const data_t m2)
 		for (int j = 0; j < n; ++j)
 		{
 			result.matrix[i][j] += m1.matrix[i][m - 1] * m2.matrix[m - 1][j];
+		}
+	}
+
+	free(rowFactor);
+	free(colFactor);
+	return result;
+}
+\end{lstlisting}
+\end{center}
+\newpage
+\begin{center}
+\begin{lstlisting}[label=vino_o,caption = {Оптимизированный алгоритм Винограда умножения матриц}]
+data_t matrix_multiplication_VinogradOptimase(const data_t m1, const data_t m2)
+{
+	data_t result;
+	result.n = m1.n;
+	result.m = m2.m;
+	result.matrix = create_matrix(m1.n, m2.m);
+	if (!result.matrix)
+	return result;
+	int n = m1.n;
+	int m = n;
+	int d = n>>1;
+	int *rowFactor = (int *)calloc(n, sizeof(int)), *colFactor = (int*)calloc(n, sizeof(int));
+		for (int i = 0; i < n; ++i)
+	{
+		for (int j = 0; j < m / 2; ++j)
+		rowFactor[i] = rowFactor[i] + m1.matrix[i][2 * j] * m1.matrix[i][2 * j + 1];
+	}
+	
+	for (int i = 0; i < n; ++i)
+	{
+		for (int j = 0; j < m / 2; ++j)
+		colFactor[i] = colFactor[i] + m2.matrix[2 * j][i] * m2.matrix[2 * j + 1][i];
+	};
+	
+	for (int i = 0; i < n; ++i)
+	for (int j = 0; j < n; ++j)
+	{
+		result.matrix[i][j] = -(rowFactor[i] + colFactor[j]);
+		for (int k = 0; k < m / 2; ++k)
+		{
+			result.matrix[i][j] = result.matrix[i][j] + (m1.matrix[i][2 * k] + m2.matrix[2 * k + 1][j]) * (m1.matrix[i][2 * k + 1] + m2.matrix[2 * k][j]);
+		}
+	}
+	
+	if (m % 2 != 0)
+	{
+		for (int i = 0; i < n; ++i)
+		for (int j = 0; j < n; ++j)
+		{
+			result.matrix[i][j] = result.matrix[i][j] + m1.matrix[i][m - 1] * m2.matrix[m - 1][j];
 		}
 	}
 	free(rowFactor);

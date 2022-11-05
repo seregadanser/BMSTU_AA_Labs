@@ -64,15 +64,17 @@
 	
 	\item Заполнения массива $a_{tmp}$, трудоёмкость которого (\ref{for:ATMP}):
 	\begin{equation}
-		\label{for:ATMP}
-		f_{a_{tmp}} = 2 + K (4 + \frac{M}{2} \cdot 12);
+
+			\label{for:ATMP}
+		f_{a_{tmp}} = 2 + K (4 + 7 +  (\frac{M}{2} - 1)  \cdot 12);
 	\end{equation}
 	
 	\item Заполнения массива $b_{tmp}$, трудоёмкость которого (\ref{for:BTMP}):
 	\begin{equation}
-		\label{for:BTMP}
-		f_{b_{tmp}} = 2 + K (4 + \frac{N}{2} \cdot 12);
+			\label{for:BTMP}
+		f_{b_{tmp}} = 2 + K (4 + 7 + (\frac{N}{2} - 1) \cdot 12);
 	\end{equation}
+
 	
 	\item Цикла заполнения для чётных размеров, трудоёмкость которого (\ref{for:cycle}):
 	\begin{equation}
@@ -119,14 +121,14 @@
 	
 	\item Заполнения массива $a_{tmp}$, трудоёмкость которого (\ref{for:ATMP1}):
 \begin{equation}
-	\label{for:ATMP1}
-	f_{a_{tmp}} = 2 + K (4 + 7 +  (\frac{M}{2} - 1)  \cdot 12);
+		\label{for:ATMP1}
+f_{a_{tmp}} = 2 + K (4 + \frac{M}{2} \cdot 12);
 \end{equation}
 
 \item Заполнения массива $b_{tmp}$, трудоёмкость которого (\ref{for:BTMP1}):
 \begin{equation}
-	\label{for:BTMP1}
-	f_{b_{tmp}} = 2 + K (4 + 7 + (\frac{N}{2} - 1) \cdot 12);
+\label{for:BTMP1}
+f_{b_{tmp}} = 2 + K (4 + \frac{N}{2} \cdot 12);
 \end{equation}
 	\newline
 	\item Цикла заполнения для чётных размеров, трудоёмкость которого (\ref{for:cycle}):
