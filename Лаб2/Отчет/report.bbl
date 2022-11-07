@@ -7,6 +7,12 @@
 \ifx\undefined\BibAnnote\long\def\BibAnnote#1{(#1)}\else\fi
 \ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
 
+\bibitem{CoppersmithWinograd}
+\selectlanguageifdefined{russian}
+Coppersmith D., Winograd S. Matrix multiplication via arithmetic progressions /
+  Symbolic Computation, 1990, no. 3, vol. 9. --- City: Publisher, 1990. --- Pp.
+  251--280.
+
 \bibitem{time}
 \selectlanguageifdefined{russian}
 GetProcessTimes function [Эл. ресурс].

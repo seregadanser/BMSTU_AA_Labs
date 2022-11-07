@@ -1,27 +1,29 @@
 \chapter{Технологическая часть}
 В данном разделе будут рассмотрены средства реализации, а также представлены листинги сортировок.
 \section{Средства реализации}
-В данной работе для реализации был выбран язык программирования $c++$. В текущей лабораторной работе требуется замерить процессорное время для выполняемой программы, а также построить графики. Для визуализации результатов использовался язык $Python$.
+В данной работе для реализации был выбран язык программирования $c++$. В текущей лабораторной работе требуется замерить процессорное время для выполняемой программы. Для визуализации результатов использовался язык $Python$.
 
-Время работы было замерено с помощью функции \textit{GetProcessTimes(...)} \cite{time} из библиотеки $Windows.h$.
+Время работы реализаций алгоритмов было замерено с помощью функции \textit{GetProcessTimes(...)} \cite{time} из библиотеки $Windows.h$. Функция возвращает пользовательское процессорное временя типа float.
+Использовать функцию приходится дважды, затем из конечного времени нужно вычесть начальное, чтобы получить результат.
+
 
 \section{Сведения о модулях программы}
 Программа состоит из следующих модулей:
 \begin{itemize}
-	\item $AA2.cpp$ - файл, содержащий весь служебный код;
-	\item $MatrixMull.cpp$ - файл, содержащий код всех алгоритмов матричного умножения;
-	\item $TimeCompare.cpp$ - файл, производящий замеры времени;
-	\item $GetCPUTime.cpp$ - файл, определяющий функцию замера времени;
-	\item $Gen.cpp$ - файл, генерирующий входную матрицу;
+	\item $AA2.cpp$ --- файл, содержащий весь служебный код;
+	\item $MatrixMull.cpp$ --- файл, содержащий код всех алгоритмов матричного умножения;
+	\item $TimeCompare.cpp$ --- файл, производящий замеры времени;
+	\item $GetCPUTime.cpp$ --- файл, определяющий функцию замера времени;
+	\item $Gen.cpp$ --- файл, генерирующий входную матрицу;
 	\newpage
-	\item $MatrixMull.hpp$ - заголовочный файл модуля $MatrixMull.cpp$;
-	\item $TimeCompare.hpp$ - заголовочный файл модуля $TimeCompare.cpp$;
-	\item $GetCPUTime.hpp$ - заголовочный файл модуля $GetCPUTime.cpp$;
-	\item $Gen.hpp$ - заголовочный файл модуля $Gen.cpp$.\newline
+	\item $MatrixMull.hpp$ --- заголовочный файл модуля $MatrixMull.cpp$;
+	\item $TimeCompare.hpp$ --- заголовочный файл модуля $TimeCompare.cpp$;
+	\item $GetCPUTime.hpp$ --- заголовочный файл модуля $GetCPUTime.cpp$;
+	\item $Gen.hpp$ --- заголовочный файл модуля $Gen.cpp$.\newline
 \end{itemize}
 
 \section{Реализация алгоритмов}
-В листингах \ref{standart}, \ref{vino}, \ref{vino_o}, представлены реализации алгоритмов матричного умножения (стандартный, винограда, оптимизированный винограда). 
+В листингах \ref{standart}, \ref{vino}, \ref{vino_o}, представлены реализации алгоритмов матричного умножения --- стандартного, Винограда, оптимизированного алгоритма Винограда. 
 \begin{center}
 \begin{lstlisting}[label=standart, caption={Стандартный алгоритм умножения матриц}]
 data_t matrix_multiplication(const data_t m1, const data_t m2)
@@ -97,7 +99,7 @@ data_t matrix_multiplication_Vinograd(const data_t m1, const data_t m2)
 }
 \end{lstlisting}
 \end{center}
-\newpage
+%\newpage
 \begin{center}
 \begin{lstlisting}[label=vino_o,caption = {Оптимизированный алгоритм Винограда умножения матриц}]
 data_t matrix_multiplication_VinogradOptimase(const data_t m1, const data_t m2)
@@ -150,7 +152,7 @@ data_t matrix_multiplication_VinogradOptimase(const data_t m1, const data_t m2)
 
 \end{center}
 \newpage
-\section{Функциональные тесты}
+\section{Функциональное тестирование}
 
 В таблице \ref{tbl:functional_test} приведены тесты для функций, реализующих алгоритмы матричного умножения. Тесты для всех реализаций алгоритмов пройдены успешно.
 	\begin{center}
@@ -161,21 +163,7 @@ data_t matrix_multiplication_VinogradOptimase(const data_t m1, const data_t m2)
 			Матрица 1 & Матрица 2 & Ожидаемый результат \\ 
 			\hline
 			
-			$\begin{pmatrix}
-			1
-			\end{pmatrix}$ &
-			$\begin{pmatrix}
-				&
-			\end{pmatrix}$ &
-			Сообщение об ошибке \\ \hline
-			
-			$\begin{pmatrix}
-				1 & 2
-			\end{pmatrix}$ &
-			$\begin{pmatrix}
-				1 & 2 & 3
-			\end{pmatrix}$ &
-			Сообщение об ошибке \\ \hline
+		
 			
 			$\begin{pmatrix}
 				1 \\
@@ -216,6 +204,21 @@ data_t matrix_multiplication_VinogradOptimase(const data_t m1, const data_t m2)
 			$\begin{pmatrix}
 				2
 			\end{pmatrix}$ \\ \hline
+			$\begin{pmatrix}
+			1
+		\end{pmatrix}$ &
+		$\begin{pmatrix}
+			&
+		\end{pmatrix}$ &
+		Сообщение об ошибке \\ \hline
+		
+		$\begin{pmatrix}
+			1 & 2
+		\end{pmatrix}$ &
+		$\begin{pmatrix}
+			1 & 2 & 3
+		\end{pmatrix}$ &
+		Сообщение об ошибке \\ \hline
 			
 		\end{tabular}
 	
@@ -226,4 +229,4 @@ data_t matrix_multiplication_VinogradOptimase(const data_t m1, const data_t m2)
 
 \section*{Вывод}
 % \addcontentsline{toc}{section}{Вывод}
-В данном разделе были представлены реализации следующих алгоритмов: стандартного матричного умножения, Винограда, Винограда с оптимизацией.
+В данном разделе были представлены реализации следующих алгоритмов: стандартного матричного умножения, Винограда, Винограда с оптимизацией. Выполнено тестирование реализаций алгоритмов.

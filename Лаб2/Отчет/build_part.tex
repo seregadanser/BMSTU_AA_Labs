@@ -1,154 +1,5 @@
 \chapter{Конструкторская часть}
 
-\section{Трудоемкость алгоритмов}
-Введем модель трудоемкости для оценки алгоритмов.
-\begin{enumerate}
-	\item Операции из списка (\ref{for:operations}) имеют трудоёмкость равную 1:
-	\begin{equation}		
-		+, -, /, *, \%, =, +=, -=, *=, /=, \%=, ==
-		\nonumber
-	\end{equation}
-\begin{equation}
-	\label{for:operations}
-	!=, <, >, <=, >=, [], ++, {-}-
-		\end{equation}
-	\item Трудоёмкость оператора выбора \code{if условие then A else B} рассчитывается, как (\ref{for:if}):
-	\begin{equation}
-		\label{for:if}
-		f_{if} = f_{\text{условия}} +
-		\begin{cases}
-			f_A, & \text{если условие выполняется,}\\
-			f_B, & \text{иначе.}
-		\end{cases}
-	\end{equation}
-	\item Трудоёмкость цикла рассчитывается, как (\ref{for:cycle}):
-	\begin{equation}
-		\label{for:cycle}
-		f_{for} = f_{\text{инициализации}} + f_{\text{сравнения}} + N(f_{\text{тела}} + f_{\text{инкремент}} + f_{\text{сравнения}})
-	\end{equation}
-	\item Трудоёмкость вызова функции равна 0.
-\end{enumerate}
-
-
-
-
-Далее будет приведены оценки трудоемкости алгоритмов. 
-\subsection{Стандартный алгоритм умножения матриц}
-
-Для стандартного алгоритма умножения матриц трудоемкость будет слагаться из трех пунктов.
-\newpage
-\begin{itemize}
-	\item Внешнего цикла по $i \in [1..M]$, трудоёмкость которого: $f = 2 + M \cdot (2 + f_{body_{j}})$.
-	\item Цикла по $j \in [1..N]$, трудоёмкость которого: $f = 2 +  N \cdot (2 + 2 + f_{body_{k}})$.
-	\item Цикла по $k \in [1..K]$, трудоёмкость которого: $f = 2 + 13K$. \newline
-\end{itemize}
-
-Поскольку трудоемкость стандартного алгоритма равна трудоемкости внешнего цикла, то:
-
-\begin{align}
-	\label{for:standard}
-	f_{standard} &= 2 + M \cdot (4 + N \cdot (4 + 13K)) = 2 + 4M + 4MN + 13MNK\\ &\approx 13MNK
-\end{align}
-
-
-\subsection{Алгоритм Винограда}
-
-Чтобы вычислить трудоемкость алгоритма Винограда, нужно учесть следующие пункты.
-
-\begin{itemize}
-	\item Создания и инициализации массивов $a_{tmp}$ и $b_{tmp}$, трудоёмкость которых (\ref{for:init}):
-	\begin{equation}
-		\label{for:init}
-		f_{init} = M + N;
-	\end{equation}
-	
-	\item Заполнения массива $a_{tmp}$, трудоёмкость которого (\ref{for:ATMP}):
-	\begin{equation}
-			\label{for:ATMP}
-		f_{a_{tmp}} = 2 + K (4 + 7 +  (\frac{M}{2} - 1)  \cdot 12);
-	\end{equation}
-	
-	\item Заполнения массива $b_{tmp}$, трудоёмкость которого (\ref{for:BTMP}):
-	\begin{equation}
-			\label{for:BTMP}
-		f_{b_{tmp}} = 2 + K (4 + 7 + (\frac{N}{2} - 1) \cdot 12);
-	\end{equation}
-
-	
-	\item Цикла заполнения для чётных размеров, трудоёмкость которого (\ref{for:cycle}):
-	\begin{equation}
-		\label{sfor:cycle}
-		f_{cycle} = 2 + M \cdot (4 + N \cdot (11 + \frac{K}{2} \cdot 23));
-	\end{equation}
-	
-	\item Цикла, который дополнительно нужен для подсчёта значений при нечётном размере матрицы, трудоемкость которого (\ref{for:last}):
-	\begin{equation}
-		\label{for:last}
-		f_{last} = \begin{cases}
-			2, & \text{чётная,}\\
-			4 + M \cdot (4 + 14N), & \text{иначе.}
-		\end{cases}
-	\end{equation}
-\end{itemize}
-
-Тогда для худшего случая (нечётный общий размер матриц) имеем (\ref{for:bad}):
-\begin{equation}
-	\label{for:bad}
-	f_{worst} =  f_{a_{tmp}} + f_{b_{tmp}} + f_{cycle} + f_{last}\approx 11.5 \cdot MNK
-\end{equation}
-
-Для лучшего случая (чётный общий размер матриц) имеем (\ref{for:good}):
-\begin{equation}
-	\label{for:good}
-	f_{best} =  f_{a_{tmp}} + f_{a_{tmp}} + f_{cycle} + f_{last} \approx 11.5 \cdot MNK
-\end{equation}
-
-
-\subsection{Оптимизированный алгоритм Винограда}
-
-Оптимизация заключается в следующих пунктах.
-\begin{itemize}
-	\item Использовании побитового сдвига вместо умножения на 2.
-	\item Замены операции сложения и вычитания на операции $+=$ и $-=$ соответственно.
-	\item Занесение в циклах вычисления множителей вычисления первых двух
-	элементов во внутренний цикл j.
-\end{itemize}
-
-Тогда трудоемкость оптимизированного алгоритма Винограда состоит из:
-
-\begin{enumerate}
-	\item создания и инициализации массивов $a_{tmp}$ и $b_{tmp}$ (\ref{for:init});
-	
-	\item Заполнения массива $a_{tmp}$, трудоёмкость которого (\ref{for:ATMP1}):
-\begin{equation}
-		\label{for:ATMP1}
-f_{a_{tmp}} = 2 + K (4 + \frac{M}{2} \cdot 12);
-\end{equation}
-
-\item Заполнения массива $b_{tmp}$, трудоёмкость которого (\ref{for:BTMP1}):
-\begin{equation}
-\label{for:BTMP1}
-f_{b_{tmp}} = 2 + K (4 + \frac{N}{2} \cdot 12);
-\end{equation}
-	\newline
-	\item Цикла заполнения для чётных размеров, трудоёмкость которого (\ref{for:cycle}):
-	
-	\item Условие, которое нужно для дополнительных вычислений при нечётном размере матрицы, трудоемкость которого (\ref{for:last}):
-
-\end{enumerate}
-
-Тогда для худшего случая (нечётный общий размер матриц) имеем (\ref{for:bad_impr}):
-\begin{equation}
-	\label{for:bad_impr}
-	f_{worst} = f_{MH} + f_{MV} + f_{cycle} + f_{last} \approx 11.5 \cdot MNK
-\end{equation}
-
-Для лучшего случая (чётный общий размер матриц) имеем (\ref{for:good_impr}):
-\begin{equation}
-	\label{for:good_impr}
-	f_{best} = f_{MH} + f_{MV} + f_{cycle} + f_{last} \approx 11.5 \cdot MNK
-\end{equation}
-
 \section{Описание алгоритмов}
 В данном разделе будут рассмотрены схемы алгоритмов классического уможения матриц (рис. \ref{ris:imageSS}), Винограда (рис. \ref{ris:imageSSO1}, \ref{ris:imageSSO2}, \ref{ris:imageSSO3}), оптимизированного Винограда (рис. \ref{ris:imageSS1}, \ref{ris:imageSS2}, \ref{ris:imageSS3}).
 \begin{center}
@@ -221,11 +72,160 @@ f_{b_{tmp}} = 2 + K (4 + \frac{N}{2} \cdot 12);
 \end{center}
 \newpage
 
+\section{Трудоемкость алгоритмов}
+Введем модель вычисления трудоемкости.
+\begin{enumerate}
+	\item Операции из списка (\ref{for:operations}) имеют трудоёмкость, равную 1:
+	\begin{equation}		
+		+, -, /, *, \%, =, +=, -=, *=, /=, \%=, ==
+		\nonumber
+	\end{equation}
+	\begin{equation}
+		\label{for:operations}
+		!=, <, >, <=, >=, [], ++, {-}-
+	\end{equation}
+	\item Трудоёмкость оператора выбора \code{if условие then A else B} рассчитывается как %(\ref{for:if})
+	\begin{equation}
+		\label{for:if}
+		f_{if} = f_{\text{условия}} +
+		\begin{cases}
+			f_A, & \text{если условие выполняется,}\\
+			f_B, & \text{иначе.}
+		\end{cases}
+	\end{equation}
+	\item Трудоёмкость цикла из NN шагов рассчитывается как %(\ref{for:cycle}):
+	\begin{equation}
+		\label{for:cycle}
+		f_{for} = f_{\text{инициализации}} + f_{\text{сравнения}} + NN(f_{\text{тела}} + f_{\text{инкремент}} + f_{\text{сравнения}})
+	\end{equation}
+	\item Трудоёмкость вызова функции равна 0.
+\end{enumerate}
+
+
+
+
+Далее будет приведены оценки трудоемкости алгоритмов. 
+\subsection{Стандартный алгоритм умножения матриц}
+
+Для стандартного алгоритма умножения матриц трудоемкость будет слагаться из трех пунктов:
+\newpage
+\begin{itemize}
+	\item внешнего цикла по $i \in [1..M]$, трудоёмкость которого $f = 2 + M \cdot (2 + f_{body_{j}})$;
+	\item цикла по $j \in [1..N]$, трудоёмкость которого $f = 2 +  N \cdot (2 + 2 + f_{body_{k}})$;
+	\item цикла по $k \in [1..K]$, трудоёмкость которого $f = 2 + 13K$.
+\end{itemize}
+
+Поскольку трудоемкость стандартного алгоритма равна трудоемкости внешнего цикла, то
+\begin{align}
+	\label{for:standard}
+	f_{standard} &= 2 + M \cdot (4 + N \cdot (4 + 13K)) = 2 + 4M + 4MN + 13MNK\\ &\approx 13MNK
+\end{align}
+
+
+\subsection{Алгоритм Винограда}
+
+Чтобы вычислить трудоемкость алгоритма Винограда, нужно учесть следующие пункты.
+
+\begin{itemize}
+	\item Создание и инициализация массивов $a_{tmp}$ и $b_{tmp}$ трудоёмкостью %(\ref{for:init}):
+	\begin{equation}
+		\label{for:init}
+		f_{init} = L + N
+	\end{equation}
+	
+	\item Заполнение массива $a_{tmp}$, трудоёмкость: %(\ref{for:ATMP}):
+	\begin{equation}
+		\label{for:ATMP}
+		f_{a_{tmp}} = 2 + L (4 + 7 +  (\frac{M}{2} - 1)  \cdot 12)
+	\end{equation}
+	
+	\item Заполнение массива $b_{tmp}$, трудоёмкость: %(\ref{for:BTMP}):
+	\begin{equation}
+		\label{for:BTMP}
+		f_{b_{tmp}} = 2 + N (4 + 7 + (\frac{M}{2} - 1) \cdot 12)
+	\end{equation}
+	
+	\item Цикл заполнения для чётных размеров, трудоёмкость которого %(\ref{for:cycle}):
+	\begin{equation}
+		\label{sfor:cycle}
+		f_{cycle} = 2 + L \cdot (4 + N \cdot (11 + \frac{M}{2} \cdot 23))
+	\end{equation}
+	
+	\item Цикл, который необходим для рассчёта при нечётном размере матрицы, трудоемкость которого
+	\newpage
+	\begin{equation}
+		\label{for:last}
+		f_{last} = \begin{cases}
+			2, & \text{чётная,}\\
+			4 + L \cdot (4 + 14N), & \text{иначе.}
+		\end{cases}
+	\end{equation}
+\end{itemize}
+
+Тогда для худшего случая (нечётный общий размер матриц) имеем трудоемкость:
+\begin{equation}
+	\label{for:bad}
+	f_{worst} =  f_{a_{tmp}} + f_{b_{tmp}} + f_{cycle} + f_{last}\approx 11.5 \cdot LNM
+\end{equation}
+
+Для лучшего случая (чётный общий размер матриц) ---
+\begin{equation}
+	\label{for:good}
+	f_{best} =  f_{a_{tmp}} + f_{a_{tmp}} + f_{cycle} + f_{last} \approx 11.5 \cdot LNM
+\end{equation}
+
+
+\subsection{Оптимизированный алгоритм Винограда}
+
+Оптимизация заключается в следующих пунктах.
+\begin{itemize}
+	\item Использование побитового сдвига вместо умножения на 2.
+	\item Замена операции сложения и вычитания на операции $+=$ и $-=$ соответственно.
+	\item Занесение в циклах вычисления множителей вычисления первых двух
+	элементов во внутренний цикл j.
+\end{itemize}
+
+Тогда трудоемкость оптимизированного алгоритма Винограда состоит из нижележащих пунктов.
+
+\begin{enumerate}
+	\item Создание и инициализацие массивов $a_{tmp}$ и $b_{tmp}$ (\ref{for:init}).
+	
+	\item Заполнение массива $a_{tmp}$, трудоёмкость:
+	\begin{equation}
+		\label{for:ATMP1}
+		f_{a_{tmp}} = 2 + L (4 + \frac{M}{2} \cdot 12)
+	\end{equation}
+	
+	\item Заполнение массива $b_{tmp}$, трудоёмкость:
+	\begin{equation}
+		\label{for:BTMP1}
+		f_{b_{tmp}} = 2 + N (4 + \frac{M}{2} \cdot 12)
+	\end{equation}
+	\newline
+	\item Цикла заполнения для чётных размеров, трудоёмкость которого (\ref{for:cycle}).
+	
+	\item Условие, которое нужно для дополнительных вычислений при нечётном размере матрицы, трудоемкость которого (\ref{for:last}).
+	
+\end{enumerate}
+
+Тогда для худшего случая --- при нечётной размерности матриц $M$ --- трудоемкость равна
+\begin{equation}
+	\label{for:bad_impr}
+	f_{worst} = f_{MH} + f_{MV} + f_{cycle} + f_{last} \approx 11.5 \cdot LNM
+\end{equation}
+
+Для лучшего случая --- при чётной размерности матриц $M$ --- трудоемкость равна 
+\begin{equation}
+	\label{for:good_impr}
+	f_{best} = f_{MH} + f_{MV} + f_{cycle} + f_{last} \approx 11.5 \cdot LNM
+\end{equation}
+
+
 \section*{Вывод}
 % \addcontentsline{toc}{section}{Вывод}
-В данном разделе были проанализированны три алгоритма умножения матриц. Рассчитаны трудоёмкости алгоритмов в лучшем случае (л.с.) и в худшем случае (х.с.).
+В данном разделе были описаны и проанализированы три алгоритма умножения матриц. Рассчитаны трудоёмкости алгоритмов в лучшем случае (л.с.) и в худшем случае (х.с.).
 
-Стандартный алгоритм: л.с. -- $O(13n^{3})$, х.с. -- $O(13n^{3})$.
+Стандартный алгоритм: трудоемкость $O(13n^{3})$.
 
 Алгоритм Винограда: л.с. -- $O(11.5n^{3})$,  х.с. --  $O(11.5n^{3})$.
 
