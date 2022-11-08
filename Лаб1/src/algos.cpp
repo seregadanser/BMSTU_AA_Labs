@@ -27,6 +27,7 @@ int rec_dam_lev1(const char* s1, const char* s2, const int li1, const int li2)
 
 int non_rec_lev(const char* s1, const char* s2)
 {
+
     int n = strlen(s1) + 1;
     int m = strlen(s2) + 1;
 
@@ -36,7 +37,7 @@ int non_rec_lev(const char* s1, const char* s2)
     if (m == 1)
         return n - 1;
 
-           data_t mtrx;
+        data_t mtrx;
         mtrx.matrix = create_matrix(strlen(s1) + 1, strlen(s2) + 1);
         mtrx.n = strlen(s1) + 1;
         mtrx.m = strlen(s2) + 1;
@@ -44,8 +45,10 @@ int non_rec_lev(const char* s1, const char* s2)
 
     for (int i = 0; i < n; ++i)
     {
+
         for (int j = 0; j < m; ++j)
         {
+     
             if (i == 0 && j == 0)
                 mtrx.matrix[i][j] = 0;
             else if (i == 0)
@@ -59,10 +62,11 @@ int non_rec_lev(const char* s1, const char* s2)
         }
     }
 
+
     int result = mtrx.matrix[n - 1][m - 1];
 
      free_matrix(&mtrx);
-
+    
     return result;
 }
 

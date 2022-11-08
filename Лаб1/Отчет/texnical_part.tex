@@ -1,0 +1,230 @@
+\chapter{Технологическая часть}
+В данном разделе будут рассмотрены средства реализации, а также представлены листинги сортировок.
+\section{Средства реализации}
+В данной работе для реализации был выбран язык программирования $c++$. В текущей лабораторной работе требуется замерить процессорное время для выполняемой программы. Для визуализации результатов использовался язык $Python$.
+
+Время работы реализаций алгоритмов было замерено с помощью функции \textit{GetProcessTimes(...)} \cite{time} из библиотеки $Windows.h$. Функция возвращает пользовательское процессорное временя типа float.
+Использовать функцию приходится дважды, затем из конечного времени нужно вычесть начальное, чтобы получить результат.
+
+
+\section{Сведения о модулях программы}
+Программа состоит из следующих модулей:
+\begin{itemize}
+	\item $AA2.cpp$ --- файл, содержащий весь служебный код;
+	\item $Matrix.cpp$ --- файл, реализующий операции над матрицами;
+	\item $algoc.cpp$ --- файл, содержаший реализации алгритмов поиска расстояний Л. и Д-Л.;
+	\item $TimeCompare.cpp$ --- файл, производящий замеры времени;
+	\item $GetCPUTime.cpp$ --- файл, определяющий функцию замера времени;
+	\item $Gen.cpp$ --- файл, генерирующий входную матрицу;
+	\item $Matrix.hpp$ --- заголовочный файл модуля $Matrix.cpp$;
+	\item $TimeCompare.hpp$ --- заголовочный файл модуля $TimeCompare.cpp$;
+	\item $algoc.hpp$ --- заголовочный файл модуля $algos.cpp$;
+	\item $GetCPUTime.hpp$ --- заголовочный файл модуля $GetCPUTime.cpp$;
+	\item $Gen.hpp$ --- заголовочный файл модуля $Gen.cpp$.
+\end{itemize}
+
+\section{Реализация алгоритмов}
+В листингах , представлены реализации алгоритмов поиска расстояний --- . 
+\begin{center}
+\begin{lstlisting}[label=lnr, caption={Матричный алгоритм поиска пути Левенштейна}]
+int non_rec_lev(const char* s1, const char* s2)
+{
+	int n = strlen(s1) + 1;
+	int m = strlen(s2) + 1;
+	if (n == 1)
+	return m - 1;
+	if (m == 1)
+	return n - 1;	
+	data_t mtrx;
+	mtrx.matrix = create_matrix(strlen(s1) + 1, strlen(s2) + 1);
+	mtrx.n = strlen(s1) + 1;
+	mtrx.m = strlen(s2) + 1;
+	for (int i = 0; i < n; ++i)
+	{	
+		for (int j = 0; j < m; ++j)
+		{
+			
+			if (i == 0 && j == 0)
+			mtrx.matrix[i][j] = 0;
+			else if (i == 0)
+			mtrx.matrix[i][j] = j;
+			else if (j == 0)
+			mtrx.matrix[i][j] = i;
+			else
+			mtrx.matrix[i][j] = min_int(3, mtrx.matrix[i][j - 1] + 1,mtrx.matrix[i - 1][j] + 1,
+			mtrx.matrix[i - 1][j - 1] + (s1[i - 1] != s2[j - 1])
+			);
+		}
+	}
+	int result = mtrx.matrix[n - 1][m - 1];
+	free_matrix(&mtrx);
+	return result;
+}
+\end{lstlisting}
+\end{center}
+\begin{center}
+\begin{lstlisting}[label=dlnr, caption={Матричный алгоритм поиска пути  Дамерау-Левенштейна}]
+int non_rec_dam_lev(const char* s1, const char* s2)
+{
+	int n = strlen(s1) + 1;
+	int m = strlen(s2) + 1;
+	if (n == 1)
+	return m - 1;
+	if (m == 1)
+	return n - 1;
+	data_t mtrx;
+	mtrx.matrix = create_matrix(strlen(s1) + 1, strlen(s2) + 1);
+	mtrx.n = strlen(s1) + 1;
+	mtrx.m = strlen(s2) + 1;
+	for (int i = 0; i < n; ++i)
+	{
+		for (int j = 0; j < m; ++j)
+		{
+			if (i == 0 && j == 0)
+			mtrx.matrix[i][j] = 0;
+			else if (i == 0)
+			mtrx.matrix[i][j] = j;
+			else if (j == 0)
+			mtrx.matrix[i][j] = i;
+			else
+			{
+				mtrx.matrix[i][j] = min_int(3,
+				mtrx.matrix[i][j - 1] + 1,
+				mtrx.matrix[i - 1][j] + 1,
+				mtrx.matrix[i - 1][j - 1] + (s1[i - 1] != s2[j - 1])
+				);
+				if (i > 1 && j > 1 && s1[i - 1] == s2[j - 2] && s1[i - 2] == s2[j - 1])
+				mtrx.matrix[i][j] = min_int(2, mtrx.matrix[i][j], mtrx.matrix[i - 2][j - 2] + 1);
+			}
+		}
+	}
+	int result = mtrx.matrix[n - 1][m - 1];
+	free_matrix(&mtrx);
+	return result;
+}
+\end{lstlisting}
+\end{center}
+%\newpage
+\begin{center}
+\begin{lstlisting}[label=dlr,caption = {Рекурсивый алгоритм поиска пути  Дамерау-Левенштейна}]
+int rec_dam_lev(const char* s1, const char* s2)
+{
+	return rec_dam_lev1(s1, s2, strlen(s1), strlen(s2));
+}
+
+int rec_dam_lev1(const char* s1, const char* s2, const int li1, const int li2)
+{
+	int result = -1;
+	if (li1 == 0 || li2 == 0)
+	return std::abs(li1 - li2);
+	result = min_int(3,
+	rec_dam_lev1(s1, s2, li1 - 1, li2) + 1,rec_dam_lev1(s1, s2, li1, li2 - 1) + 1, 
+	rec_dam_lev1(s1, s2, li1 - 1, li2 - 1) + (s1[li1 - 1] != s2[li2 - 1]));
+	if (li1 > 1 && li2 > 1 && s1[li1 - 1] == s2[li2 - 2] && s1[li1 - 2] == s2[li2 - 1])
+	result = min_int(2,result,rec_dam_lev1(s1, s2, li1 - 2, li2 - 2) + 1);
+	return result;
+}
+
+\end{lstlisting}
+
+\end{center}
+\begin{center}
+	\begin{lstlisting}[label=dlrc,caption = {Рекурсивый с кешем алгоритм поиска пути  Дамерау-Левенштейна}]
+	int cache_dam_lev(const char* s1, const char* s2)
+	{
+		data_t cache;
+		cache.matrix = create_matrix(strlen(s1) + 1, strlen(s2) + 1);
+		cache.n = strlen(s1) + 1;
+		cache.m = strlen(s2) + 1;
+		fill_mtrx_with_inf(&cache);
+		int r = cache_dam_lev1(&cache, s1, s2, strlen(s1), strlen(s2));
+		free_matrix(&cache);
+		return r;
+	}
+	
+	int cache_dam_lev1(data_t* cache, const char* s1, const char* s2, const int li1, const int li2)
+	{
+		if (cache->matrix[li1][li2] != LONG_MAX)
+		return cache->matrix[li1][li2];
+		if (li1 == 0 && li2 == 0)
+		{
+			cache->matrix[li1][li2] = 0;
+			return cache->matrix[li1][li2];
+		}
+		if (li1 == 0 && li2 > 0)
+		{
+			cache->matrix[li1][li2] = li2;
+			return li2;
+		}
+		if (li2 == 0 && li1 > 0)
+		{
+			cache->matrix[li1][li2] = li1;
+			return li1;
+		}	
+		int r1 = 0, r2 = 0, r3 = 0;
+		r1 = cache_dam_lev1(cache, s1, s2, li1 - 1, li2) + 1;
+		r2 = cache_dam_lev1(cache, s1, s2, li1, li2 - 1) + 1;
+		r3 = cache_dam_lev1(cache, s1, s2, li1 - 1, li2 - 1) + (s1[li1 - 1] != s2[li2 - 1]);
+		cache->matrix[li1][li2] = min_int(3, r1, r2, r3);
+		int result = 0;
+		if (li1 > 1 && li2 > 1 && s1[li1 - 1] == s2[li2 - 2] && s1[li1 - 2] == s2[li2 - 1])
+		{
+			int r4 = 0;		
+			r4 = cache_dam_lev1(cache, s1, s2, li1 - 2, li2 - 2) + 1;	
+			cache->matrix[li1][li2] = min_int(2, cache->matrix[li1][li2], r4);
+		}
+		return cache->matrix[li1][li2];
+	}	
+	\end{lstlisting}
+	
+\end{center}
+\newpage
+\section{Функциональное тестирование}
+
+В таблице \ref{tbl:functional_test} приведены тесты для функций, реализующих алгоритмы матричного умножения. Тесты для всех реализаций алгоритмов пройдены успешно.
+	\begin{center}
+
+				\begin{threeparttable}
+					\captionsetup{justification=raggedright,singlelinecheck=off}
+					\caption{\label{tbl:functional_test} Функциональные тесты}
+					\begin{tabular}{|c|c|c|c|c|}
+						\hline
+						& \multicolumn{2}{c|}{Входные данные}  & \multicolumn{2}{c|}{Ожидаемый результат} \\
+						\hline
+						№&Строка 1&Строка 2&Левенштейн&Дамерау-Л. \\
+						\hline
+						1&"пустая строка"&"пустая строка"&0&0 \\
+						\hline
+						2&"пустая строка"&слово&5&5 \\
+						\hline
+						3&проверка&"пустая строка"&8&8 \\
+						\hline
+						4&ремонт&емонт&1&1 \\
+						\hline
+						5&гигиена&иена&3&3 \\
+						\hline
+						6&нисан&автоваз&6&6 \\
+						\hline
+						7&спасибо&пожалуйста&9&9 \\
+						\hline
+						8&что&кто&1&1 \\
+						\hline
+						9&ты&тыква&3&3 \\
+						\hline
+						10&есть&кушать&4&4 \\
+						\hline
+						11&abba&baab&3&2 \\
+						\hline
+						12&abcba&bacab&4&2 \\
+						\hline
+					\end{tabular}
+				\end{threeparttable}
+
+
+	\end{center}
+
+
+
+\section*{Вывод}
+% \addcontentsline{toc}{section}{Вывод}
+В данном разделе были представлены реализации следующих алгоритмов: стандартного матричного умножения, Винограда, Винограда с оптимизацией. Выполнено тестирование реализаций алгоритмов.

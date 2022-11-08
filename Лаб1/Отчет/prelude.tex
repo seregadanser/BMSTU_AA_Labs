@@ -1,0 +1,146 @@
+\documentclass[ fontsize=14pt]{scrreprt}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{geometry}
+\usepackage{tocloft} %пакет для оформления оглавления
+\usepackage{titlesec} %пакет для оформления заголовков
+\usepackage{indentfirst}
+\usepackage{longtable}
+\usepackage{tocvsec2}
+\usepackage{fontspec} 
+\usepackage{threeparttable}
+\usepackage{pgfplots}
+\usepackage{filecontents}
+%\usepackage{caption2}[2008/03/29]
+\usepackage[nooneline]{caption} \captionsetup[table]{justification=raggedright} \captionsetup[figure]{justification=centering,labelsep=endash}
+\DeclareCaptionLabelSeparator{dash}{~---~}
+\captionsetup{labelsep=dash}
+
+\graphicspath{{src/}}
+\DeclareGraphicsExtensions{.png,.jpg,.svg}
+\usepackage[russian]{babel}
+\setlength{\footskip}{40pt}
+
+\usepackage[nottoc]{tocbibind} %добавление списка источников в оглавление
+\usepackage[titletoc]{appendix} %добавление приложений в оглавление
+
+\setmainfont[Ligatures=TeX]{Times New Roman}
+\newfontfamily\cyrillicfont{Times New Roman}
+\setsansfont{Times New Roman}
+\newfontfamily{\cyrillicfontsf}{Times New Roman}
+\setmonofont{Times New Roman}
+\newfontfamily{\cyrillicfonttt}{Times New Roman}
+\parindent=1.25cm %красная строка
+\sloppy
+\newcommand{\code}[1]{\texttt{#1}}
+\renewcaptionname{russian}{\contentsname}{\normalsize \MakeUppercase{Содержание}} %заголовок оглавления
+\renewcaptionname{russian}{\appendixname}{Приложение} %заголовок приложений
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % заполнение точками Глав в оглавлении
+
+%параметры заголовков разделов (глав)
+\newcommand{\hsp}{\hspace{20pt}} % длина линии в 20pt
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter{.}\hsp}{0pt}{\Huge\bfseries}
+\titleformat{\section}[hang]{\Large\bfseries}{\thesection\hsp}{0pt}{\Large\bfseries}
+\titleformat{\subsection}[hang]{\large\bfseries}{\thesubsection\hsp}{0pt}{\large\bfseries}
+
+%\renewcommand{\captionlabeldelim}{~---~}
+
+%\renewcommand{\table}{\let\@makecaption\@maketablecaption\@float{table}}
+\lstset{basicstyle=\fontsize{10}{10}\selectfont,breaklines=true}
+
+\geometry{ left = 2cm, right = 1cm, top = 2cm, bottom = 2cm, includehead,head=12pt,headsep=0cm,nofoot}
+\linespread{1.3}
+
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{datavisualization.formats.functions}
+
+\lstset{ %
+	language=c++,                 % выбор языка для подсветки (здесь это С)
+	basicstyle=\small\sffamily, % размер и начертание шрифта для подсветки кода
+	numbers=left,               % где поставить нумерацию строк (слева\справа)
+	numberstyle=\tiny,           % размер шрифта для номеров строк
+	stepnumber=1,                   % размер шага между двумя номерами строк
+	numbersep=5pt,                % как далеко отстоят номера строк от подсвечиваемого кода
+	showspaces=false,            % показывать или нет пробелы специальными отступами
+	showstringspaces=false,      % показывать или нет пробелы в строках
+	showtabs=false,             % показывать или нет табуляцию в строках
+	frame=single,              % рисовать рамку вокруг кода
+	tabsize=2,                 % размер табуляции по умолчанию равен 2 пробелам
+	captionpos=t,              % позиция заголовка вверху [t] или внизу [b] 
+	breaklines=true,           % автоматически переносить строки (да\нет)
+	breakatwhitespace=false, % переносить строки только если есть пробел
+	escapeinside={\#*}{*)}   % если нужно добавить комментарии в коде
+}
+
+\lstset{
+    literate=
+    {а}{{\selectfont\char224}}1
+    {б}{{\selectfont\char225}}1
+    {в}{{\selectfont\char226}}1
+    {г}{{\selectfont\char227}}1
+    {д}{{\selectfont\char228}}1
+    {е}{{\selectfont\char229}}1
+    {ё}{{\"e}}1
+    {ж}{{\selectfont\char230}}1
+    {з}{{\selectfont\char231}}1
+    {и}{{\selectfont\char232}}1
+    {й}{{\selectfont\char233}}1
+    {к}{{\selectfont\char234}}1
+    {л}{{\selectfont\char235}}1
+    {м}{{\selectfont\char236}}1
+    {н}{{\selectfont\char237}}1
+    {о}{{\selectfont\char238}}1
+    {п}{{\selectfont\char239}}1
+    {р}{{\selectfont\char240}}1
+    {с}{{\selectfont\char241}}1
+    {т}{{\selectfont\char242}}1
+    {у}{{\selectfont\char243}}1
+    {ф}{{\selectfont\char244}}1
+    {х}{{\selectfont\char245}}1
+    {ц}{{\selectfont\char246}}1
+    {ч}{{\selectfont\char247}}1
+    {ш}{{\selectfont\char248}}1
+    {щ}{{\selectfont\char249}}1
+    {ъ}{{\selectfont\char250}}1
+    {ы}{{\selectfont\char251}}1
+    {ь}{{\selectfont\char252}}1
+    {э}{{\selectfont\char253}}1
+    {ю}{{\selectfont\char254}}1
+    {я}{{\selectfont\char255}}1
+    {А}{{\selectfont\char192}}1
+    {Б}{{\selectfont\char193}}1
+    {В}{{\selectfont\char194}}1
+    {Г}{{\selectfont\char195}}1
+    {Д}{{\selectfont\char196}}1
+    {Е}{{\selectfont\char197}}1
+    {Ё}{{\"E}}1
+    {Ж}{{\selectfont\char198}}1
+    {З}{{\selectfont\char199}}1
+    {И}{{\selectfont\char200}}1
+    {Й}{{\selectfont\char201}}1
+    {К}{{\selectfont\char202}}1
+    {Л}{{\selectfont\char203}}1
+    {М}{{\selectfont\char204}}1
+    {Н}{{\selectfont\char205}}1
+    {О}{{\selectfont\char206}}1
+    {П}{{\selectfont\char207}}1
+    {Р}{{\selectfont\char208}}1
+    {С}{{\selectfont\char209}}1
+    {Т}{{\selectfont\char210}}1
+    {У}{{\selectfont\char211}}1
+    {Ф}{{\selectfont\char212}}1
+    {Х}{{\selectfont\char213}}1
+    {Ц}{{\selectfont\char214}}1
+    {Ч}{{\selectfont\char215}}1
+    {Ш}{{\selectfont\char216}}1
+    {Щ}{{\selectfont\char217}}1
+    {Ъ}{{\selectfont\char218}}1
+    {Ы}{{\selectfont\char219}}1
+    {Ь}{{\selectfont\char220}}1
+    {Э}{{\selectfont\char221}}1
+    {Ю}{{\selectfont\char222}}1
+    {Я}{{\selectfont\char223}}1
+}
+
+

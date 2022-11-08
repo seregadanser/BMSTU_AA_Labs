@@ -1,0 +1,17 @@
+
+\babel@toc {russian}{}\relax 
+\contentsline {chapter}{Введение}{3}{}%
+\contentsline {chapter}{\numberline {1}Аналитическая часть}{5}{}%
+\contentsline {chapter}{\numberline {2}Технологическая часть}{6}{}%
+\contentsline {section}{\numberline {2.1}Средства реализации}{6}{}%
+\contentsline {section}{\numberline {2.2}Сведения о модулях программы}{6}{}%
+\contentsline {section}{\numberline {2.3}Реализация алгоритмов}{7}{}%
+\contentsline {section}{\numberline {2.4}Функциональное тестирование}{12}{}%
+\contentsline {chapter}{\numberline {3}Исследовательская часть}{13}{}%
+\contentsline {section}{\numberline {3.1}Технические характеристики}{13}{}%
+\contentsline {section}{\numberline {3.2}Демонстрация работы программы}{13}{}%
+\contentsline {section}{\numberline {3.3}Время выполнения реализаций алгоритмов}{14}{}%
+\contentsline {section}{\numberline {3.4}Затрачиваемая память при выполнении реализаций алгоритмов}{15}{}%
+\contentsline {section}{\numberline {3.5}Вывод}{15}{}%
+\contentsline {chapter}{Заключение}{16}{}%
+\contentsline {chapter}{Список использованных источников}{17}{}%
