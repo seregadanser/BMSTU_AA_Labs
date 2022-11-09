@@ -11,7 +11,7 @@ void time_compare(gen_func_t gen_func) {
     double copy_t;
     int repeats = 1000;
     cout << setw(33) << "Time in ms" << endl;
-    cout << setw(3) << "Size" << setw(15) << "NRL" << setw(15) << "NRDL" << setw(15) << "CDL" <<setw(15) << "RDL" << endl;
+    cout << setw(3) << "Size" << setw(15) << "NRL" << setw(15) << "NRDL" << setw(15) << "CDL"  << endl;
     for (int len = 10; len < 100; len += 10) {
         cout << setw(3) << len;
       char s1[256], s2[256];
@@ -38,14 +38,14 @@ void time_compare(gen_func_t gen_func) {
      cache_dam_lev(s1, s2);
         }
         end = getCPUTime();
-        cout << setw(15) << (end - start) / repeats ;
+        cout << setw(15) << (end - start) / repeats <<endl;
 
-         start = getCPUTime();
+       /*  start = getCPUTime();
         for (int i = 0; i < repeats; i++) {
      rec_dam_lev(s1, s2);
         }
         end = getCPUTime();
-        cout << setw(15) << (end - start) / repeats << endl;
+        cout << setw(15) << (end - start) / repeats << endl;*/
     
     }
 
@@ -75,14 +75,14 @@ void time_compare(gen_func_t gen_func) {
      cache_dam_lev(s1, s2);
         }
         end = getCPUTime();
-        cout << setw(15) << (end - start) / repeats ;
+        cout << setw(15) << (end - start) / repeats <<endl;
 
-         start = getCPUTime();
+       /*  start = getCPUTime();
         for (int i = 0; i < repeats; i++) {
      rec_dam_lev(s1, s2);
         }
         end = getCPUTime();
-        cout << setw(15) << (end - start) / repeats << endl;
+        cout << setw(15) << (end - start) / repeats << endl;*/
     
     }
 }

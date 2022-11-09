@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.8)  10 NOV 2022 00:04
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.8)  10 NOV 2022 00:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1388,6 +1388,11 @@ Overfull \hbox (153.64647pt too wide) in paragraph at lines 21--25
  []
 
 
+Overfull \hbox (21.36267pt too wide) in paragraph at lines 27--31
+\TU/TimesNewRoman(0)/b/n/14.4 Тема $[]$ 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 27--31
 
  []
@@ -1575,7 +1580,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  35226 strings out of 410654
  914735 string characters out of 2816299
- 1955582 words of memory out of 3000000
+ 1955583 words of memory out of 3000000
  55736 multiletter control sequences out of 15000+600000
  471090 words of font info for 64 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
