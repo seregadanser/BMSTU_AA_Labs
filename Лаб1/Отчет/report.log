@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.8)  9 NOV 2022 00:11
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.8)  10 NOV 2022 00:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1196,8 +1196,11 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 ))
-(report.aux (title.aux) (introduction.aux) (analit_part.aux) (texnical_part.aux
-) (reserch_part.aux) (conclusion.aux) (lib.aux))
+(report.aux (title.aux) (introduction.aux) (analit_part.aux
+
+LaTeX Warning: Label `eq:m2' multiply defined.
+
+) (texnical_part.aux) (reserch_part.aux) (conclusion.aux) (lib.aux))
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
@@ -1415,7 +1418,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--31
 
 
 
-]
+] [3]
 \openout2 = `introduction.aux'.
 
  (introduction.tex
@@ -1436,10 +1439,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
 ейна и Дамерау-
  []
 
-[3
+[4
 
 
-] [4])
+] [5])
 \openout2 = `analit_part.aux'.
 
  (analit_part.tex
@@ -1470,12 +1473,12 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) [5
+[6
 
 
 
 
-]
+] [7] [8] [9] [10]) [11]
 \openout2 = `texnical_part.aux'.
 
  (texnical_part.tex
@@ -1491,12 +1494,12 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-[6
+[12
 
 
 
 
-] [7] [8] [9] [10] [11]) [12]
+] [13] [14] [15] [16] [17]) [18]
 \openout2 = `reserch_part.aux'.
 
  (reserch_part.tex
@@ -1512,12 +1515,12 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-[13
+[19
 
 
 
 
-] [14]) [15]
+] [20]) [21]
 \openout2 = `conclusion.aux'.
 
  (conclusion.tex
@@ -1538,7 +1541,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 ейна и Дамерау-
  []
 
-) [16
+) [22
 
 
 
@@ -1558,20 +1561,24 @@ Class scrreprt Warning: Redefinition of \@makeschapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-)) [17
+)) [23
 
 
 
 
 ] (report.aux (title.aux) (introduction.aux) (analit_part.aux)
-(texnical_part.aux) (reserch_part.aux) (conclusion.aux) (lib.aux)) ) 
-Here is how much of TeX's memory you used:
- 35210 strings out of 410654
- 914352 string characters out of 2816299
- 1955583 words of memory out of 3000000
- 55723 multiletter control sequences out of 15000+600000
- 470839 words of font info for 60 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 115i,9n,111p,10641b,1865s stack positions out of 10000i,1000n,20000p,200000b,80000s
+(texnical_part.aux) (reserch_part.aux) (conclusion.aux) (lib.aux))
 
-Output written on report.pdf (17 pages).
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 35226 strings out of 410654
+ 914735 string characters out of 2816299
+ 1955582 words of memory out of 3000000
+ 55736 multiletter control sequences out of 15000+600000
+ 471090 words of font info for 64 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 115i,15n,111p,10641b,1865s stack positions out of 10000i,1000n,20000p,200000b,80000s
+
+Output written on report.pdf (23 pages).

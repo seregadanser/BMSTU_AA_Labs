@@ -1,17 +1,24 @@
 
 \babel@toc {russian}{}\relax 
-\contentsline {chapter}{Введение}{3}{}%
-\contentsline {chapter}{\numberline {1}Аналитическая часть}{5}{}%
-\contentsline {chapter}{\numberline {2}Технологическая часть}{6}{}%
-\contentsline {section}{\numberline {2.1}Средства реализации}{6}{}%
-\contentsline {section}{\numberline {2.2}Сведения о модулях программы}{6}{}%
-\contentsline {section}{\numberline {2.3}Реализация алгоритмов}{7}{}%
-\contentsline {section}{\numberline {2.4}Функциональное тестирование}{12}{}%
-\contentsline {chapter}{\numberline {3}Исследовательская часть}{13}{}%
-\contentsline {section}{\numberline {3.1}Технические характеристики}{13}{}%
-\contentsline {section}{\numberline {3.2}Демонстрация работы программы}{13}{}%
-\contentsline {section}{\numberline {3.3}Время выполнения реализаций алгоритмов}{14}{}%
-\contentsline {section}{\numberline {3.4}Затрачиваемая память при выполнении реализаций алгоритмов}{15}{}%
-\contentsline {section}{\numberline {3.5}Вывод}{15}{}%
-\contentsline {chapter}{Заключение}{16}{}%
-\contentsline {chapter}{Список использованных источников}{17}{}%
+\contentsline {chapter}{Введение}{4}{}%
+\contentsline {chapter}{\numberline {1}Аналитическая часть}{6}{}%
+\contentsline {section}{\numberline {1.1}Расстояние Левенштейна}{6}{}%
+\contentsline {subsection}{\numberline {1.1.1}Матричный алгоритм нахождения расстояния}{7}{}%
+\contentsline {section}{\numberline {1.2}Расстояние Дамерау-Левенштейна}{8}{}%
+\contentsline {subsection}{\numberline {1.2.1}Рекурсивный алгоритм нахождения расстояния}{9}{}%
+\contentsline {subsection}{\numberline {1.2.2}Матричный алгоритм нахождения расстояния}{10}{}%
+\contentsline {subsection}{\numberline {1.2.3}Рекурсивный алгоритм нахождения расстояния с использованием кеша}{11}{}%
+\contentsline {section}{\numberline {1.3}Вывод}{11}{}%
+\contentsline {chapter}{\numberline {2}Технологическая часть}{12}{}%
+\contentsline {section}{\numberline {2.1}Средства реализации}{12}{}%
+\contentsline {section}{\numberline {2.2}Сведения о модулях программы}{12}{}%
+\contentsline {section}{\numberline {2.3}Реализация алгоритмов}{13}{}%
+\contentsline {section}{\numberline {2.4}Функциональное тестирование}{18}{}%
+\contentsline {chapter}{\numberline {3}Исследовательская часть}{19}{}%
+\contentsline {section}{\numberline {3.1}Технические характеристики}{19}{}%
+\contentsline {section}{\numberline {3.2}Демонстрация работы программы}{19}{}%
+\contentsline {section}{\numberline {3.3}Время выполнения реализаций алгоритмов}{20}{}%
+\contentsline {section}{\numberline {3.4}Затрачиваемая память при выполнении реализаций алгоритмов}{21}{}%
+\contentsline {section}{\numberline {3.5}Вывод}{21}{}%
+\contentsline {chapter}{Заключение}{22}{}%
+\contentsline {chapter}{Список использованных источников}{23}{}%

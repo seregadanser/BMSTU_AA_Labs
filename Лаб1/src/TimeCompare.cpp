@@ -12,7 +12,7 @@ void time_compare(gen_func_t gen_func) {
     int repeats = 1000;
     cout << setw(33) << "Time in ms" << endl;
     cout << setw(3) << "Size" << setw(15) << "NRL" << setw(15) << "NRDL" << setw(15) << "CDL" <<setw(15) << "RDL" << endl;
-    for (int len = 11; len < 101; len += 10) {
+    for (int len = 10; len < 100; len += 10) {
         cout << setw(3) << len;
       char s1[256], s2[256];
      gen_case(s1, len);
@@ -49,7 +49,7 @@ void time_compare(gen_func_t gen_func) {
     
     }
 
-    for (int len = 101; len < 601; len += 100) {
+    for (int len = 100; len < 600; len += 100) {
         cout << setw(3) << len;
       char s1[707], s2[707];
      gen_case(s1, len);
