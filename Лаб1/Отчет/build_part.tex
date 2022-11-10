@@ -64,44 +64,40 @@
 
 Пусть n -- длина строки S1, m -- длина строки S2.
 
-Тогда затраты по памяти будут такими:
+Тогда можно рассчитать затраты по памяти.
 \begin{itemize}
 	\item алгоритм нахождения расстояния Левенштейна (матричный):
-	
 	\begin{itemize}
-		\item для матрицы -- ((n + 1)$ \cdot$ (m + 1)) $ \cdot$ sizeof(int));
-		\item для S1, S2 -- (n + m) $ \cdot$ sizeof(char);
-		\item для n, m -- 2 $ \cdot$ sizeof(int);
-		\item доп. переменные -- 3 $ \cdot$ sizeof(int);
+		\item для матрицы --- ((n + 1)$ \cdot$ (m + 1)) $ \cdot$ sizeof(int));
+		\item для S1, S2 --- (n + m) $ \cdot$ sizeof(char);
+		\item для n, m --- 2 $ \cdot$ sizeof(int);
+		\item доп. переменные --- 6 $ \cdot$ sizeof(int);
 		\item адрес возврата.
 	\end{itemize}
 	
 	\item алгоритм нахождения расстояния Дамерау-Левенштейна (матричный):
-	
 	\begin{itemize}
-		\item для матрицы -- ((n + 1) $ \cdot$ (m + 1)) $ \cdot$ sizeof(int));
-		\item для S1, S2 -- (n + m) $ \cdot$ sizeof(char);
-		\item для n, m -- 2 $ \cdot$ sizeof(int);
-		\item доп. переменные -- 4 $ \cdot$ sizeof(int);
+		\item для матрицы --- ((n + 1) $ \cdot$ (m + 1)) $ \cdot$ sizeof(int));
+		\item для S1, S2 --- (n + m) $ \cdot$ sizeof(char);
+		\item для n, m --- 2 $ \cdot$ sizeof(int);
+		\item доп. переменные --- 7 $ \cdot$ sizeof(int);
 		\item адрес возврата.
 	\end{itemize}
 	
 	\item алгоритм нахождения расстояния Дамерау-Левенштейна (рекурсивный), где для каждого вызова:
-	
 	\begin{itemize}
-		\item для S1, S2 -- (n + m) $ \cdot$ sizeof(char);
-		\item для n, m -- 2 $ \cdot$ sizeof(int);
-		\item доп. переменные - 2 $ \cdot$ sizeof(int);
+		\item для S1, S2 --- (n + m) $ \cdot$ sizeof(char);
+		\item для n, m --- 2 $ \cdot$ sizeof(int);
+		\item доп. переменные --- 5 $ \cdot$ sizeof(int);
 		\item адрес возврата.
 	\end{itemize}
 	
 	\item алгоритм нахождения расстояния Дамерау-Левенштейна с использованием кеша в виде матрицы (память на саму матрицу: ((n + 1) $ \cdot$ (m + 1)) $ \cdot$ sizeof(int)) (рекурсивный), где для каждого вызова:
-	
 	\begin{itemize}
-		\item для S1, S2 -- (n + m) $ \cdot$ sizeof(char);
-		\item для n, m -- 2 $ \cdot$ sizeof(int);
-		\item доп. переменные -- 2 $ \cdot$ sizeof(int);
-		\item ссылка на матрицу - 8 байт;
+		\item для S1, S2 --- (n + m) $ \cdot$ sizeof(char);
+		\item для n, m --- 2 $ \cdot$ sizeof(int);
+		\item доп. переменные --- 5 $ \cdot$ sizeof(int);
+		\item указатель на матрицу --- sizeof(int**);
 		\item адрес возврата.
 	\end{itemize}
 	
