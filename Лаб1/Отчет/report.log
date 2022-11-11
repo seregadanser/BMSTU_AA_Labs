@@ -1,6 +1,6 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.8)  11 NOV 2022 12:46
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.2)  11 NOV 2022 16:35
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **./report.tex
 (report.tex
@@ -957,7 +957,11 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: threeparttable package is loaded.
-) (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+) (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2022/06/26 3.77 The Babel package
 \babel@savecnt=\count336
 \U@D=\dimen299
@@ -1636,10 +1640,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 35409 strings out of 410654
- 918220 string characters out of 2816299
- 1929585 words of memory out of 3000000
- 55885 multiletter control sequences out of 15000+600000
+ 35495 strings out of 410654
+ 919438 string characters out of 2816299
+ 1930680 words of memory out of 3000000
+ 55968 multiletter control sequences out of 15000+600000
  471090 words of font info for 64 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  115i,15n,111p,10641b,1865s stack positions out of 10000i,1000n,20000p,200000b,80000s
