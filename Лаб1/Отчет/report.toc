@@ -22,6 +22,6 @@
 \contentsline {section}{\numberline {4.1}Технические характеристики}{29}{}%
 \contentsline {section}{\numberline {4.2}Демонстрация работы программы}{29}{}%
 \contentsline {section}{\numberline {4.3}Время выполнения реализаций алгоритмов}{30}{}%
-\contentsline {section}{\numberline {4.4}Вывод}{33}{}%
-\contentsline {chapter}{Заключение}{34}{}%
-\contentsline {chapter}{Список использованных источников}{35}{}%
+\contentsline {section}{\numberline {4.4}Вывод}{36}{}%
+\contentsline {chapter}{Заключение}{37}{}%
+\contentsline {chapter}{Список использованных источников}{38}{}%

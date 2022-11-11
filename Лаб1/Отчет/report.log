@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.8)  11 NOV 2022 00:12
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.8)  11 NOV 2022 12:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1573,12 +1573,16 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 ]
 File: src/screen.png Graphic file (type bmp)
 <src/screen.png>
- [30]
+ [30] [31]
 File: src/Graph.png Graphic file (type bmp)
 <src/Graph.png>
+ [32]
 File: src/Graph1.png Graphic file (type bmp)
 <src/Graph1.png>
- [31] [32]) [33]
+ [33]
+File: src/Graph2.png Graphic file (type bmp)
+<src/Graph2.png>
+ [34] [35]) [36]
 \openout2 = `conclusion.aux'.
 
  (conclusion.tex
@@ -1599,7 +1603,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 ейна и Дамерау-
  []
 
-) [34
+) [37
 
 
 
@@ -1619,7 +1623,7 @@ Class scrreprt Warning: Redefinition of \@makeschapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-)) [35
+)) [38
 
 
 
@@ -1632,12 +1636,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 35397 strings out of 410654
- 918015 string characters out of 2816299
- 1929583 words of memory out of 3000000
- 55874 multiletter control sequences out of 15000+600000
+ 35409 strings out of 410654
+ 918220 string characters out of 2816299
+ 1929585 words of memory out of 3000000
+ 55885 multiletter control sequences out of 15000+600000
  471090 words of font info for 64 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  115i,15n,111p,10641b,1865s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on report.pdf (35 pages).
+Output written on report.pdf (38 pages).
