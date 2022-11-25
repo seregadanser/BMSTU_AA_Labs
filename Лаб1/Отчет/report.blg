@@ -5,6 +5,10 @@ Reallocating 'name_of_file' (item size: 1) to 10 items.
 A level-1 auxiliary file: title.aux
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 A level-1 auxiliary file: introduction.aux
+Reallocating 'name_of_file' (item size: 1) to 16 items.
+A level-1 auxiliary file: analit_part.aux
+Reallocating 'name_of_file' (item size: 1) to 15 items.
+A level-1 auxiliary file: build_part.aux
 Reallocating 'name_of_file' (item size: 1) to 18 items.
 A level-1 auxiliary file: texnical_part.aux
 Reallocating 'name_of_file' (item size: 1) to 17 items.
@@ -19,7 +23,7 @@ Reallocating 'name_of_file' (item size: 1) to 4 items.
 Database file #1: lib.bib
 You've used 3 entries,
             2958 wiz_defined-function locations,
-            681 strings with 5715 characters,
+            683 strings with 5744 characters,
 and the built_in function-call counts, 362 in all, are:
 = -- 33
 > -- 3

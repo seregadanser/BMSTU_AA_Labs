@@ -1,0 +1,43 @@
+Структура классов
+Так как при написании программы используется язык $c\#$, а это объектно-ориентированный язык, то особое внимание уделено структуре классов.
+Условно классы в программе можно разделить на несколько групп по выполняемым функциям.\newpage
+\begin{itemize}
+\item Математические структуры.
+\begin{itemize}
+\item MatrixCoord3D --- представление координат в матричном виде
+\item MatrixTransformScale3D --- матрица масштабирования
+\item MaxtrixTransformTransfer3D --- матрица переноса
+\item MatrixTransformRotateX3D --- матрица поворота вокруг X
+\item MatrixTransformRotateY3D --- матрица поворота вокруг Y
+\item MatrixTransformRotateZ3D --- матрица поворота вокруг Z
+\item MatrixTransformRotateVec3D --- матрица поворота вокруг произвольного вектора
+\item MatrixPerspectiveProjection --- матрица перспективной проекции
+\item MatrixOrtoProjection --- матрица ортогональной проекции
+\end{itemize}
+\item Трехмерные объекты.
+\begin{itemize}
+\item PointComponent --- вершина модели
+\item LineComponent --- ребро модели
+\item PolygonComponent --- полигон модели
+\item IModel --- модель
+\item Camera --- камера
+\item Container --- контейнерный класс для хранения объектов
+\end{itemize}
+\item Алгоритмы преобразований и визуализации.
+\begin{itemize}
+\item EasytransformVisitor --- преобразования объектов относительно начала координат
+\item HardTtransformVisitor --- преобразования объектов относительно любой точки
+\item DrawVisitor --- отрисовка объектов
+\item VertexShaderProjection --- перевод точек из трехмерного пространства в двухмерное с использованием матрицы проекции
+\item ReacVisitor --- считываение щелчка мыши
+\end{itemize}
+\item Алгоритмы визуализации.
+\begin{itemize}
+\item RasterizatorNoCutter --- растеризатор без отсечения невидимых полигонов
+\item RasterizatorCutter --- растеризатор с отсечением невидимых полигонов
+\item ZBuffer --- z-буффер
+\item RayT --- рэйкастинг
+\end{itemize}
+\end{itemize}
+	
+
