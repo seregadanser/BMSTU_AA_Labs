@@ -1,0 +1,68 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: report.aux
+Reallocating 'name_of_file' (item size: 1) to 10 items.
+A level-1 auxiliary file: title.aux
+Reallocating 'name_of_file' (item size: 1) to 17 items.
+A level-1 auxiliary file: introduction.aux
+Reallocating 'name_of_file' (item size: 1) to 16 items.
+A level-1 auxiliary file: analit_part.aux
+Reallocating 'name_of_file' (item size: 1) to 15 items.
+A level-1 auxiliary file: build_part.aux
+Reallocating 'name_of_file' (item size: 1) to 18 items.
+A level-1 auxiliary file: texnical_part.aux
+Reallocating 'name_of_file' (item size: 1) to 17 items.
+A level-1 auxiliary file: reserch_part.aux
+Reallocating 'name_of_file' (item size: 1) to 15 items.
+A level-1 auxiliary file: conclusion.aux
+Reallocating 'name_of_file' (item size: 1) to 8 items.
+A level-1 auxiliary file: lib.aux
+Reallocating 'name_of_file' (item size: 1) to 10 items.
+The style file: ugost2008.bst
+Reallocating 'name_of_file' (item size: 1) to 4 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Database file #1: lib.bib
+Warning--empty year in wind
+Warning--empty year in proc
+You've used 2 entries,
+            3946 wiz_defined-function locations,
+            1104 strings with 9112 characters,
+and the built_in function-call counts, 300 in all, are:
+= -- 22
+> -- 2
+< -- 0
++ -- 2
+- -- 0
+* -- 18
+:= -- 33
+add.period$ -- 4
+call.type$ -- 2
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 4
+duplicate$ -- 18
+empty$ -- 41
+format.name$ -- 0
+if$ -- 65
+int.to.chr$ -- 0
+int.to.str$ -- 2
+missing$ -- 0
+newline$ -- 24
+num.names$ -- 0
+pop$ -- 12
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 6
+stack$ -- 0
+substring$ -- 0
+swap$ -- 10
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 0
+width$ -- 3
+write$ -- 29
+(There were 2 warnings)

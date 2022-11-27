@@ -75,9 +75,9 @@ void ParalCode()
     Thread[] t = new Thread[3];
     Conver[] c = new Conver[3];
   
-    c[0] = new Conver(new ConsoleApp1.Action(Crypto.aaa),300, q, 0);
-    c[1] = new Conver(new ConsoleApp1.Action(Crypto.aaa), 400, 1);
-    c[2] = new Conver(new ConsoleApp1.Action(Crypto.aaa), 500, 2);
+    c[0] = new Conver(new ConsoleApp1.Action(Crypto.CodeEncode),300, q, 0);
+    c[1] = new Conver(new ConsoleApp1.Action(Crypto.Cipher), 400, 1);
+    c[2] = new Conver(new ConsoleApp1.Action(Crypto.CodeEncode), 500, 2);
 
     c[0].nextState = c[1].queue;
     c[1].nextState = c[2].queue;
@@ -98,9 +98,9 @@ void SerialCode()
 {
     Conver[] c = new Conver[3];
 
-    c[0] = new Conver(new ConsoleApp1.Action(Crypto.aaa), 300, q, 0);
-    c[1] = new Conver(new ConsoleApp1.Action(Crypto.aaa), 400, 1);
-    c[2] = new Conver(new ConsoleApp1.Action(Crypto.aaa), 500, 2);
+    c[0] = new Conver(new ConsoleApp1.Action(Crypto.CodeEncode), 300, q, 0);
+    c[1] = new Conver(new ConsoleApp1.Action(Crypto.Cipher), 400, 1);
+    c[2] = new Conver(new ConsoleApp1.Action(Crypto.CodeEncode), 500, 2);
 
     c[0].nextState = c[1].queue;
     c[1].nextState = c[2].queue;
@@ -111,31 +111,6 @@ void SerialCode()
     c[2].Start();
 
 }
-void ParalDeCode()
-{
-    Thread[] t = new Thread[3];
-    Conver[] c = new Conver[3];
-
-    c[0] = new Conver(new ConsoleApp1.Action(Crypto.CodeEncode), -3, exit, 0);
-    c[1] = new Conver(new ConsoleApp1.Action(Crypto.Cipher), 4, 1);
-    c[2] = new Conver(new ConsoleApp1.Action(Crypto.CodeEncode), -5, 2);
-
-    c[0].nextState = c[1].queue;
-    c[1].nextState = c[2].queue;
-    c[2].nextState = q;
-
-    for (int i = 0; i < 3; i++)
-    {
-        t[i] = new Thread(c[i].Start);
-        t[i].Start();
-    }
-
-    foreach (Thread thread in t)
-    {
-        thread.Join();
-    }
-}
-
 
 class Ask
 {
