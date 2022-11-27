@@ -1,0 +1,109 @@
+\chapter{Конструкторская часть}
+
+\section{Описание алгоритмов}
+В данном разделе будут рассмотрены схемы алгоритмов поиска расстояний --- Левенштейна (рис. \ref{ris:NRL1}, \ref{ris:NRL2}), Дамерау-Левенштейна матричным способом (рис. \ref{ris:NRDL1}, \ref{ris:NRDL2}), Дамерау-Левенштейна рекурсивным способом (рис. \ref{ris:RDL}), Дамерау-Левенштейна рекурсивным с кеширование способом (рис. \ref{ris:СDL1}, \ref{ris:СDL2}).
+\begin{center}
+	
+
+\newpage
+	\centering
+	\def\svgwidth{14cm}
+	\input{src/NRL1.pdf_tex}
+	\captionof{figure}{Схема алгоритма поиска р. Л. матричным способом, часть 1}
+	\label{ris:NRL1}
+\newpage
+
+\centering
+\def\svgwidth{14cm}
+\input{src/NRL2.pdf_tex}
+\captionof{figure}{Схема алгоритма поиска р. Л. матричным способом, часть 2}
+\label{ris:NRL2}
+\newpage
+
+\centering
+\def\svgwidth{14cm}
+\input{src/NRDL1.pdf_tex}
+\captionof{figure}{Схема алгоритма поиска р. Д-Л. матричным способом, часть 1}
+\label{ris:NRDL1}
+\newpage
+
+\centering
+\def\svgwidth{14cm}
+\input{src/NRDL2.pdf_tex}
+\captionof{figure}{Схема алгоритма поиска р. Д-Л. матричным способом, часть 2}
+\label{ris:NRDL2}
+\newpage
+
+\centering
+\def\svgwidth{12cm}
+\input{src/RDL.pdf_tex}
+\captionof{figure}{Схема алгоритма поиска р. Д-Л. рекурсивным способом}
+\label{ris:RDL}
+\newpage
+
+\centering
+\def\svgwidth{14cm}
+\input{src/CDL1.pdf_tex}
+\captionof{figure}{Схема алгоритма поиска р. Д-Л. рекурсивным способом с кешем, часть 1}
+\label{ris:СDL1}
+\newpage
+
+\centering
+\def\svgwidth{11cm}
+\input{src/CDL2.pdf_tex}
+\captionof{figure}{Схема алгоритма поиска р. Д-Л. рекурсивным способом с кешем, часть 2}
+\label{ris:СDL2}
+\newpage
+
+\end{center}
+
+
+\section{Использование памяти}
+Замеры времени работы и используемой памяти алгоритмов Левенштейна и Дамерау-Левенштейна могут быть произведены одним и тем же способом.
+Тогда рассмотрим только рекурсивную и матричную реализации данных алгоритмов.
+
+Пусть n --- длина строки S1, m --- длина строки S2.
+
+Тогда можно рассчитать затраты по памяти.
+\begin{itemize}
+	\item Алгоритм нахождения расстояния Левенштейна (матричный):
+	\begin{itemize}
+		\item для матрицы --- ((n + 1)$ \cdot$ (m + 1)) $ \cdot$ sizeof(int));
+		\item для S1, S2 --- (n + m) $ \cdot$ sizeof(char);
+		\item для n, m --- 2 $ \cdot$ sizeof(int);
+		\item доп. переменные --- 6 $ \cdot$ sizeof(int);
+		\item адрес возврата.
+	\end{itemize}
+	
+	\item Алгоритм нахождения расстояния Дамерау-Левенштейна (матричный):
+	\begin{itemize}
+		\item для матрицы --- ((n + 1) $ \cdot$ (m + 1)) $ \cdot$ sizeof(int));
+		\item для S1, S2 --- (n + m) $ \cdot$ sizeof(char);
+		\item для n, m --- 2 $ \cdot$ sizeof(int);
+		\item доп. переменные --- 7 $ \cdot$ sizeof(int);
+		\item адрес возврата.
+	\end{itemize}
+	
+	\item Алгоритм нахождения расстояния Дамерау-Левенштейна (рекурсивный), где для каждого вызова:
+	\begin{itemize}
+		\item для S1, S2 --- (n + m) $ \cdot$ sizeof(char);
+		\item для n, m --- 2 $ \cdot$ sizeof(int);
+		\item доп. переменные --- 5 $ \cdot$ sizeof(int);
+		\item адрес возврата.
+	\end{itemize}
+	\newpage
+	\item Алгоритм нахождения расстояния Дамерау-Левенштейна с использованием кеша в виде матрицы (память на саму матрицу: ((n + 1) $ \cdot$ (m + 1)) $ \cdot$ sizeof(int)) (рекурсивный), где для каждого вызова:
+	\begin{itemize}
+		\item для S1, S2 --- (n + m) $ \cdot$ sizeof(char);
+		\item для n, m --- 2 $ \cdot$ sizeof(int);
+		\item доп. переменные --- 5 $ \cdot$ sizeof(int);
+		\item указатель на матрицу --- sizeof(int**);
+		\item адрес возврата.
+	\end{itemize}
+	
+\end{itemize}
+
+
+
+\section*{Вывод}
+В данном разделе --- были описаны алгоритма поиска расстояний Левенштейна и Дамерау-Левенштейна, рассчитана паямять, используемая данными алгоритмами.
