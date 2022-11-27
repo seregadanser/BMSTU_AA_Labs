@@ -13,7 +13,7 @@ namespace ConsoleApp1
 
       static public char CodeEncode(char text, int k)
         {
-            var fullAlfabet = alfabet + alfabet.ToLower();
+            var fullAlfabet = alfabet.ToLower();// + alfabet.ToLower();
             var letterQty = fullAlfabet.Length;
             char retVal = '\0';
 
@@ -47,6 +47,10 @@ namespace ConsoleApp1
             return res;
         }
 
-       
+        static public char aaa(char text, int key)
+        {
+            Thread.Sleep(key);
+            return 'q';
+        }
     }
 }

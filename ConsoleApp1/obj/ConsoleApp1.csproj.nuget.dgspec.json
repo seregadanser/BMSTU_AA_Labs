@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Study\\Анализ Алгоритмов\\ConsoleApp1\\ConsoleApp1.csproj": {}
+    "D:\\Labs\\Анализ Алгоритмов\\ConsoleApp1\\ConsoleApp1.csproj": {}
   },
   "projects": {
-    "D:\\Study\\Анализ Алгоритмов\\ConsoleApp1\\ConsoleApp1.csproj": {
+    "D:\\Labs\\Анализ Алгоритмов\\ConsoleApp1\\ConsoleApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\Анализ Алгоритмов\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "D:\\Labs\\Анализ Алгоритмов\\ConsoleApp1\\ConsoleApp1.csproj",
         "projectName": "ConsoleApp1",
-        "projectPath": "D:\\Study\\Анализ Алгоритмов\\ConsoleApp1\\ConsoleApp1.csproj",
-        "packagesPath": "C:\\Users\\kalas\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\Анализ Алгоритмов\\ConsoleApp1\\obj\\",
+        "projectPath": "D:\\Labs\\Анализ Алгоритмов\\ConsoleApp1\\ConsoleApp1.csproj",
+        "packagesPath": "C:\\Users\\Test\\.nuget\\packages\\",
+        "outputPath": "D:\\Labs\\Анализ Алгоритмов\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kalas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Test\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,8 +45,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -55,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
