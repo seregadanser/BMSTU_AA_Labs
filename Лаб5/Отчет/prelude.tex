@@ -13,6 +13,13 @@
 \usepackage{pgfplots}
 \usepackage{filecontents}
 \usepackage{pdfpages}
+\usepackage[
+backend=biber,
+style=numeric,
+sorting=none
+]{biblatex}
+\DeclareFieldFormat{labelnumberwidth}{#1.}
+\addbibresource{lib.bib}
 %\usepackage{caption2}[2008/03/29]
 \usepackage[nooneline]{caption} \captionsetup[table]{justification=raggedright} \captionsetup[figure]{justification=centering,labelsep=endash}
 \DeclareCaptionLabelSeparator{dash}{~---~}

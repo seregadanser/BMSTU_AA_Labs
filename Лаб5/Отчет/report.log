@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.2)  27 NOV 2022 23:47
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.2)  28 NOV 2022 17:21
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -963,6 +963,274 @@ File: ppxetex.def 2022/05/22 v0.5v Pdfpages driver for XeTeX (AM)
 \c@AM@survey=\count339
 \AM@templatesizebox=\box78
 )
+(C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
+Package: biblatex 2022/07/12 v3.18b programmable bibliographies (PK/MW)
+
+(C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
+.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
+ty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+) (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count340
+)
+(C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)) (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count341
+
+(C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+(C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+\c@tabx@nest=\count342
+\c@listtotal=\count343
+\c@listcount=\count344
+\c@liststart=\count345
+\c@liststop=\count346
+\c@citecount=\count347
+\c@citetotal=\count348
+\c@multicitecount=\count349
+\c@multicitetotal=\count350
+\c@instcount=\count351
+\c@maxnames=\count352
+\c@minnames=\count353
+\c@maxitems=\count354
+\c@minitems=\count355
+\c@citecounter=\count356
+\c@maxcitecounter=\count357
+\c@savedcitecounter=\count358
+\c@uniquelist=\count359
+\c@uniquename=\count360
+\c@refsection=\count361
+\c@refsegment=\count362
+\c@maxextratitle=\count363
+\c@maxextratitleyear=\count364
+\c@maxextraname=\count365
+\c@maxextradate=\count366
+\c@maxextraalpha=\count367
+\c@abbrvpenalty=\count368
+\c@highnamepenalty=\count369
+\c@lownamepenalty=\count370
+\c@maxparens=\count371
+\c@parenlevel=\count372
+\blx@tempcnta=\count373
+\blx@tempcntb=\count374
+\blx@tempcntc=\count375
+\c@blx@maxsection=\count376
+\blx@maxsegment@0=\count377
+\blx@notetype=\count378
+\blx@parenlevel@text=\count379
+\blx@parenlevel@foot=\count380
+\blx@sectionciteorder@0=\count381
+\blx@sectionciteorderinternal@0=\count382
+\blx@entrysetcounter=\count383
+\blx@biblioinstance=\count384
+\labelnumberwidth=\skip110
+\labelalphawidth=\skip111
+\biblabelsep=\skip112
+\bibitemsep=\skip113
+\bibnamesep=\skip114
+\bibinitsep=\skip115
+\bibparsep=\skip116
+\bibhang=\skip117
+\blx@bcfin=\read3
+\blx@bcfout=\write4
+\blx@langwohyphens=\language79
+\c@mincomprange=\count385
+\c@maxcomprange=\count386
+\c@mincompwidth=\count387
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
+File: blx-dm.def 2022/07/12 v3.18b biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'numeric.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count388
+\c@savedafterword=\count389
+\c@annotator=\count390
+\c@savedannotator=\count391
+\c@author=\count392
+\c@savedauthor=\count393
+\c@bookauthor=\count394
+\c@savedbookauthor=\count395
+\c@commentator=\count396
+\c@savedcommentator=\count397
+\c@editor=\count398
+\c@savededitor=\count399
+\c@editora=\count400
+\c@savededitora=\count401
+\c@editorb=\count402
+\c@savededitorb=\count403
+\c@editorc=\count404
+\c@savededitorc=\count405
+\c@foreword=\count406
+\c@savedforeword=\count407
+\c@holder=\count408
+\c@savedholder=\count409
+\c@introduction=\count410
+\c@savedintroduction=\count411
+\c@namea=\count412
+\c@savednamea=\count413
+\c@nameb=\count414
+\c@savednameb=\count415
+\c@namec=\count416
+\c@savednamec=\count417
+\c@translator=\count418
+\c@savedtranslator=\count419
+\c@shortauthor=\count420
+\c@savedshortauthor=\count421
+\c@shorteditor=\count422
+\c@savedshorteditor=\count423
+\c@labelname=\count424
+\c@savedlabelname=\count425
+\c@institution=\count426
+\c@savedinstitution=\count427
+\c@lista=\count428
+\c@savedlista=\count429
+\c@listb=\count430
+\c@savedlistb=\count431
+\c@listc=\count432
+\c@savedlistc=\count433
+\c@listd=\count434
+\c@savedlistd=\count435
+\c@liste=\count436
+\c@savedliste=\count437
+\c@listf=\count438
+\c@savedlistf=\count439
+\c@location=\count440
+\c@savedlocation=\count441
+\c@organization=\count442
+\c@savedorganization=\count443
+\c@origlocation=\count444
+\c@savedoriglocation=\count445
+\c@origpublisher=\count446
+\c@savedorigpublisher=\count447
+\c@publisher=\count448
+\c@savedpublisher=\count449
+\c@language=\count450
+\c@savedlanguage=\count451
+\c@origlanguage=\count452
+\c@savedoriglanguage=\count453
+\c@pageref=\count454
+\c@savedpageref=\count455
+\shorthandwidth=\skip118
+\shortjournalwidth=\skip119
+\shortserieswidth=\skip120
+\shorttitlewidth=\skip121
+\shortauthorwidth=\skip122
+\shorteditorwidth=\skip123
+\locallabelnumberwidth=\skip124
+\locallabelalphawidth=\skip125
+\localshorthandwidth=\skip126
+\localshortjournalwidth=\skip127
+\localshortserieswidth=\skip128
+\localshorttitlewidth=\skip129
+\localshortauthorwidth=\skip130
+\localshorteditorwidth=\skip131
+Package biblatex Info: Trying to load enhanced support for Unicode engines...
+Package biblatex Info: ... file 'blx-unicode.def' found.
+
+(C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-unicode.de
+f)
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.def
+File: blx-compat.def 2022/07/12 v3.18b biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
+File: biblatex.def 2022/07/12 v3.18b biblatex compatibility (PK/MW)
+\c@textcitecount=\count456
+\c@textcitetotal=\count457
+\c@textcitemaxnames=\count458
+\c@biburlbigbreakpenalty=\count459
+\c@biburlbreakpenalty=\count460
+\c@biburlnumpenalty=\count461
+\c@biburlucpenalty=\count462
+\c@biburllcpenalty=\count463
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count464
+)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric.bb
+x
+File: numeric.bbx 2022/07/12 v3.18b biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.b
+bx
+File: standard.bbx 2022/07/12 v3.18b biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count465
+\c@bbx:relatedtotal=\count466
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
+
+(C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric.cb
+x
+File: numeric.cbx 2022/07/12 v3.18b biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: XeTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Document encoding is UTF8 ....
+Package biblatex Info: ... and expl3
+(biblatex)             2022-07-04 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+
+(C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-expl3
+.sty
+Package: blx-case-expl3 2022/07/12 v3.18b expl3 case changing code for biblatex
+
+))
 (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
 Package: caption 2022/03/01 v3.6b Customizing captions (AR)
 
@@ -983,8 +1251,8 @@ o
 File: caption-koma.sto 2020/09/21 v2.0b Adaption of the caption package to the 
 KOMA-Script document classes (AR)
 ))
-\c@caption@flags=\count340
-\c@continuedfloat=\count341
+\c@caption@flags=\count467
+\c@continuedfloat=\count468
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
 
@@ -992,20 +1260,16 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: threeparttable package is loaded.
-) (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
-\Urlmuskip=\muskip17
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
-(C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+) (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2022/06/26 3.77 The Babel package
-\babel@savecnt=\count342
+\babel@savecnt=\count469
 \U@D=\dimen306
-\l@unhyphenated=\language79
+\l@unhyphenated=\language80
 
 (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/generic/babel\xebabel.def
 (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def))
-\bbl@readstream=\read3
-\bbl@dirlevel=\count343
+\bbl@readstream=\read4
+\bbl@dirlevel=\count470
 
 *************************************
 * Local config file bblopts.cfg used
@@ -1036,7 +1300,7 @@ Class scrreprt Warning: Usage of package `tocbibind' together
 (scrreprt)              the list of figures, list of tables, bibliography,
 (scrreprt)              index and the running head.
 (scrreprt)              Nevertheless, using requested
-(scrreprt)              package `tocbibind' on input line 27.
+(scrreprt)              package `tocbibind' on input line 34.
 
 
 (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/tocbibind\tocbibind.sty
@@ -1047,9 +1311,9 @@ Package tocbibind Note: Using chapter style headings, unless overridden.
 
 ) (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/appendix\appendix.sty
 Package: appendix 2020/02/08 v1.2c extra appendix facilities
-\c@@pps=\count344
-\c@@ppsavesec=\count345
-\c@@ppsaveapp=\count346
+\c@@pps=\count471
+\c@@ppsavesec=\count472
+\c@@ppsaveapp=\count473
 )
 
 Package fontspec Info: Font family 'TimesNewRoman(0)' created for font 'Times
@@ -1200,12 +1464,12 @@ File: pgfmoduledatavisualization.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 
 (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
 oo.code.tex
-\pgfoo@objectcount=\count347
-\pgfoothis@count=\count348
+\pgfoo@objectcount=\count474
+\pgfoothis@count=\count475
 \pgfoo@toks=\toks44
 )
-\pgf@lib@dv@cache@count=\count349
-\pgf@lib@dv@cache@count=\count350
+\pgf@lib@dv@cache@count=\count476
+\pgf@lib@dv@cache@count=\count477
 )
 (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries\tikzlibrarybackgrounds.code.tex
@@ -1213,7 +1477,7 @@ File: tikzlibrarybackgrounds.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@layerbox@background=\box79
 \pgf@layerboxsaved@background=\box80
 )
-\tikzdvvisualizercounter=\count351
+\tikzdvvisualizercounter=\count478
 )
 (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries/datavisualization\tikzlibrarydatavisualization.formats.functions.co
@@ -1235,6 +1499,12 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 ))
+
+Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
+(biblatex)                Loading 'csquotes' recommended.
+
+\@quotelevel=\count479
+\@quotereset=\count480
 (report.aux (title.aux) (introduction.aux) (analit_part.aux) (build_part.aux)
 (texnical_part.aux) (reserch_part.aux) (conclusion.aux) (lib.aux))
 \openout1 = `report.aux'.
@@ -1275,7 +1545,7 @@ Package tocbasic Warning: `tocbibind' redefinition of `\listoftables'
 (tocbasic)                Note: Loading `tocbibind' without option `notlot'
 (tocbasic)                can break several features of `tocbasic'.
 
-\c@lstlisting=\count352
+\c@lstlisting=\count481
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1396,6 +1666,24 @@ Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 ))
+Package biblatex Info: Trying to load language 'russian'...
+Package biblatex Info: ... file 'russian.lbx' found.
+
+(C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\russian.lb
+x
+File: russian.lbx 2022/07/12 v3.18b biblatex localization (PK/MW)
+)
+Package biblatex Info: XeTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout4 = `report.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'report.bbl' found.
+ (report.bbl)
+Package biblatex Info: Reference section=0 on input line 3.
+Package biblatex Info: Reference segment=0 on input line 3.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Info: Redefining \th on input line 3.
@@ -1403,7 +1691,7 @@ Package scrbase Info: activating russian \contentsname on input line 3.
 Package scrbase Info: activating russian \appendixname on input line 3.
 \openout2 = `title.aux'.
 
-(title.tex
+ (title.tex
 File: src//b_logo.jpg Graphic file (type bmp)
 <src//b_logo.jpg>
 
@@ -1470,8 +1758,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--31
 
 
 ]) (report.toc)
-\tf@toc=\write4
-\openout4 = `report.toc'.
+\tf@toc=\write5
+\openout5 = `report.toc'.
 
  [2
 
@@ -1591,52 +1879,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--1
 |[]\TU/TimesNewRoman(0)/b/n/35.83 Исследовательская
  []
 
+File: src/screen.png Graphic file (type bmp)
+<src/screen.png>
 [14
 
 
 
 
-]) [15]
+]
+File: src/good.png Graphic file (type bmp)
+<src/good.png>
+ [15]) [16]
 \openout2 = `conclusion.aux'.
 
- (conclusion.tex) [16
+ (conclusion.tex) [17
 
 
 
 ]
 \openout2 = `lib.aux'.
 
- (lib.tex (report.bbl
-
-Class scrreprt Warning: Redefinition of \@makeschapterhead detected.
-(scrreprt)              Note: KOMA-Script does use styles for commands like
-(scrreprt)              \chapter. Currently it internally still provides and
-(scrreprt)              uses \@makeschapterhead, but a completely different
-(scrreprt)              definition compared to the standard classes.
-(scrreprt)              So redefining or using internal \@makeschapterhead
-(scrreprt)              by users or package authors may already break
-(scrreprt)              KOMA-Script and will not work with a coming version,
-(scrreprt)              that will remove this deprecated code.
-
-)) [17
+ (lib.tex) [18
 
 
 
+] (report.aux (title.aux)
+(introduction.aux) (analit_part.aux) (build_part.aux) (texnical_part.aux)
+(reserch_part.aux) (conclusion.aux) (lib.aux))
+Package logreq Info: Writing requests to 'report.run.xml'.
+\openout1 = `report.run.xml'.
 
-]
-
-Package caption Warning: Unused \captionsetup[figure] on input line 17.
-See the caption package documentation for explanation.
-
-(report.aux (title.aux) (introduction.aux) (analit_part.aux) (build_part.aux)
-(texnical_part.aux) (reserch_part.aux) (conclusion.aux) (lib.aux)) ) 
+ ) 
 Here is how much of TeX's memory you used:
- 36229 strings out of 410654
- 931572 string characters out of 2816299
- 1899076 words of memory out of 3000000
- 56711 multiletter control sequences out of 15000+600000
- 470831 words of font info for 59 fonts, out of 8000000 for 9000
+ 44017 strings out of 410654
+ 1085140 string characters out of 2816299
+ 2311547 words of memory out of 3000000
+ 64434 multiletter control sequences out of 15000+600000
+ 470847 words of font info for 61 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 115i,8n,111p,10641b,1869s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 115i,8n,111p,10641b,4871s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on report.pdf (17 pages).
+Output written on report.pdf (18 pages).

@@ -27,7 +27,7 @@ namespace ConsoleApp1
                 var codeIndex = (letterQty + index + k) % letterQty;
                 retVal = fullAlfabet[codeIndex];
             }
-
+            Thread.Sleep(k);
             return retVal;
         }
 
@@ -44,6 +44,7 @@ namespace ConsoleApp1
             var currentKey = GetRandomKey(key);
             char res = '\0';
             res = ((char)(text ^ key));
+            Thread.Sleep(key);
             return res;
         }
 
