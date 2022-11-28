@@ -1,17 +1,54 @@
 \chapter{Конструкторская часть}
 
 \section{Описание используемых структур}
-
+При реализации алгоритмов будут использованы нижеприведенные структуры.
+\begin{itemize}
+	\item Заявка --- обрабатываемый элемент, хранящий время входа и выхода с каждого конвейера, время обработки и обрабатываемый элемент (символ).
+	\item Очередь ---  основной компонент конвейера. Здесь храняться элементы в ожидании обработки.
+	\item Конвейер ---  реализует обработку элементов, хранение очереди, может манипулировать элементами.
+\end{itemize} 
 
 \section{Описание алгоритмов}
+Всего будут создано три конвейера. Все контейнеры могут работать либо параллельно либо последовательно.
+На рисунках \ref{ris:NRL1}, \ref{ris:NRL2} -- \ref{ris:NRL5} приведены схемы линейной и параллельной обработки соответственно.  
 \begin{center}	
-%\newpage
-%	\centering
-%	\def\svgwidth{14cm}
-%	\input{src/NRL1.pdf_tex}
-%	\captionof{figure}{Схема алгоритма поиска р. Л. матричным способом, часть 1}
-%	\label{ris:NRL1}
+\newpage
+	\centering
+	\def\svgwidth{12cm}
+	\input{src/Linear.pdf_tex}
+	\captionof{figure}{Схема линейной конвейерной обработки}
+	\label{ris:NRL1}
+\end{center}
+\begin{center}	
+	\centering
+	\def\svgwidth{5cm}
+	\input{src/Parallel1.pdf_tex}
+	\captionof{figure}{Схема параллельной конвейерной обработки}
+	\label{ris:NRL2}
+\end{center}
+\begin{center}	
+	\newpage
+	\centering
+	\def\svgwidth{11cm}
+	\input{src/Parallel2.pdf_tex}
+	\captionof{figure}{Схема 1 потока параллельной конвейерной обработки}
+	\label{ris:NRL3}
+\end{center}
+\begin{center}	
+	\centering
+	\def\svgwidth{11cm}
+	\input{src/Parallel3.pdf_tex}
+	\captionof{figure}{Схема 2 потока параллельной конвейерной обработки}
+	\label{ris:NRL4}
+\end{center}
+\begin{center}	
+	\newpage
+	\centering
+	\def\svgwidth{11cm}
+	\input{src/Parallel4.pdf_tex}
+	\captionof{figure}{Схема 3 потока параллельной конвейерной обработки}
+	\label{ris:NRL5}
 \end{center}
 
 \section*{Вывод}
-В данном разделе --- были описаны 
+В данном разделе --- были описаны используемые структуры и приведены схемы алгоритмов.
