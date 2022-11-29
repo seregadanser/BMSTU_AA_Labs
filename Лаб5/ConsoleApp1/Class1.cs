@@ -6,37 +6,37 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    public delegate char Action(char a, int key);
+    public delegate string Action(string a, int key);
     static class  Crypto
     {
         const string alfabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-      static public char CodeEncode(string/*char*/ text, int k)
+        static public string CodeEncode(string text, int k)
         {
-            var fullAlfabet = alfabet.ToLower();// + alfabet.ToLower();
+            //добавляем в алфавит маленькие буквы
+            var fullAlfabet = alfabet.ToLower();
             var letterQty = fullAlfabet.Length;
-            //char retVal = '\0';
-            string retVal = "";
-
-            var index = fullAlfabet.IndexOf(text);
-            if (index < 0)
+            var retVal = "";
+            for (int i = 0; i < text.Length; i++)
             {
-                retVal = text;
-            }
-            else
-            {
-                int codeIndex=0;
-                for (int i = 0; i < text.Length; i++)
+                var c = text[i];
+                var index = fullAlfabet.IndexOf(c);
+                if (index < 0)
                 {
-                    codeIndex = (letterQty + index + k) % letterQty;
-                    retVal  += fullAlfabet[codeIndex];
+                    //если символ не найден, то добавляем его в неизменном виде
+                    retVal += c.ToString();
+                }
+                else
+                {
+                    var codeIndex = (letterQty + index + k) % letterQty;
+                    retVal += fullAlfabet[codeIndex];
                 }
             }
-            //Thread.Sleep(k);
+
             return retVal;
         }
 
-       static char GetRandomKey(int k)
+        static char GetRandomKey(int k)
         {
             char gamma = '\0';
             var rnd = new Random(k);
@@ -44,12 +44,15 @@ namespace ConsoleApp1
             return gamma;
         }
 
-       static public char Cipher(char text, int key)
+        static public string Cipher(string text, int key)
         {
-            var currentKey = GetRandomKey(key);
-            char res = '\0';
-            res = ((char)(text ^ key));
-            Thread.Sleep(key);
+       
+            string res = "";
+            for (var i = 0; i < text.Length; i++)
+            {
+                res += Convert.ToString(text[i] ^ key);
+            }
+
             return res;
         }
 

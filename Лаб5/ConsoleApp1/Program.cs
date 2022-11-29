@@ -2,100 +2,103 @@
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-string input = Console.ReadLine();
+Random r = new Random();
 Queue<Ask> q;
-Ask b;
 Queue<Ask> exit;
-
-
-
-q = new Queue<Ask>();
-foreach (char c in input)
+Ask b;
+const string alfabet = "abcdefghijklmnopqrstuvwxyz";
+string[] input = new string[10];
+for(int i =0; i<10;i++)
 {
-    Ask a = new Ask(4, c);
-    a.in_time[0] = DateTime.Now.Ticks;
-    a.state[0] = c;
-    q.Enqueue(a);
+    input[i]= Console.ReadLine();
 }
-b = new Ask(4, '\0', true);
-b.in_time[0] = DateTime.Now.Ticks;
-b.state[0] = '\0';
-q.Enqueue(b);
-Console.WriteLine(q.Count);
-exit = new Queue<Ask>();
-SerialCode();
-//Formatter.FormatOut(exit);
+//Console.WriteLine("Gen data");
+//for (int i = 0; i < 10000; i++)
+//{
+//    for (int j = 0; j < 500; j++)
+//        input[i] += alfabet[r.Next(0, 300) % alfabet.Length];
+//   // Console.WriteLine(i);
+//}
+//Console.WriteLine("Done gen");
+
+
 
 Console.WriteLine("&&@Parallel@&&");
 q = new Queue<Ask>();
-foreach (char c in input)
+foreach (string c in input)
 {
     Ask a = new Ask(4, c);
     a.in_time[0] = DateTime.Now.Ticks;
     a.state[0] = c;
     q.Enqueue(a);
 }
-b = new Ask(4, '\0', true);
+b = new Ask(4, "", true);
 b.in_time[0] = DateTime.Now.Ticks;
-b.state[0] = '\0';
+b.state[0] = "";
 q.Enqueue(b);
+Console.WriteLine(q.Count);
 exit = new Queue<Ask>();
 ParalCode();
 Formatter.FormatOut(exit);
 
 Console.WriteLine("&&@Serial@&&");
 q = new Queue<Ask>();
-foreach (char c in input)
+foreach (string c in input)
 {
     Ask a = new Ask(4, c);
     a.in_time[0] = DateTime.Now.Ticks;
     a.state[0] = c;
     q.Enqueue(a);
 }
-b = new Ask(4, '\0', true);
+b = new Ask(4, "", true);
 b.in_time[0] = DateTime.Now.Ticks;
-b.state[0] = '\0';
+b.state[0] = "";
 q.Enqueue(b);
+Console.WriteLine(q.Count);
 exit = new Queue<Ask>();
 SerialCode();
 Formatter.FormatOut(exit);
 
 
-//const string alfabet = "abcdefghijklmnopqrstuvwxyz";
 
-//for (int i = 1; i < 100; i++)
+
+//for (int k = 0; k <= 100; k++)
 //{
-//    Random r = new Random();
-//    string ss = "";
-//    for (int j = 0; j <= i; j++)
-//        ss += alfabet[r.Next(0, 300)%alfabet.Length];
-//    Console.WriteLine(i);
-//    q = new Queue<Ask>();
-//    foreach (char c in ss)
+//    string[] ss = new string[10000];
+//   // Console.WriteLine("Gen data");
+//    for (int i = 0; i < 10000; i++)
 //    {
-//        Ask a = new Ask(4, c);
-//        a.in_time[0] = DateTime.Now.Ticks;
-//        a.state[0] = c;
-//        q.Enqueue(a);
+//        for (int j = 0; j < k*20+500; j++)
+//            ss[i] += alfabet[r.Next(0, 300) % alfabet.Length];
+//        // Console.WriteLine(i);
 //    }
-//    b = new Ask(4, '\0', true);
-//    b.in_time[0] = DateTime.Now.Ticks;
-//    b.state[0] = '\0';
-//    q.Enqueue(b);
-//    exit = new Queue<Ask>();
-//    ParalCode();
+//    // Console.WriteLine(k * 20 + 500+",");
+//    //q = new Queue<Ask>();
+//    //foreach (string c in ss)
+//    //{
+//    //    Ask a = new Ask(4, c);
+//    //    a.in_time[0] = DateTime.Now.Ticks;
+//    //    a.state[0] = c;
+//    //    q.Enqueue(a);
+//    //}
+//    //b = new Ask(4, "", true);
+//    //b.in_time[0] = DateTime.Now.Ticks;
+//    //b.state[0] = "";
+//    //q.Enqueue(b);
+//    //exit = new Queue<Ask>();
+//    //ParalCode();
 
 //    q = new Queue<Ask>();
-//    foreach (char c in ss)
+//    foreach (string c in ss)
 //    {
 //        Ask a = new Ask(4, c);
 //        a.in_time[0] = DateTime.Now.Ticks;
 //        a.state[0] = c;
 //        q.Enqueue(a);
 //    }
-//    b = new Ask(4, '\0', true);
+//    b = new Ask(4, "", true);
 //    b.in_time[0] = DateTime.Now.Ticks;
-//    b.state[0] = '\0';
+//    b.state[0] = "";
 //    q.Enqueue(b);
 //    exit = new Queue<Ask>();
 //    SerialCode();
@@ -139,10 +142,10 @@ void ParalCode()
     strender.Stop();
    ts = strender.Elapsed;
 
-    string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-        ts.Hours, ts.Minutes, ts.Seconds,
+    string elapsedTime = String.Format("{0:00}.{1:00},",
+      ts.Seconds,
         ts.Milliseconds / 10);
-    Console.WriteLine($"Parall finished with time " + elapsedTime);
+   Console.WriteLine(elapsedTime);
 }
 void SerialCode()
 {
@@ -164,24 +167,24 @@ void SerialCode()
     strender.Stop();
     ts = strender.Elapsed;
 
-    string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}, ",
-        ts.Hours, ts.Minutes, ts.Seconds,
+    string elapsedTime = String.Format("{0:00}.{1:00},",
+      ts.Seconds,
         ts.Milliseconds / 10);
-    Console.WriteLine($"Serial finished with time " + elapsedTime);
+    Console.WriteLine(elapsedTime);
 }
 
 class Ask
 {
     public long[] in_time, out_time, work_time;
-    public char[] state;
-    public char elem;
+    public string[] state;
+    public string elem;
     public bool last;
-    public Ask(int n, char elem, bool last = false)
+    public Ask(int n, string elem, bool last = false)
     {
         in_time = new long[n];
         out_time = new long[n];
         work_time = new long[n];
-        state = new char[n];
+        state = new string[n];
         this.elem = elem;
         this.last = last;
     }
