@@ -3,8 +3,9 @@
 \contentsline {chapter}{Введение}{3}{}%
 \contentsline {chapter}{\numberline {1}Аналитическая часть}{4}{}%
 \contentsline {section}{\numberline {1.1}Конвейерная обработка данных}{4}{}%
-\contentsline {section}{\numberline {1.2}Описание используемых алгоритмов}{5}{}%
-\contentsline {section}{\numberline {1.3}Организация взаимодействия параллельных потоков}{5}{}%
+\contentsline {section}{\numberline {1.2}Последовательная обработка данных}{4}{}%
+\contentsline {section}{\numberline {1.3}Описание используемых алгоритмов}{4}{}%
+\contentsline {section}{\numberline {1.4}Организация взаимодействия параллельных потоков}{5}{}%
 \contentsline {chapter}{\numberline {2}Конструкторская часть}{6}{}%
 \contentsline {section}{\numberline {2.1}Описание используемых структур}{6}{}%
 \contentsline {section}{\numberline {2.2}Описание алгоритмов}{6}{}%

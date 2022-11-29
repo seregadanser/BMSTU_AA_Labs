@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.2)  29 NOV 2022 14:16
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.2)  29 NOV 2022 19:43
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1730,27 +1730,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--18
  []
 
 
-Overfull \hbox (140.84259pt too wide) in paragraph at lines 21--25
- []$ 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--31
+Underfull \hbox (badness 10000) in paragraph at lines 32--36
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 27--31
+Underfull \hbox (badness 10000) in paragraph at lines 32--36
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 27--31
+Underfull \hbox (badness 10000) in paragraph at lines 32--36
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 27--31
+Underfull \hbox (badness 10000) in paragraph at lines 32--36
 
  []
 
@@ -1807,7 +1802,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 29--29
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
 |[]\TU/TimesNewRoman(0)/b/n/20.74 Организация взаимодействия парал-
  []
 
@@ -1927,10 +1922,10 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44099 strings out of 410654
- 1086858 string characters out of 2816299
+ 44092 strings out of 410654
+ 1086756 string characters out of 2816299
  2311612 words of memory out of 3000000
- 64500 multiletter control sequences out of 15000+600000
+ 64493 multiletter control sequences out of 15000+600000
  470847 words of font info for 61 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  115i,8n,111p,10641b,4871s stack positions out of 10000i,1000n,20000p,200000b,80000s

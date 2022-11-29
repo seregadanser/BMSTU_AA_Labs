@@ -11,11 +11,12 @@ namespace ConsoleApp1
     {
         const string alfabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-      static public char CodeEncode(char text, int k)
+      static public char CodeEncode(string/*char*/ text, int k)
         {
             var fullAlfabet = alfabet.ToLower();// + alfabet.ToLower();
             var letterQty = fullAlfabet.Length;
-            char retVal = '\0';
+            //char retVal = '\0';
+            string retVal = "";
 
             var index = fullAlfabet.IndexOf(text);
             if (index < 0)
@@ -24,10 +25,14 @@ namespace ConsoleApp1
             }
             else
             {
-                var codeIndex = (letterQty + index + k) % letterQty;
-                retVal = fullAlfabet[codeIndex];
+                int codeIndex=0;
+                for (int i = 0; i < text.Length; i++)
+                {
+                    codeIndex = (letterQty + index + k) % letterQty;
+                    retVal  += fullAlfabet[codeIndex];
+                }
             }
-            Thread.Sleep(k);
+            //Thread.Sleep(k);
             return retVal;
         }
 
