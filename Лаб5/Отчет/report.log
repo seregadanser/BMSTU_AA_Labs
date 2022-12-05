@@ -1,6 +1,6 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.8)  30 NOV 2022 00:22
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.2)  5 DEC 2022 18:05
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **./report.tex
 (report.tex
@@ -1803,7 +1803,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 25--25
-|[]\TU/TimesNewRoman(0)/b/n/20.74 Организация взаимодействия парал-
+|[]\TU/TimesNewRoman(0)/b/n/20.74 Организация взаимодействия
  []
 
 ) [5]
@@ -1860,8 +1860,8 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              that will remove this deprecated code.
 
 
-Underfull \hbox (badness 2452) in paragraph at lines 3--3
-|[]\TU/TimesNewRoman(0)/b/n/20.74 Требования к программному обеспече-
+Underfull \hbox (badness 10000) in paragraph at lines 3--3
+|[]\TU/TimesNewRoman(0)/b/n/20.74 Требования к программному
  []
 
 [13
@@ -1929,7 +1929,7 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 Here is how much of TeX's memory you used:
  44092 strings out of 410654
  1086756 string characters out of 2816299
- 2311610 words of memory out of 3000000
+ 2311612 words of memory out of 3000000
  64493 multiletter control sequences out of 15000+600000
  470847 words of font info for 61 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
