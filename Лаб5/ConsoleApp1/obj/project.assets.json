@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Labs\\Анализ Алгоритмов\\Лаб5\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectUniqueName": "D:\\Study\\Анализ Алгоритмов\\Лаб5\\ConsoleApp1\\ConsoleApp1.csproj",
       "projectName": "ConsoleApp1",
-      "projectPath": "D:\\Labs\\Анализ Алгоритмов\\Лаб5\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectPath": "D:\\Study\\Анализ Алгоритмов\\Лаб5\\ConsoleApp1\\ConsoleApp1.csproj",
       "packagesPath": "C:\\Users\\kalas\\.nuget\\packages\\",
-      "outputPath": "D:\\Labs\\Анализ Алгоритмов\\Лаб5\\ConsoleApp1\\obj\\",
+      "outputPath": "D:\\Study\\Анализ Алгоритмов\\Лаб5\\ConsoleApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kalas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

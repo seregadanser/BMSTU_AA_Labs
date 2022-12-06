@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.2)  5 DEC 2022 18:05
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.2)  6 DEC 2022 15:10
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -963,6 +963,15 @@ File: ppxetex.def 2022/05/22 v0.5v Pdfpages driver for XeTeX (AM)
 \c@AM@survey=\count339
 \AM@templatesizebox=\box78
 )
+(C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip110
+\enit@outerparindent=\dimen298
+\enit@toks=\toks44
+\enit@inbox=\box79
+\enit@count@id=\count340
+\enitdp@description=\count341
+)
 (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2022/07/12 v3.18b programmable bibliographies (PK/MW)
 
@@ -983,7 +992,7 @@ Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode not found.
 ) (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count340
+\etb@tempcnta=\count342
 )
 (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
@@ -992,7 +1001,7 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )) (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count341
+\lrq@indent=\count343
 
 (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
@@ -1001,63 +1010,63 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count342
-\c@listtotal=\count343
-\c@listcount=\count344
-\c@liststart=\count345
-\c@liststop=\count346
-\c@citecount=\count347
-\c@citetotal=\count348
-\c@multicitecount=\count349
-\c@multicitetotal=\count350
-\c@instcount=\count351
-\c@maxnames=\count352
-\c@minnames=\count353
-\c@maxitems=\count354
-\c@minitems=\count355
-\c@citecounter=\count356
-\c@maxcitecounter=\count357
-\c@savedcitecounter=\count358
-\c@uniquelist=\count359
-\c@uniquename=\count360
-\c@refsection=\count361
-\c@refsegment=\count362
-\c@maxextratitle=\count363
-\c@maxextratitleyear=\count364
-\c@maxextraname=\count365
-\c@maxextradate=\count366
-\c@maxextraalpha=\count367
-\c@abbrvpenalty=\count368
-\c@highnamepenalty=\count369
-\c@lownamepenalty=\count370
-\c@maxparens=\count371
-\c@parenlevel=\count372
-\blx@tempcnta=\count373
-\blx@tempcntb=\count374
-\blx@tempcntc=\count375
-\c@blx@maxsection=\count376
-\blx@maxsegment@0=\count377
-\blx@notetype=\count378
-\blx@parenlevel@text=\count379
-\blx@parenlevel@foot=\count380
-\blx@sectionciteorder@0=\count381
-\blx@sectionciteorderinternal@0=\count382
-\blx@entrysetcounter=\count383
-\blx@biblioinstance=\count384
-\labelnumberwidth=\skip110
-\labelalphawidth=\skip111
-\biblabelsep=\skip112
-\bibitemsep=\skip113
-\bibnamesep=\skip114
-\bibinitsep=\skip115
-\bibparsep=\skip116
-\bibhang=\skip117
+\c@tabx@nest=\count344
+\c@listtotal=\count345
+\c@listcount=\count346
+\c@liststart=\count347
+\c@liststop=\count348
+\c@citecount=\count349
+\c@citetotal=\count350
+\c@multicitecount=\count351
+\c@multicitetotal=\count352
+\c@instcount=\count353
+\c@maxnames=\count354
+\c@minnames=\count355
+\c@maxitems=\count356
+\c@minitems=\count357
+\c@citecounter=\count358
+\c@maxcitecounter=\count359
+\c@savedcitecounter=\count360
+\c@uniquelist=\count361
+\c@uniquename=\count362
+\c@refsection=\count363
+\c@refsegment=\count364
+\c@maxextratitle=\count365
+\c@maxextratitleyear=\count366
+\c@maxextraname=\count367
+\c@maxextradate=\count368
+\c@maxextraalpha=\count369
+\c@abbrvpenalty=\count370
+\c@highnamepenalty=\count371
+\c@lownamepenalty=\count372
+\c@maxparens=\count373
+\c@parenlevel=\count374
+\blx@tempcnta=\count375
+\blx@tempcntb=\count376
+\blx@tempcntc=\count377
+\c@blx@maxsection=\count378
+\blx@maxsegment@0=\count379
+\blx@notetype=\count380
+\blx@parenlevel@text=\count381
+\blx@parenlevel@foot=\count382
+\blx@sectionciteorder@0=\count383
+\blx@sectionciteorderinternal@0=\count384
+\blx@entrysetcounter=\count385
+\blx@biblioinstance=\count386
+\labelnumberwidth=\skip111
+\labelalphawidth=\skip112
+\biblabelsep=\skip113
+\bibitemsep=\skip114
+\bibnamesep=\skip115
+\bibinitsep=\skip116
+\bibparsep=\skip117
+\bibhang=\skip118
 \blx@bcfin=\read3
 \blx@bcfout=\write4
 \blx@langwohyphens=\language79
-\c@mincomprange=\count385
-\c@maxcomprange=\count386
-\c@mincompwidth=\count387
+\c@mincomprange=\count387
+\c@maxcomprange=\count388
+\c@mincompwidth=\count389
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -1068,88 +1077,88 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count388
-\c@savedafterword=\count389
-\c@annotator=\count390
-\c@savedannotator=\count391
-\c@author=\count392
-\c@savedauthor=\count393
-\c@bookauthor=\count394
-\c@savedbookauthor=\count395
-\c@commentator=\count396
-\c@savedcommentator=\count397
-\c@editor=\count398
-\c@savededitor=\count399
-\c@editora=\count400
-\c@savededitora=\count401
-\c@editorb=\count402
-\c@savededitorb=\count403
-\c@editorc=\count404
-\c@savededitorc=\count405
-\c@foreword=\count406
-\c@savedforeword=\count407
-\c@holder=\count408
-\c@savedholder=\count409
-\c@introduction=\count410
-\c@savedintroduction=\count411
-\c@namea=\count412
-\c@savednamea=\count413
-\c@nameb=\count414
-\c@savednameb=\count415
-\c@namec=\count416
-\c@savednamec=\count417
-\c@translator=\count418
-\c@savedtranslator=\count419
-\c@shortauthor=\count420
-\c@savedshortauthor=\count421
-\c@shorteditor=\count422
-\c@savedshorteditor=\count423
-\c@labelname=\count424
-\c@savedlabelname=\count425
-\c@institution=\count426
-\c@savedinstitution=\count427
-\c@lista=\count428
-\c@savedlista=\count429
-\c@listb=\count430
-\c@savedlistb=\count431
-\c@listc=\count432
-\c@savedlistc=\count433
-\c@listd=\count434
-\c@savedlistd=\count435
-\c@liste=\count436
-\c@savedliste=\count437
-\c@listf=\count438
-\c@savedlistf=\count439
-\c@location=\count440
-\c@savedlocation=\count441
-\c@organization=\count442
-\c@savedorganization=\count443
-\c@origlocation=\count444
-\c@savedoriglocation=\count445
-\c@origpublisher=\count446
-\c@savedorigpublisher=\count447
-\c@publisher=\count448
-\c@savedpublisher=\count449
-\c@language=\count450
-\c@savedlanguage=\count451
-\c@origlanguage=\count452
-\c@savedoriglanguage=\count453
-\c@pageref=\count454
-\c@savedpageref=\count455
-\shorthandwidth=\skip118
-\shortjournalwidth=\skip119
-\shortserieswidth=\skip120
-\shorttitlewidth=\skip121
-\shortauthorwidth=\skip122
-\shorteditorwidth=\skip123
-\locallabelnumberwidth=\skip124
-\locallabelalphawidth=\skip125
-\localshorthandwidth=\skip126
-\localshortjournalwidth=\skip127
-\localshortserieswidth=\skip128
-\localshorttitlewidth=\skip129
-\localshortauthorwidth=\skip130
-\localshorteditorwidth=\skip131
+\c@afterword=\count390
+\c@savedafterword=\count391
+\c@annotator=\count392
+\c@savedannotator=\count393
+\c@author=\count394
+\c@savedauthor=\count395
+\c@bookauthor=\count396
+\c@savedbookauthor=\count397
+\c@commentator=\count398
+\c@savedcommentator=\count399
+\c@editor=\count400
+\c@savededitor=\count401
+\c@editora=\count402
+\c@savededitora=\count403
+\c@editorb=\count404
+\c@savededitorb=\count405
+\c@editorc=\count406
+\c@savededitorc=\count407
+\c@foreword=\count408
+\c@savedforeword=\count409
+\c@holder=\count410
+\c@savedholder=\count411
+\c@introduction=\count412
+\c@savedintroduction=\count413
+\c@namea=\count414
+\c@savednamea=\count415
+\c@nameb=\count416
+\c@savednameb=\count417
+\c@namec=\count418
+\c@savednamec=\count419
+\c@translator=\count420
+\c@savedtranslator=\count421
+\c@shortauthor=\count422
+\c@savedshortauthor=\count423
+\c@shorteditor=\count424
+\c@savedshorteditor=\count425
+\c@labelname=\count426
+\c@savedlabelname=\count427
+\c@institution=\count428
+\c@savedinstitution=\count429
+\c@lista=\count430
+\c@savedlista=\count431
+\c@listb=\count432
+\c@savedlistb=\count433
+\c@listc=\count434
+\c@savedlistc=\count435
+\c@listd=\count436
+\c@savedlistd=\count437
+\c@liste=\count438
+\c@savedliste=\count439
+\c@listf=\count440
+\c@savedlistf=\count441
+\c@location=\count442
+\c@savedlocation=\count443
+\c@organization=\count444
+\c@savedorganization=\count445
+\c@origlocation=\count446
+\c@savedoriglocation=\count447
+\c@origpublisher=\count448
+\c@savedorigpublisher=\count449
+\c@publisher=\count450
+\c@savedpublisher=\count451
+\c@language=\count452
+\c@savedlanguage=\count453
+\c@origlanguage=\count454
+\c@savedoriglanguage=\count455
+\c@pageref=\count456
+\c@savedpageref=\count457
+\shorthandwidth=\skip119
+\shortjournalwidth=\skip120
+\shortserieswidth=\skip121
+\shorttitlewidth=\skip122
+\shortauthorwidth=\skip123
+\shorteditorwidth=\skip124
+\locallabelnumberwidth=\skip125
+\locallabelalphawidth=\skip126
+\localshorthandwidth=\skip127
+\localshortjournalwidth=\skip128
+\localshortserieswidth=\skip129
+\localshorttitlewidth=\skip130
+\localshortauthorwidth=\skip131
+\localshorteditorwidth=\skip132
 Package biblatex Info: Trying to load enhanced support for Unicode engines...
 Package biblatex Info: ... file 'blx-unicode.def' found.
 
@@ -1165,19 +1174,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2022/07/12 v3.18b biblatex compatibility (PK/MW)
-\c@textcitecount=\count456
-\c@textcitetotal=\count457
-\c@textcitemaxnames=\count458
-\c@biburlbigbreakpenalty=\count459
-\c@biburlbreakpenalty=\count460
-\c@biburlnumpenalty=\count461
-\c@biburlucpenalty=\count462
-\c@biburllcpenalty=\count463
+\c@textcitecount=\count458
+\c@textcitetotal=\count459
+\c@textcitemaxnames=\count460
+\c@biburlbigbreakpenalty=\count461
+\c@biburlbreakpenalty=\count462
+\c@biburlnumpenalty=\count463
+\c@biburlucpenalty=\count464
+\c@biburllcpenalty=\count465
 \biburlbigskip=\muskip18
 \biburlnumskip=\muskip19
 \biburlucskip=\muskip20
 \biburllcskip=\muskip21
-\c@smartand=\count464
+\c@smartand=\count466
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -1191,8 +1200,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.b
 bx
 File: standard.bbx 2022/07/12 v3.18b biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count465
-\c@bbx:relatedtotal=\count466
+\c@bbx:relatedcount=\count467
+\c@bbx:relatedtotal=\count468
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -1236,14 +1245,14 @@ Package: caption 2022/03/01 v3.6b Customizing captions (AR)
 
 (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
-\caption@tempdima=\dimen298
-\captionmargin=\dimen299
-\caption@leftmargin=\dimen300
-\caption@rightmargin=\dimen301
-\caption@width=\dimen302
-\caption@indent=\dimen303
-\caption@parindent=\dimen304
-\caption@hangindent=\dimen305
+\caption@tempdima=\dimen299
+\captionmargin=\dimen300
+\caption@leftmargin=\dimen301
+\caption@rightmargin=\dimen302
+\caption@width=\dimen303
+\caption@indent=\dimen304
+\caption@parindent=\dimen305
+\caption@hangindent=\dimen306
 Package caption Info: KOMA-Script document class detected.
 
 (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption-koma.st
@@ -1251,8 +1260,8 @@ o
 File: caption-koma.sto 2020/09/21 v2.0b Adaption of the caption package to the 
 KOMA-Script document classes (AR)
 ))
-\c@caption@flags=\count467
-\c@continuedfloat=\count468
+\c@caption@flags=\count469
+\c@continuedfloat=\count470
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
 
@@ -1262,14 +1271,14 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 Package caption Info: threeparttable package is loaded.
 ) (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2022/06/26 3.77 The Babel package
-\babel@savecnt=\count469
-\U@D=\dimen306
+\babel@savecnt=\count471
+\U@D=\dimen307
 \l@unhyphenated=\language80
 
 (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/generic/babel\xebabel.def
 (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def))
 \bbl@readstream=\read4
-\bbl@dirlevel=\count470
+\bbl@dirlevel=\count472
 
 *************************************
 * Local config file bblopts.cfg used
@@ -1300,7 +1309,7 @@ Class scrreprt Warning: Usage of package `tocbibind' together
 (scrreprt)              the list of figures, list of tables, bibliography,
 (scrreprt)              index and the running head.
 (scrreprt)              Nevertheless, using requested
-(scrreprt)              package `tocbibind' on input line 34.
+(scrreprt)              package `tocbibind' on input line 35.
 
 
 (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/tocbibind\tocbibind.sty
@@ -1311,9 +1320,9 @@ Package tocbibind Note: Using chapter style headings, unless overridden.
 
 ) (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/latex/appendix\appendix.sty
 Package: appendix 2020/02/08 v1.2c extra appendix facilities
-\c@@pps=\count471
-\c@@ppsavesec=\count472
-\c@@ppsaveapp=\count473
+\c@@pps=\count473
+\c@@ppsavesec=\count474
+\c@@ppsaveapp=\count475
 )
 
 Package fontspec Info: Font family 'TimesNewRoman(0)' created for font 'Times
@@ -1464,20 +1473,20 @@ File: pgfmoduledatavisualization.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 
 (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
 oo.code.tex
-\pgfoo@objectcount=\count474
-\pgfoothis@count=\count475
-\pgfoo@toks=\toks44
+\pgfoo@objectcount=\count476
+\pgfoothis@count=\count477
+\pgfoo@toks=\toks45
 )
-\pgf@lib@dv@cache@count=\count476
-\pgf@lib@dv@cache@count=\count477
+\pgf@lib@dv@cache@count=\count478
+\pgf@lib@dv@cache@count=\count479
 )
 (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries\tikzlibrarybackgrounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@layerbox@background=\box79
-\pgf@layerboxsaved@background=\box80
+\pgf@layerbox@background=\box80
+\pgf@layerboxsaved@background=\box81
 )
-\tikzdvvisualizercounter=\count478
+\tikzdvvisualizercounter=\count480
 )
 (C:\Users\kalas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries/datavisualization\tikzlibrarydatavisualization.formats.functions.co
@@ -1503,8 +1512,8 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count479
-\@quotereset=\count480
+\@quotelevel=\count481
+\@quotereset=\count482
 (report.aux (title.aux) (introduction.aux) (analit_part.aux) (build_part.aux)
 (texnical_part.aux) (reserch_part.aux) (conclusion.aux) (lib.aux))
 \openout1 = `report.aux'.
@@ -1545,7 +1554,7 @@ Package tocbasic Warning: `tocbibind' redefinition of `\listoftables'
 (tocbasic)                Note: Loading `tocbibind' without option `notlot'
 (tocbasic)                can break several features of `tocbasic'.
 
-\c@lstlisting=\count481
+\c@lstlisting=\count483
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1927,12 +1936,12 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44092 strings out of 410654
- 1086756 string characters out of 2816299
- 2311612 words of memory out of 3000000
- 64493 multiletter control sequences out of 15000+600000
+ 44425 strings out of 410654
+ 1092524 string characters out of 2816299
+ 2319132 words of memory out of 3000000
+ 64823 multiletter control sequences out of 15000+600000
  470847 words of font info for 61 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 115i,8n,111p,10641b,4871s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 115i,8n,111p,10641b,4920s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
 Output written on report.pdf (24 pages).
