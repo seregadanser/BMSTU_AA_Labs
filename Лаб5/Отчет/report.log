@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.2)  13 DEC 2022 15:12
+=======
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.8)  11 DEC 2022 22:52
+>>>>>>> d58ce9f92a3ef6c25dd1c409dae6834765a49f64
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1915,7 +1919,11 @@ File: src/screen.png Graphic file (type bmp)
 File: src/good.png Graphic file (type bmp)
 <src/good.png>
 
+<<<<<<< HEAD
 Overfull \hbox (10.64027pt too wide) in paragraph at lines 58--59
+=======
+Overfull \hbox (17.98317pt too wide) in paragraph at lines 58--59
+>>>>>>> d58ce9f92a3ef6c25dd1c409dae6834765a49f64
  [] 
  []
 

@@ -7,6 +7,7 @@ Queue<Ask> q;
 Queue<Ask> exit;
 Ask b;
 const string alfabet = "abcdefghijklmnopqrstuvwxyz";
+<<<<<<< HEAD
 string[] input = new string[10];
 //for(int i =0; i<10;i++)
 //{
@@ -16,11 +17,45 @@ Console.WriteLine("Gen data");
 for (int i = 0; i < 10; i++)
 {
     for (int j = 0; j < 20000; j++)
+=======
+string[] input = new string[1000];
+//for (int i = 0; i < 10; i++)
+//{
+//    input[i] = Console.ReadLine();
+//}
+Console.WriteLine("Gen data");
+for (int i = 0; i < 1000; i++)
+{
+    for (int j = 0; j < 22500; j++)
+>>>>>>> d58ce9f92a3ef6c25dd1c409dae6834765a49f64
         input[i] += alfabet[r.Next(0, 300) % alfabet.Length];
     // Console.WriteLine(i);
 }
 Console.WriteLine("Done gen");
 
+string[] input1 = new string[10];
+for (int i = 0; i < 10; i++)
+{
+    for (int j = 0; j < 500; j++)
+        input1[i] += alfabet[r.Next(0, 300) % alfabet.Length];
+    // Console.WriteLine(i);
+}
+
+q = new Queue<Ask>();
+foreach (string c in input1)
+{
+    Ask a = new Ask(4, c);
+    a.in_time[0] = DateTime.Now.Ticks;
+    a.state[0] = c;
+    q.Enqueue(a);
+}
+b = new Ask(4, "", true);
+b.in_time[0] = DateTime.Now.Ticks;
+b.state[0] = "";
+q.Enqueue(b);
+Console.WriteLine(q.Count);
+exit = new Queue<Ask>();
+SerialCode();
 
 
 Console.WriteLine("&&@Parallel@&&");
@@ -38,6 +73,7 @@ b.state[0] = "";
 q.Enqueue(b);
 Console.WriteLine(q.Count);
 exit = new Queue<Ask>();
+//SerialCode();
 ParalCode();
 Formatter.FormatOut(exit);
 
@@ -56,6 +92,7 @@ b.state[0] = "";
 q.Enqueue(b);
 Console.WriteLine(q.Count);
 exit = new Queue<Ask>();
+//ParalCode();
 SerialCode();
 Formatter.FormatOut(exit);
 
@@ -128,13 +165,13 @@ void ParalCode()
     c[2].nextState = exit;
     Stopwatch strender = new Stopwatch();
     TimeSpan ts = strender.Elapsed;
-    strender.Start();
+  
     for (int i = 0; i < 3; i++)
     {
         t[i] = new Thread(c[i].Start);
         t[i].Start();
     }
-
+    strender.Start();
     foreach (Thread thread in t)
     {
         thread.Join();
@@ -142,10 +179,10 @@ void ParalCode()
     strender.Stop();
    ts = strender.Elapsed;
 
-    string elapsedTime = String.Format("{0:00}.{1:00},",
-      ts.Seconds,
-        ts.Milliseconds / 10);
-   Console.WriteLine(elapsedTime);
+    string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+            ts.Hours, ts.Minutes, ts.Seconds,
+            ts.Milliseconds / 10);
+    Console.WriteLine(elapsedTime);
 }
 void SerialCode()
 {
@@ -160,22 +197,23 @@ void SerialCode()
     c[2].nextState = exit;
     Stopwatch strender = new Stopwatch();
     TimeSpan ts = strender.Elapsed;
+    int g = q.Count;
     strender.Start();
     c[0].Start();
     c[1].Start();
-    c[2].Start();
+    c[2].Start(); 
     strender.Stop();
     ts = strender.Elapsed;
 
-    string elapsedTime = String.Format("{0:00}.{1:00},",
-      ts.Seconds,
-        ts.Milliseconds / 10);
+    string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+              ts.Hours, ts.Minutes, ts.Seconds,
+              ts.Milliseconds / 10);
     Console.WriteLine(elapsedTime);
 }
 
 class Ask
 {
-    public long[] in_time, out_time, work_time;
+    public long[] in_time, out_time, work_time, work_timeF;
     public string[] state;
     public string elem;
     public bool last;
@@ -185,6 +223,7 @@ class Ask
         out_time = new long[n];
         work_time = new long[n];
         state = new string[n];
+        work_timeF = new long[n];
         this.elem = elem;
         this.last = last;
     }
@@ -227,11 +266,13 @@ class Conver
         lock (queue)
         {
             if (queue.Count > 0)
-                e = queue.TryDequeue(out elem);
+            { e = queue.TryDequeue(out elem);
+                elem.out_time[id] = DateTime.Now.Ticks;
+            }
         }
         if (e && elem.last)
         {
-            elem.out_time[id] = DateTime.Now.Ticks;
+            
             elem.in_time[id + 1] = DateTime.Now.Ticks;
             lock (nextState)
             { nextState.Enqueue(elem); }
@@ -239,9 +280,8 @@ class Conver
         }
         if (e)
         {
-            elem.out_time[id] = DateTime.Now.Ticks;
             long s = DateTime.Now.Ticks;            
-            elem.elem = a.Invoke(elem.elem, key); 
+            elem.elem = a.Invoke(elem, key, id); 
             elem.work_time[id] = DateTime.Now.Ticks - s;
             elem.state[id+1] = elem.elem;
           
@@ -259,9 +299,14 @@ class Conver
         Ask elem = queue.Dequeue();
         elem.out_time[id] = DateTime.Now.Ticks;
         if (elem.last)
+        {
+            elem.in_time[id + 1] = DateTime.Now.Ticks;
+            elem.state[id + 1] = elem.elem;
+            nextState.Enqueue(elem);
             return;
+        }
         long s = DateTime.Now.Ticks;
-        elem.elem = a.Invoke(elem.elem, key);
+        elem.elem = a.Invoke(elem, key, id);
         elem.work_time[id] = DateTime.Now.Ticks - s;
         elem.state[id + 1] = elem.elem;
         elem.in_time[id + 1] = DateTime.Now.Ticks;
