@@ -12,6 +12,7 @@ namespace ConsoleApp1
         public static void FormatOut(Queue<Ask> list)
         {
             //while (list.Count > 0)
+            ss = 0;
             foreach (Ask a in list)
                 FElem(a);
             //FElem(list.Dequeue());
@@ -29,8 +30,9 @@ namespace ConsoleApp1
             long summ = 0;
             for(int i = 0; i<element.work_time.Length-1;i++)
             {
-                summ += (element.out_time[i] - element.in_time[i]) / 10000;
-                Console.WriteLine($"Conv {i}: {element.state[i]} -> {element.state[i+1]}" + "|" + $"in q {element.in_time[i]}, out q {element.out_time[i]}, wait {(element.out_time[i] - element.in_time[i])/10000}; work {element.work_time[i]/10000}");
+                //{element.state[i]} -> {element.state[i+1]}
+                summ += (element.out_time[i] - element.in_time[i]) ;
+                Console.WriteLine($"Conv {i}: " + "|" + $"in q {element.in_time[i]}, out q {element.out_time[i]}, wait {(element.out_time[i] - element.in_time[i])}; work {element.work_time[i]}");
                 Console.WriteLine("----------------------------------------------------------------------------------------------");
             }
             ss += summ;

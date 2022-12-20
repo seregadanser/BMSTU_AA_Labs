@@ -1,0 +1,158 @@
+\chapter{Технологическая часть}
+В данном разделе будут рассмотрены средства реализации, а также представлены листинги алгоритмов.
+\section[Требования к программному обеспечению]{Требования к программному\\обеспечению }
+
+Программа должна предоставлять пользователю три функции:
+\begin{enumerate}[itemindent=1em]
+	\item[1)] поиск гамильтонова цикла с помощью алгоритма полного перебора;
+	\item[2)] поиск гамильтонова цикла с помощью муравьиного алгоритма;
+	\item[3)] параметризация муравьиного алгоритма.
+\end{enumerate}
+
+Притом для решения задачи коммивояжера используется файл с матрицей расстояний, имя которого пользователь должен ввести по запросу программы.
+
+Программа должна обрабатывать ошибки (например, отсутствие файла с матрицей расстояний) и корректно завершать работу с выводом информации об ошибке на экран.
+
+\section{Средства реализации}
+В данной работе для реализации был выбран язык программирования $c\#$. В текущей лабораторной работе требуется замерить время работы реализаций алгоритмов. Для этого используется класс  $Stopwatch$ из библиотеки $System.Diagnostics$.
+\newpage
+\section{Сведения о модулях программы}
+Программа состоит из следующих классов:
+\begin{itemize}[itemindent=1.25em]
+	\item[---] $AntAlgorithm$ --- класс, реализующий муравьиный алгоритм; 
+	\item[---] $Program$ --- класс, реализующий основную программу;
+    \item[---] $BruteForce$ --- класс, реализующий алгоритм полного перебора;
+\end{itemize}
+
+\section{Реализация алгоритмов}
+В листингах \ref{l1}--\ref{l2} представлены реализации алгоритмов. 
+\begin{center}
+\begin{lstlisting}[label=l1, caption={Реалитзация алгоритма полного перебора}]
+ class BruteForce
+{
+	public static Path GetShortestPath(Map m)
+	{
+		int[] routeIndexes = new int[m.n - 1];
+		for (int i = 0; i < m.n - 1; i++)
+		{
+			routeIndexes[i] = i + 1;
+		}
+		var allRoutes = GetAllRoutes(routeIndexes); 
+		Path shortestPath = new Path(int.MaxValue);
+		foreach (List<int> path in allRoutes)
+		{
+			path.Insert(0, 0);
+			path.Add(0);
+			Path cur = new Path(m, path.ToArray());
+			if (cur.distance < shortestPath.distance)
+			shortestPath = cur;
+		}
+		
+		return shortestPath;
+	}
+	
+	public static List<List<T>> GetAllRoutes<T>(IList<T> arr, List<List<T>> res = null, List<T> current = null)
+	{
+		if (res == null)
+		res = new List<List<T>>();
+		if (arr.Count == 0) 
+		{
+			res.Add(current);
+			return res;
+		}
+		for (int i = 0; i < arr.Count; i++)
+		{
+			List<T> lst = new List<T>(arr);
+			lst.RemoveAt(i);
+			List<T> next;
+			if (current == null)
+			next = new List<T>();
+			else
+			next = new List<T>(current);
+			next.Add(arr[i]);
+			GetAllRoutes(lst, res, next);
+		}
+		return res;
+	}
+}
+\end{lstlisting}
+\end{center}
+\begin{center}
+\begin{lstlisting}[label=l2, caption={Реализация муравьиного алгоритма}]
+     public static Path GetShortestPath(Map map, int nIter, double alpha, double beta, double Q, double ro)
+{
+	Path minPath = new Path(int.MaxValue);
+	int n = map.n;
+	double[][] pheromones = Program.InitMatr(n, 0.1);
+	List<Ant> ants = new List<Ant>();
+	for (int t = 0; t < nIter; t++)
+	{
+		ants = InitAnts(map, n);
+		for (int i = 0; i < n - 1; i++)
+		{
+			double[][] pheromonesIter = Program.InitMatr(n, (double)0); 
+			for (int j = 0; j < ants.Count(); j++) 
+			{
+				double sumChance = 0, chance = 0;
+				bool flag = false;
+				Ant curAnt = ants[j];
+				int curCity = curAnt.path.route.Last();
+				for (int sityId = 0; sityId < n; sityId++) 
+				{
+					if (curAnt.visited[sityId] == false)
+					{
+						sumChance += Math.Pow(pheromones[curCity][sityId], alpha) * Math.Pow(1 / (map.distance[curCity,sityId]), beta); 
+						flag = true;
+					}
+				}
+				double x = r.NextDouble();
+				int k = 0;
+				for (; x > 0; k++)
+				{
+					if (curAnt.visited[k] == false)
+					{
+						chance = Math.Pow(pheromones[curCity][k], alpha) * Math.Pow(1 / (map.distance[curCity,k]), beta);
+						chance /= sumChance;
+						x -= chance;
+					}
+				}
+				k--;
+				ants[j].VisitedTown(k);
+				pheromonesIter[curCity][k] += Q / (map.distance[curCity,k]);
+			}
+			for (int ii = 0; ii < n; ii++)
+			for (int j = 0; j < n; j++)
+			pheromones[ii][j] = (1 - ro) * pheromones[ii][j] + pheromonesIter[ii][j];
+		}
+		
+		foreach (Ant a in ants)
+		{
+			a.VisitedTown(a.iStartTown);
+			if (a.GetDistance() < minPath.distance)
+			{
+				minPath = a.path;
+			}
+		}                
+	}
+	return minPath;
+}
+public static List<Ant> InitAnts(Map m, int n)
+{
+	List<Ant> ants = new List<Ant>();
+	for (int i = 0; i < n; i++)
+	{
+		ants.Add(new Ant(m, 0));
+	}
+	return ants;
+}
+\end{lstlisting}
+\end{center}
+
+
+\newpage
+\section{Функциональное тестирование}
+
+
+\section*{\hsp Вывод}
+% \addcontentsline{toc}{section}{Вывод}
+В данном разделе были рассмотрены листинги используемых алгориитмов, проведено функциональное тестирование.

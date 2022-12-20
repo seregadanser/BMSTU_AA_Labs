@@ -8,18 +8,18 @@ Queue<Ask> exit;
 Ask b;
 const string alfabet = "abcdefghijklmnopqrstuvwxyz";
 string[] input = new string[10];
-for(int i =0; i<10;i++)
-{
-    input[i]= Console.ReadLine();
-}
-//Console.WriteLine("Gen data");
-//for (int i = 0; i < 10000; i++)
+//for(int i =0; i<10;i++)
 //{
-//    for (int j = 0; j < 500; j++)
-//        input[i] += alfabet[r.Next(0, 300) % alfabet.Length];
-//   // Console.WriteLine(i);
+//    input[i]= Console.ReadLine();
 //}
-//Console.WriteLine("Done gen");
+Console.WriteLine("Gen data");
+for (int i = 0; i < 10; i++)
+{
+    for (int j = 0; j < 20000; j++)
+        input[i] += alfabet[r.Next(0, 300) % alfabet.Length];
+    // Console.WriteLine(i);
+}
+Console.WriteLine("Done gen");
 
 
 

@@ -1,0 +1,73 @@
+\chapter{Исследовательская часть}
+
+В данном разделе будет проведен сравнительный анализ времени работы реализаций алгоритмов при различных ситуациях на основе полученных данных.
+
+\section{Технические характеристики}
+
+Технические характеристики устройства, на котором выполнялись замеры времени, представлены далее:
+
+\begin{itemize}[itemindent=1.25em]
+	\item[---] операционная система Windows 11 Pro Версия 22H2 (22621.674) \cite{wind};
+	\item[---] память 16 ГБ;
+	\item[---] процессор 11th Gen Intel(R) Core(TM) i5-11400 2.59 ГГц \cite{proc}, 6 физических и 12 логических ядер.
+\end{itemize}
+
+При тестировании компьютер был включен в сеть электропитания. Во время замеров процессорного времени устройство было нагружено только встроенными приложениями окружения, а также системой тестирования.
+
+\section[Время выполнения реализаций алгоритмов]{Время выполнения реализаций\\алгоритмов}
+
+На рис. \ref{img:graph1} и рис. \ref{img:graph} показаны результаты замеров времени.
+
+\begin{center}
+\begin{tikzpicture}
+	\begin{axis}[
+		axis lines = left,
+		xlabel = {Количество вершин},
+		ylabel = {Время (тики)},
+		legend pos=north west,
+		ymajorgrids=true
+		]
+		
+		
+		\addplot[color=blue] table[x index=0, y index= 1] {src/Brute.txt}; 
+		\addlegendentry{Полный перебор}
+		
+		\addplot[color=orange] table[x index=0, y index= 1] {src/Ant.txt}; 
+		\addlegendentry{Муравьиный алгоритм}
+		
+		
+	\end{axis}
+\end{tikzpicture}
+		\captionof{figure}{Сравнение времени работы алгоритмов при увеличении размера графа}
+\label{img:graph1}
+\end{center}
+\begin{center}
+
+\begin{tikzpicture}
+	\begin{axis}[
+		axis lines = left,
+		xlabel = {Количество вершин},
+		ylabel = {Время (тики)},
+		legend pos=north west,
+		ymajorgrids=true
+		]
+		
+		
+		\addplot[color=blue] table[x index=0, y index= 1] {src/Brute2.txt}; 
+		\addlegendentry{Полный перебор}
+		
+		\addplot[color=orange] table[x index=0, y index= 1] {src/Ant2.txt}; 
+		\addlegendentry{Муравьиный алгоритм}
+		
+		
+	\end{axis}
+
+\end{tikzpicture}
+		\captionof{figure}{Сравнение времени работы алгоритмов на малых размерах графа}
+\label{img:graph}
+\end{center}
+
+
+
+\section{Вывод}
+По полученным результатам иследования можно сделать вывод, что 

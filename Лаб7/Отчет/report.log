@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.2)  13 DEC 2022 15:12
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.2)  20 DEC 2022 17:07
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1810,12 +1810,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 
 
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 25--25
-|[]\TU/TimesNewRoman(0)/b/n/20.74 Организация взаимодействия
- []
-
-) [5]
+] [5]) [6]
 \openout2 = `build_part.aux'.
 
  (build_part.tex
@@ -1831,36 +1826,15 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-
-Underfull \hbox (badness 2065) in paragraph at lines 3--3
-|[]\TU/TimesNewRoman(0)/b/n/20.74 Описание используемых структур дан-
- []
-
-[6
+) [7
 
 
 
 
-] (src/Linear.pdf_tex
-File: src//Linear.pdf Graphic file (type pdf)
-<use src//Linear.pdf, page 1>
-) [7] (src/Parallel1.pdf_tex
-File: src//Parallel1.pdf Graphic file (type pdf)
-<use src//Parallel1.pdf, page 1>
-) [8] (src/Parallel2.pdf_tex
-File: src//Parallel2.pdf Graphic file (type pdf)
-<use src//Parallel2.pdf, page 1>
-) (src/Parallel4.pdf_tex
-File: src//Parallel4.pdf Graphic file (type pdf)
-<use src//Parallel4.pdf, page 1>
-) [9] [10] (src/Parallel3.pdf_tex
-File: src//Parallel3.pdf Graphic file (type pdf)
-<use src//Parallel3.pdf, page 1>
-)) [11] [12]
+]
 \openout2 = `texnical_part.aux'.
 
-
-(texnical_part.tex
+ (texnical_part.tex
 chapter 3.
 
 Class scrreprt Warning: Redefinition of \@makechapterhead detected.
@@ -1873,17 +1847,12 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--3
-|[]\TU/TimesNewRoman(0)/b/n/20.74 Требования к программному
- []
-
-[13
+[8
 
 
 
 
-] [14] [15] [16] [17] [18]) [19]
+] [9] [10] [11] [12]) [13]
 \openout2 = `reserch_part.aux'.
 
  (reserch_part.tex
@@ -1899,54 +1868,48 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
-|[]\TU/TimesNewRoman(0)/b/n/35.83 Исследовательская
- []
-
-File: src/screen.png Graphic file (type bmp)
-<src/screen.png>
-[20
+PGFPlots: reading {src/Brute.txt}
+PGFPlots: reading {src/Ant.txt}
+[14
 
 
 
 
 ]
-File: src/good.png Graphic file (type bmp)
-<src/good.png>
-
-Overfull \hbox (10.64027pt too wide) in paragraph at lines 58--59
- [] 
- []
-
-[21]) [22]
+PGFPlots: reading {src/Brute2.txt}
+PGFPlots: reading {src/Ant2.txt}
+) [15]
 \openout2 = `conclusion.aux'.
 
- (conclusion.tex) [23
+ (conclusion.tex) [16
 
 
 
 ]
 \openout2 = `lib.aux'.
 
- (lib.tex) [24
+ (lib.tex) [17
 
 
 
-] (report.aux (title.aux)
-(introduction.aux) (analit_part.aux) (build_part.aux) (texnical_part.aux)
-(reserch_part.aux) (conclusion.aux) (lib.aux))
+]
+
+Package caption Warning: Unused \captionsetup[table] on input line 25.
+See the caption package documentation for explanation.
+
+(report.aux (title.aux) (introduction.aux) (analit_part.aux) (build_part.aux)
+(texnical_part.aux) (reserch_part.aux) (conclusion.aux) (lib.aux))
 Package logreq Info: Writing requests to 'report.run.xml'.
 \openout1 = `report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44425 strings out of 410654
- 1092524 string characters out of 2816299
- 2319132 words of memory out of 3000000
- 64823 multiletter control sequences out of 15000+600000
+ 44795 strings out of 410654
+ 1103825 string characters out of 2816299
+ 2334083 words of memory out of 3000000
+ 65204 multiletter control sequences out of 15000+600000
  470847 words of font info for 61 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 115i,8n,111p,10641b,4920s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 115i,15n,111p,10641b,4920s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on report.pdf (24 pages).
+Output written on report.pdf (17 pages).

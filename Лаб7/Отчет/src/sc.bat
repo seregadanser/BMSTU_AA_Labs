@@ -1,0 +1,1 @@
+for %%i in (*.svg) do inkscape -D --export-latex --export-filename=%%~ni.pdf %%i

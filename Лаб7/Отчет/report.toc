@@ -1,0 +1,20 @@
+
+\babel@toc {russian}{}\relax 
+\contentsline {chapter}{ВВЕДЕНИЕ}{3}{}%
+\contentsline {chapter}{\numberline {1}Аналитическая часть}{4}{}%
+\contentsline {section}{\numberline {1.1}Задача коммивояжера}{4}{}%
+\contentsline {section}{\numberline {1.2}Алгоритм полного перебора}{4}{}%
+\contentsline {section}{\numberline {1.3}Муравьиный алгоритм}{4}{}%
+\contentsline {chapter}{\numberline {2}Конструкторская часть}{7}{}%
+\contentsline {chapter}{\numberline {3}Технологическая часть}{8}{}%
+\contentsline {section}{\numberline {3.1}Требования к программному обеспечению}{8}{}%
+\contentsline {section}{\numberline {3.2}Средства реализации}{8}{}%
+\contentsline {section}{\numberline {3.3}Сведения о модулях программы}{9}{}%
+\contentsline {section}{\numberline {3.4}Реализация алгоритмов}{9}{}%
+\contentsline {section}{\numberline {3.5}Функциональное тестирование}{13}{}%
+\contentsline {chapter}{\numberline {4}Исследовательская часть}{14}{}%
+\contentsline {section}{\numberline {4.1}Технические характеристики}{14}{}%
+\contentsline {section}{\numberline {4.2}Время выполнения реализаций алгоритмов}{14}{}%
+\contentsline {section}{\numberline {4.3}Вывод}{15}{}%
+\contentsline {chapter}{ЗАКЛЮЧЕНИЕ}{16}{}%
+\contentsline {chapter}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}{17}{}%

@@ -7,7 +7,7 @@
 \contentsline {section}{\numberline {1.3}Описание используемых алгоритмов}{4}{}%
 \contentsline {section}{\numberline {1.4}Организация взаимодействия \hbox {параллельных потоков}}{5}{}%
 \contentsline {chapter}{\numberline {2}Конструкторская часть}{6}{}%
-\contentsline {section}{\numberline {2.1}Описание используемых структур}{6}{}%
+\contentsline {section}{\numberline {2.1}Описание используемых структур данных}{6}{}%
 \contentsline {section}{\numberline {2.2}Описание алгоритмов}{6}{}%
 \contentsline {chapter}{\numberline {3}Технологическая часть}{13}{}%
 \contentsline {section}{\numberline {3.1}Требования к программному \hbox {обеспечению} }{13}{}%
