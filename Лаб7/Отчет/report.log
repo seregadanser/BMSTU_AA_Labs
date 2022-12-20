@@ -1,6 +1,6 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.2)  20 DEC 2022 17:07
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.8)  20 DEC 2022 21:38
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
  %&-line parsing enabled.
 **./report.tex
 (report.tex
@@ -1826,12 +1826,18 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
+(src/alg1.pdf_tex
+File: src//alg1.pdf Graphic file (type pdf)
+<use src//alg1.pdf, page 1>
 ) [7
 
 
 
 
-]
+] (src/alg2.pdf_tex
+File: src//alg2.pdf Graphic file (type pdf)
+<use src//alg2.pdf, page 1>
+) [8]) [9] [10]
 \openout2 = `texnical_part.aux'.
 
  (texnical_part.tex
@@ -1847,12 +1853,12 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-[8
+[11
 
 
 
 
-] [9] [10] [11] [12]) [13]
+] [12] [13] [14] [15]) [16]
 \openout2 = `reserch_part.aux'.
 
  (reserch_part.tex
@@ -1870,7 +1876,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 
 PGFPlots: reading {src/Brute.txt}
 PGFPlots: reading {src/Ant.txt}
-[14
+[17
 
 
 
@@ -1878,38 +1884,39 @@ PGFPlots: reading {src/Ant.txt}
 ]
 PGFPlots: reading {src/Brute2.txt}
 PGFPlots: reading {src/Ant2.txt}
-) [15]
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--75
+
+ []
+
+[18]) [19]
 \openout2 = `conclusion.aux'.
 
- (conclusion.tex) [16
+ (conclusion.tex) [20
 
 
 
 ]
 \openout2 = `lib.aux'.
 
- (lib.tex) [17
+ (lib.tex) [21
 
 
 
-]
-
-Package caption Warning: Unused \captionsetup[table] on input line 25.
-See the caption package documentation for explanation.
-
-(report.aux (title.aux) (introduction.aux) (analit_part.aux) (build_part.aux)
-(texnical_part.aux) (reserch_part.aux) (conclusion.aux) (lib.aux))
+] (report.aux (title.aux)
+(introduction.aux) (analit_part.aux) (build_part.aux) (texnical_part.aux)
+(reserch_part.aux) (conclusion.aux) (lib.aux))
 Package logreq Info: Writing requests to 'report.run.xml'.
 \openout1 = `report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44795 strings out of 410654
- 1103825 string characters out of 2816299
- 2334083 words of memory out of 3000000
- 65204 multiletter control sequences out of 15000+600000
+ 44840 strings out of 410654
+ 1104557 string characters out of 2816299
+ 2334127 words of memory out of 3000000
+ 65242 multiletter control sequences out of 15000+600000
  470847 words of font info for 61 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 115i,15n,111p,10641b,4920s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 115i,17n,111p,10641b,4920s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on report.pdf (17 pages).
+Output written on report.pdf (21 pages).
