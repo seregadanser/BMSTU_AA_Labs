@@ -16,7 +16,7 @@
 \contentsline {chapter}{\numberline {4}Исследовательская часть}{10}{}%
 \contentsline {section}{\numberline {4.1}Формализация объекта и его признака}{10}{}%
 \contentsline {section}{\numberline {4.2}Анкетирование респондентов}{11}{}%
-\contentsline {subsection}{\numberline {4.2.1}Функция принадлежности термам}{11}{}%
-\contentsline {section}{\numberline {4.3}Вывод}{12}{}%
+\contentsline {section}{\numberline {4.3}Функция принадлежности термам}{11}{}%
+\contentsline {section}{\numberline {4.4}Вывод}{12}{}%
 \contentsline {chapter}{ЗАКЛЮЧЕНИЕ}{13}{}%
 \contentsline {chapter}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}{14}{}%
