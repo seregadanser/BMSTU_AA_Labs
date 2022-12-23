@@ -1,6 +1,6 @@
 This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.2)  23 DEC 2022 14:10
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
  %&-line parsing enabled.
 **./report.tex
 (report.tex
@@ -1837,7 +1837,11 @@ File: src//alg1.pdf Graphic file (type pdf)
 ] (src/alg2.pdf_tex
 File: src//alg2.pdf Graphic file (type pdf)
 <use src//alg2.pdf, page 1>
+<<<<<<< HEAD
 ) [8]) [9]
+=======
+) [8]) [9] [10]
+>>>>>>> 33115874deba1850798fb4b2d715e9d23f6db5b3
 \openout2 = `texnical_part.aux'.
 
  (texnical_part.tex
@@ -1853,12 +1857,20 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
+<<<<<<< HEAD
 [10
+=======
+[11
+>>>>>>> 33115874deba1850798fb4b2d715e9d23f6db5b3
 
 
 
 
+<<<<<<< HEAD
 ] [11] [12] [13]) [14]
+=======
+] [12] [13] [14] [15]) [16]
+>>>>>>> 33115874deba1850798fb4b2d715e9d23f6db5b3
 \openout2 = `reserch_part.aux'.
 
  (reserch_part.tex
@@ -1876,7 +1888,11 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 
 PGFPlots: reading {src/Brute.txt}
 PGFPlots: reading {src/Ant.txt}
+<<<<<<< HEAD
 [15
+=======
+[17
+>>>>>>> 33115874deba1850798fb4b2d715e9d23f6db5b3
 
 
 
@@ -1889,17 +1905,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--75
 
  []
 
+<<<<<<< HEAD
 [16]) [17]
 \openout2 = `conclusion.aux'.
 
  (conclusion.tex) [18
+=======
+[18]) [19]
+\openout2 = `conclusion.aux'.
+
+ (conclusion.tex) [20
+>>>>>>> 33115874deba1850798fb4b2d715e9d23f6db5b3
 
 
 
 ]
 \openout2 = `lib.aux'.
 
+<<<<<<< HEAD
  (lib.tex) [19
+=======
+ (lib.tex) [21
+>>>>>>> 33115874deba1850798fb4b2d715e9d23f6db5b3
 
 
 
@@ -1912,11 +1939,20 @@ Package logreq Info: Writing requests to 'report.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  44840 strings out of 410654
+<<<<<<< HEAD
  1104567 string characters out of 2816299
  2334200 words of memory out of 3000000
+=======
+ 1104557 string characters out of 2816299
+ 2334127 words of memory out of 3000000
+>>>>>>> 33115874deba1850798fb4b2d715e9d23f6db5b3
  65242 multiletter control sequences out of 15000+600000
  470847 words of font info for 61 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 115i,15n,111p,10641b,4920s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 115i,17n,111p,10641b,4920s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
+<<<<<<< HEAD
 Output written on report.pdf (19 pages).
+=======
+Output written on report.pdf (21 pages).
+>>>>>>> 33115874deba1850798fb4b2d715e9d23f6db5b3

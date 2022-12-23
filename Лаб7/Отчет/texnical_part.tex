@@ -138,6 +138,49 @@ public static List<Ant> InitAnts(Map m, int n)
 }
 \end{lstlisting}
 \end{center}
+<<<<<<< HEAD
+=======
+\section{Функциональное тестирование}
+В таблице \ref{tabular:testsdata} приведены тесты для функций, реализующих алгоритмы для решения задачи коммивояжера (поиска гамильтонова цикла). Тесты для всех реализаций алгоритмов пройдены успешно.
+
+\begin{center}
+\begin{threeparttable}
+	\caption{Тестовые данные}
+	\label{tabular:testsdata}
+	\begin{tabular}{|p{6cm}|p{5cm}|p{4cm}|}
+		\hline
+		\textbf{Матрица расстояний} & \textbf{Алгоритм полного перебора} & \textbf{Муравьиный алгоритм}
+		\tabularnewline
+		\hline
+		\begin{equation*}
+			\begin{bmatrix}
+				0
+			\end{bmatrix}
+		\end{equation*} & 0; [1, 1] & 0; [1, 1]
+		\tabularnewline
+		\hline
+		\begin{equation*}
+			\begin{bmatrix}
+				0 & 10 \\
+				10 & 0 \\
+			\end{bmatrix}
+		\end{equation*} & 10; [1, 2, 1] & 10; [1, 2, 1]
+		\tabularnewline
+		\hline
+		\begin{equation*}
+			\begin{bmatrix}
+				0 & 10 & 15 & 20 \\
+				10 & 0 & 35 & 25 \\
+				15 & 35 & 0 & 30 \\
+				20 & 25 & 30 & 0 \\
+			\end{bmatrix}
+		\end{equation*} & 80; [1, 2, 4, 3, 1] & 80; [1, 2, 4, 3, 1]
+		\tabularnewline
+		\hline
+	\end{tabular}
+\end{threeparttable}
+\end{center}
+>>>>>>> 33115874deba1850798fb4b2d715e9d23f6db5b3
 
 \section*{\hsp Вывод}
 % \addcontentsline{toc}{section}{Вывод}
