@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.2)  23 DEC 2022 14:10
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.2)  23 DEC 2022 11:14
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1690,7 +1690,22 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'report.bbl' found.
- (report.bbl)
+ (report.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                AI
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                dict
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 3.
 Package biblatex Info: Reference segment=0 on input line 3.
 Package caption Info: Begin \AtBeginDocument code.
@@ -1826,18 +1841,12 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-(src/alg1.pdf_tex
-File: src//alg1.pdf Graphic file (type pdf)
-<use src//alg1.pdf, page 1>
 ) [7
 
 
 
 
-] (src/alg2.pdf_tex
-File: src//alg2.pdf Graphic file (type pdf)
-<use src//alg2.pdf, page 1>
-) [8]) [9]
+]
 \openout2 = `texnical_part.aux'.
 
  (texnical_part.tex
@@ -1853,12 +1862,12 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-[10
+[8
 
 
 
 
-] [11] [12] [13]) [14]
+] [9]) [10]
 \openout2 = `reserch_part.aux'.
 
  (reserch_part.tex
@@ -1876,7 +1885,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 
 PGFPlots: reading {src/Brute.txt}
 PGFPlots: reading {src/Ant.txt}
-[15
+[11
 
 
 
@@ -1884,39 +1893,46 @@ PGFPlots: reading {src/Ant.txt}
 ]
 PGFPlots: reading {src/Brute2.txt}
 PGFPlots: reading {src/Ant2.txt}
-
-Underfull \hbox (badness 10000) in paragraph at lines 72--75
-
- []
-
-[16]) [17]
+) [12]
 \openout2 = `conclusion.aux'.
 
- (conclusion.tex) [18
+ (conclusion.tex) [13
 
 
 
 ]
 \openout2 = `lib.aux'.
 
- (lib.tex) [19
+ (lib.tex) [14
 
 
 
-] (report.aux (title.aux)
-(introduction.aux) (analit_part.aux) (build_part.aux) (texnical_part.aux)
-(reserch_part.aux) (conclusion.aux) (lib.aux))
+]
+
+Package caption Warning: Unused \captionsetup[table] on input line 25.
+See the caption package documentation for explanation.
+
+(report.aux (title.aux) (introduction.aux) (analit_part.aux) (build_part.aux)
+(texnical_part.aux) (reserch_part.aux) (conclusion.aux) (lib.aux))
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                report
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'report.run.xml'.
 \openout1 = `report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44840 strings out of 410654
- 1104567 string characters out of 2816299
- 2334200 words of memory out of 3000000
- 65242 multiletter control sequences out of 15000+600000
- 470847 words of font info for 61 fonts, out of 8000000 for 9000
+ 44639 strings out of 410654
+ 1102071 string characters out of 2816299
+ 2138028 words of memory out of 3000000
+ 65050 multiletter control sequences out of 15000+600000
+ 470831 words of font info for 59 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  115i,15n,111p,10641b,4920s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on report.pdf (19 pages).
+Output written on report.pdf (14 pages).
