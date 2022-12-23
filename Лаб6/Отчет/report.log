@@ -1,6 +1,6 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.2)  23 DEC 2022 11:14
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2022.10.8)  23 DEC 2022 23:55
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
  %&-line parsing enabled.
 **./report.tex
 (report.tex
@@ -1825,7 +1825,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 
 
 
-] [5]) [6]
+]) [5]
 \openout2 = `build_part.aux'.
 
  (build_part.tex
@@ -1841,12 +1841,15 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) [7
+(src/ris.pdf_tex
+File: src//ris.pdf Graphic file (type pdf)
+<use src//ris.pdf, page 1>
+) [6
 
 
 
 
-]
+]) [7]
 \openout2 = `texnical_part.aux'.
 
  (texnical_part.tex
@@ -1867,7 +1870,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 
 
 
-] [9]) [10]
+]) [9]
 \openout2 = `reserch_part.aux'.
 
  (reserch_part.tex
@@ -1883,17 +1886,31 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-PGFPlots: reading {src/Brute.txt}
-PGFPlots: reading {src/Ant.txt}
-[11
+[10
 
 
 
 
 ]
-PGFPlots: reading {src/Brute2.txt}
-PGFPlots: reading {src/Ant2.txt}
-) [12]
+Underfull \hbox (badness 1484) in paragraph at lines 36--37
+[]\TU/TimesNewRoman(2)/m/n/14.4 Результаты анкетирования перечисленных респонде
+нтов продемон-
+ []
+
+
+Underfull \hbox (badness 1178) in paragraph at lines 55--56
+[]\TU/TimesNewRoman(2)/m/n/14.4 Графики функций принадлежности числовых значени
+й временным
+ []
+
+File: src/good.png Graphic file (type bmp)
+<src/good.png>
+
+Overfull \hbox (12.07985pt too wide) in paragraph at lines 57--59
+ [] 
+ []
+
+[11]) [12]
 \openout2 = `conclusion.aux'.
 
  (conclusion.tex) [13
@@ -1907,13 +1924,9 @@ PGFPlots: reading {src/Ant2.txt}
 
 
 
-]
-
-Package caption Warning: Unused \captionsetup[table] on input line 25.
-See the caption package documentation for explanation.
-
-(report.aux (title.aux) (introduction.aux) (analit_part.aux) (build_part.aux)
-(texnical_part.aux) (reserch_part.aux) (conclusion.aux) (lib.aux))
+] (report.aux (title.aux)
+(introduction.aux) (analit_part.aux) (build_part.aux) (texnical_part.aux)
+(reserch_part.aux) (conclusion.aux) (lib.aux))
 
 LaTeX Warning: There were undefined references.
 
@@ -1927,12 +1940,12 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44639 strings out of 410654
- 1102071 string characters out of 2816299
- 2138028 words of memory out of 3000000
- 65050 multiletter control sequences out of 15000+600000
- 470831 words of font info for 59 fonts, out of 8000000 for 9000
+ 44222 strings out of 410654
+ 1089537 string characters out of 2816299
+ 2158106 words of memory out of 3000000
+ 64634 multiletter control sequences out of 15000+600000
+ 470839 words of font info for 60 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 115i,15n,111p,10641b,4920s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 115i,8n,111p,10641b,4700s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
 Output written on report.pdf (14 pages).
